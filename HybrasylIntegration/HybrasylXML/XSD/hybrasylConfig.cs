@@ -55,6 +55,9 @@ namespace Hybrasyl.XSD
         [System.Xml.Serialization.XmlArrayItemAttribute("board", IsNullable = false, ElementName = "board")]
         public List<GlobalBoard> Boards { get; set; }
 
+        [XmlElementAttribute("timeconfig")]
+        public TimeConfig Time { get; set; } 
+
         public HybrasylConfig()
         {
             this.Boards = new List<GlobalBoard>();
@@ -62,6 +65,7 @@ namespace Hybrasyl.XSD
             this.Network = new Network();
             this.Datastore = new DataStore();
             this.Logging = new LogConfig();
+            this.Time = new TimeConfig();
         }
     }
 
@@ -120,6 +124,121 @@ namespace Hybrasyl.XSD
         /// <remarks/>
         off = Int32.MaxValue,
     }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Config")]
+    [System.Xml.Serialization.XmlRootAttribute("time")]
+    public partial class TimeConfig
+    {
+        
+        [XmlElementAttribute("serverstart")]
+        public ServerStart ServerStart { get; set; }
+
+        [XmlIgnore]
+        public DateTime? StartDate => ServerStart.ServerStartDate;
+
+        [XmlArray("ages")]
+        [XmlArrayItemAttribute("age", IsNullable = false, ElementName = "age")]
+        public List<HybrasylAge> Ages { get; set; }
+
+        public TimeConfig()
+        {
+            ServerStart = new ServerStart();
+            Ages = new List<HybrasylAge>();
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Config")]
+    [System.Xml.Serialization.XmlRootAttribute("serverstart")]
+    public partial class ServerStart
+    {
+        [XmlText]      
+        public string Value;
+
+        [XmlIgnore]
+        public DateTime? ServerStartDate
+        {
+            get
+            {
+                if (Value != string.Empty)
+                {
+                    try
+                    {
+                        return XmlConvert.ToDateTime(Value, XmlDateTimeSerializationMode.Local);
+                    }
+                    catch (Exception)
+                    {
+                        return null;
+                    }
+                }
+                return null;
+            }
+        }
+
+        [XmlAttribute("defaultage")]
+        [DefaultValueAttribute(typeof(string), "Hybrasyl")]
+        public string DefaultAge;
+
+        [XmlAttribute("defaultyear")]
+        [DefaultValueAttribute(typeof(int), "1")]
+        public int DefaultYear;
+
+        public ServerStart()
+        {
+            DefaultAge = "Hybrasyl";
+            DefaultYear = 1;          
+        }
+
+    }
+
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Config")]
+    [System.Xml.Serialization.XmlRootAttribute("HybrasylAge")]
+    public partial class HybrasylAge
+    {
+        [XmlAttributeAttribute(AttributeName = "name")]
+        public string Name { get; set; }
+
+        [XmlAttributeAttribute(AttributeName = "startdate")]
+        public DateTime StartDate { get; set; }
+
+        [XmlIgnore]
+        public DateTime? EndDate { get; set; }
+
+        [XmlAttributeAttribute(AttributeName = "enddate")]
+        public string EndDateString
+        {
+            get { return EndDate?.ToString("u"); }
+            set
+            {
+                EndDate = value == null ? (DateTime?)null : DateTime.Parse(value);
+            }
+        }
+
+        [XmlAttributeAttribute(AttributeName = "startyear")]
+        [DefaultValueAttribute(typeof(int), "1")]
+        public int StartYear { get; set; }
+
+        public bool DateInAge(DateTime datetime)
+        {
+            if (EndDate == null) return datetime.Ticks > StartDate.Ticks;
+            var endDate = (DateTime) EndDate;
+            return datetime.Ticks >= StartDate.Ticks && datetime.Ticks <= endDate.Ticks;
+        } 
+    }
+
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
     [System.SerializableAttribute()]

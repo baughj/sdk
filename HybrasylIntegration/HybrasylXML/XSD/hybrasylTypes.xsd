@@ -12,6 +12,13 @@
 
   <!-- Define common types and elements that we will reuse later -->
 
+  <xs:simpleType name="String5">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+    
   <xs:simpleType name="String8">
 	  <xs:restriction base="xs:string">
 		  <xs:minLength value="1" />

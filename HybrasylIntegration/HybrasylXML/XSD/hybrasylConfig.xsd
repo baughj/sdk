@@ -88,10 +88,49 @@
   <xs:complexType name="HybrasylConfig">
     <xs:sequence>
       <xs:element name="logging" type="config:LogConfig" minOccurs="0" maxOccurs="1" />
-      <xs:element name="datastore" type="config:DataStore" minOccurs="0" maxOccurs="1" />
-      <xs:element name="network" type="config:Network" minOccurs="0" maxOccurs="1" />
+      <xs:element name="datastore" type="config:DataStore" minOccurs="1" maxOccurs="1" />
+      <xs:element name="network" type="config:Network" minOccurs="1" maxOccurs="1" />
       <xs:element name="access" type="config:Access" minOccurs="0" maxOccurs="1" />
       <xs:element name="boards" type="config:GlobalBoards" minOccurs="0" maxOccurs="1" />
+      <xs:element name="time" type="config:Time" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--
+  <time>
+  <serverstart defaultage="Hybrasyl" defaultyear="1">2016-04-01T01:00:00Z</serverstart>
+  <ages>
+    <age name="Danaan" startdate="2016-04-01" startyear="1"/>
+  </ages>
+</time>
+-->
+  <xs:complexType name="Time">
+    <xs:sequence>
+      <xs:element name="ages" type="config:HybrasylAges" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ServerStart">
+    <xs:simpleContent>
+      <xs:extension base="xs:dateTime">
+        <xs:attribute name="defaultage" type="hyb:String5" default="Hybrasyl"/>
+        <xs:attribute name="defaultyear" type="xs:int" default="1"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="HybrasylAge">
+    <xs:sequence>
+      <xs:element name="name" type="hyb:String5" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="startdate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="enddate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="startyear" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="HybrasylAges">
+    <xs:sequence>
+      <xs:element name="age" minOccurs="1" maxOccurs="unbounded" type="config:HybrasylAge">
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 
