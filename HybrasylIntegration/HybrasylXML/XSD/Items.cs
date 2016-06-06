@@ -1307,7 +1307,7 @@ namespace Hybrasyl.XSD
             }
         }
 
-        [XmlElementAttribute("playerEffect")]
+        [XmlElementAttribute("playereffect")]
         public ItemPropertiesUsePlayerEffect PlayerEffect
         {
             get

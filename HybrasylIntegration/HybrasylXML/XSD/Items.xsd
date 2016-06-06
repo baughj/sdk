@@ -243,7 +243,7 @@
                 </xs:simpleContent>
               </xs:complexType>
             </xs:element>
-            <xs:element name="playerEffect" minOccurs="0" maxOccurs="1">
+            <xs:element name="playereffect" minOccurs="0" maxOccurs="1">
               <xs:complexType>
                 <xs:attribute name="gold" default="0" type="xs:int" />
                 <xs:attribute name="hp" default="0" type="xs:int" />
