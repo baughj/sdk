@@ -5,89 +5,106 @@
   <xs:documentation xml:lang="en">
     Hybrasyl Project - Hybrasyl XML Schema - Creatures (NPCs/mobs/drops)
     This file is subject to the same licenses as Project Hybrasyl.
-    (C) 2015 Project Hybrasyl (info@hybrasyl.com)
+    (C) 2016 Project Hybrasyl (info@hybrasyl.com)
     Written by Justin Baugh (baughj@hybrasyl.com)
   </xs:documentation>
 </xs:annotation>
 
 <xs:import schemaLocation="hybrasylTypes.xsd" namespace="http://www.hybrasyl.com/XML/HybrasylCommon" />
 
+  <!-- Base definition for a monster -->
   <xs:complexType name="Mob">
     <xs:sequence>
       <xs:element name="name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
       <xs:element name="description" type="hyb:String8" minOccurs="0" maxOccurs="1" />
-      <xs:element name="properties" type="creatures:Properties" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="sprite" use="required" type="xs:unsignedShort" />
   </xs:complexType>
 
-  <xs:complexType name="Drop">
-    <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="item">
-        <xs:complexType>
-          <xs:simpleContent>
-            <xs:extension base="hyb:String8">
-              <xs:attribute name="minqty" type="xs:unsignedByte" default="1" />
-              <xs:attribute name="maxqty" type="xs:unsignedByte" default="1" />
-              <xs:attribute name="chance" type="xs:float" default="1.0" />
-              <xs:attribute name="variant" type="hyb:String8" default="none" />
-            </xs:extension>
-          </xs:simpleContent>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="gold">
-        <xs:complexType>
-          <xs:attribute name="minqty" type="xs:unsignedByte" default="1" />
-          <xs:attribute name="maxqty" type="xs:unsignedByte" default="1" />
-          <xs:attribute name="chance" type="xs:float" default="1.0" />
-        </xs:complexType>
-      </xs:element>
-    </xs:choice>
-  </xs:complexType>
+  <!-- Spawngroup -->
 
-  <xs:complexType name="Properties">
+  <xs:complexType name="Spawngroup">
     <xs:sequence>
-      <xs:element name="difficulty" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:attribute name="level" type="xs:unsignedByte" use="required" />
-          <xs:attribute name="multiplier" type="xs:float" default="1.0" />
-          <xs:attribute name="speed" type="xs:float" default="1.0" />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="damage" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:attribute name="min" type="xs:unsignedInt" use="required" />
-          <xs:attribute name="max" type="xs:unsignedInt" use="required" />
-          <xs:attribute name="element" type="hyb:Element" default="none" />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="defense" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:attribute name="mr" type="xs:unsignedByte" default="1" />
-          <xs:attribute name="ac" type="xs:unsignedByte" use="required" />
-          <xs:attribute name="element" type="hyb:Element" default="none" />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="loot" minOccurs="0" maxOccurs="1" type="creatures:Loot" />
-      <xs:element name="scriptname" minOccurs="0" maxOccurs="1" />
+      <xs:element mape="maps" type="creature:MapList" minOccurs="1" maxOccurs="1"/>
+      <xs:element mape="spawns" type="creature:SpawnList" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="Loot">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="dropset" type="hyb:String8" />
-      <xs:element name="drops" type="creatures:Drop" />
-    </xs:choice>
-    <xs:attribute name="exp" type="xs:unsignedInt" use="optional" default="0" />
-    <xs:attribute name="gold" type="xs:unsignedInt" use="optional" default="0" />
-  </xs:complexType>
-  <xs:complexType name="Dropset">
+  
+  <xs:complexType name="MapList">
     <xs:sequence>
-      <xs:element name="name" minOccurs="1" maxOccurs="1" type="hyb:String8" />
-      <xs:element name="drops" type="creatures:Drop" />
+      <xs:element name="maps" type="Creature:Map" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:element name="mob" type="creatures:Mob" />
-  <xs:element name="dropset" type="creatures:Dropset" />
-</xs:schema>
+  <!-- Maps in the spawngroup -->
+  <xs:complexType name="Map">
+    <xs:sequence>
+      <xs:element name="map" type="hyb:String8" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- List of spawns in a spawngroup -->
+  <xs:complexType name="SpawnList">
+    <xs:sequence>
+      <xs:element name="spawn" type="creature:Spawn" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- definition for a monster (mob variant)-->
+  <xs:complexType name="Spawn">
+    <xs:sequence>
+      <xs:element name="script" type="hyb:String8" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="intents" type="creature:IntentList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="respawn" type="creature:Respawn" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="damage" type="creature:Damage" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="defense" type="creature:Defense" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="stats" type="creature:Stats" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="loot" type="creature:LootList" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="castables" type="creature:Castables" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="base" type="hyb:String8" use="required"/>
+  </xs:complexType>
+
+  <!-- List of intents -->
+  <xs:complexType name="IntentList">
+    <xs:sequence>
+      <xs:element name="npc" type="creature:Intent" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="player" type="creature:Intent" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="monster" type="creature:Intent" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Spawn intent (hostile/friendly/etc) -->
+  <xs:complexType name="Intent">
+    <xs:simpleContent>
+      <xs:extension base="hyb:string8">
+        <xs:attribute base="hyb:IntentType" name="intent"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- Spawns -->
+  <xs:complexType name="Spawns">
+    <xs:sequence>
+      <xs:element name="spawn" type="maps:Spawn" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Respawn">
+  </xs:complexType>
+
+  <xs:complexType name="Damage">
+  </xs:complexType>
+
+  <xs:complexType name="Defense">
+  </xs:complexType>
+
+  <xs:complexType name="Stats">
+  </xs:complexType>
+
+  <xs:complexType name="LootList">
+  </xs:complexType>
+
+  <xs:complexType name="Castables">
+  </xs:complexType>
