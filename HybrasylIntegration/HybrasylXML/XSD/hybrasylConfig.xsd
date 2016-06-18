@@ -137,9 +137,9 @@
   <xs:complexType name="Death">
     <xs:sequence>
       <xs:element name="map" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="coma" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="penalty" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="legendmark" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="coma" type="config:DeathComa" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="penalty" type="config:DeathPenalty" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="legendmark" type="config:DeathLegendMark" minOccurs="1" maxOccurs="1"/>
 
     </xs:sequence>
     <xs:attribute name="active" type="xs:boolean" default="true" use="optional"/>
