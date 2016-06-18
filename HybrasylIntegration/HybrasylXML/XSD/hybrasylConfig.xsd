@@ -93,16 +93,10 @@
       <xs:element name="access" type="config:Access" minOccurs="0" maxOccurs="1" />
       <xs:element name="boards" type="config:GlobalBoards" minOccurs="0" maxOccurs="1" />
       <xs:element name="time" type="config:Time" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="handlers" type="config:Handlers" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
-  <!--
-  <time>
-  <serverstart defaultage="Hybrasyl" defaultyear="1">2016-04-01T01:00:00Z</serverstart>
-  <ages>
-    <age name="Danaan" startdate="2016-04-01" startyear="1"/>
-  </ages>
-</time>
--->
+
   <xs:complexType name="Time">
     <xs:sequence>
       <xs:element name="ages" type="config:HybrasylAges" minOccurs="0" maxOccurs="1"/>
@@ -134,5 +128,51 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="Handlers">
+    <xs:sequence>
+      <xs:element name="death" minOccurs="0" maxOccurs="1" type="config:Death" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Death">
+    <xs:sequence>
+      <xs:element name="map" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="coma" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="penalty" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="legendmark" type="config:DeathMap" minOccurs="1" maxOccurs="1"/>
+
+    </xs:sequence>
+    <xs:attribute name="active" type="xs:boolean" default="true" use="optional"/>
+    <xs:attribute name="perishable" type="xs:boolean" default="true" use="optional"/>
+    <xs:attribute name="groupnotify" type="xs:boolean" default="true" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="DeathMap">
+    <xs:simpleContent>
+      <xs:extension base="hyb:String8">
+        <xs:attribute name="x" type="xs:byte" use="required"/>
+        <xs:attribute name="y" type="xs:byte" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="DeathComa">
+    <xs:attribute name="timeout" default="30" use="optional"/>  
+  </xs:complexType>
+  
+  <xs:complexType name="DeathPenalty">
+    <xs:attribute name="xp" type="xs:unsignedInt" default="5" use="optional"/>
+    <xs:attribute name="hp" type="xs:unsignedInt" default="5" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="DeathLegendMark">
+    <xs:simpleContent>
+      <xs:extension base="hyb:String8">
+        <xs:attribute name="prefix" type="hyb:String8" use="required"/>
+        <xs:attribute name="increment" type="xs:boolean" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
   <xs:element name="hybrasylconfig" type="config:HybrasylConfig" />
 </xs:schema>
