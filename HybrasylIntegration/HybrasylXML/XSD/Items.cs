@@ -1268,7 +1268,7 @@ namespace Hybrasyl.XSD
         public bool Consumed { get; set; }
 
         [XmlIgnore()]
-        public bool ScriptnameSpecified { get; set; }
+        public bool ScriptSpecified { get; set; }
 
         [XmlIgnore()]
         public bool TeleportSpecified { get; set; }

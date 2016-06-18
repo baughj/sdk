@@ -45,7 +45,7 @@
   <xs:complexType name="Reactor">
     <xs:sequence>
       <xs:element name="description" type="hyb:String16" minOccurs="0" maxOccurs="1" />
-      <xs:element name="scriptname" type="hyb:String8" minOccurs="1" maxOccurs="1" />
+      <xs:element name="script" type="hyb:String8" minOccurs="1" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="x" type="xs:unsignedByte" use="required" />
     <xs:attribute name="y" type="xs:unsignedByte" use="required" />
@@ -56,7 +56,7 @@
   <xs:complexType name="Signpost">
     <xs:sequence>
       <xs:element name="message" type="hyb:String16" minOccurs="1" maxOccurs="1" />
-      <xs:element name="scriptname" type="hyb:String8" minOccurs="0" maxOccurs="1" />
+      <xs:element name="script" type="hyb:String8" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="x" type="xs:unsignedByte" use="required" />
     <xs:attribute name="y" type="xs:unsignedByte" use="required" />
@@ -67,7 +67,7 @@
     <xs:sequence>
       <xs:element name="name" type="hyb:String8" />
       <xs:element name="description" type="hyb:String16" />
-      <xs:element name="scriptname" type="hyb:String8" />
+      <xs:element name="script" type="hyb:String8" />
     </xs:sequence>
     <xs:attribute name="x" type="xs:unsignedByte" use="required" />
     <xs:attribute name="y" type="xs:unsignedByte" use="required" />

@@ -32,28 +32,14 @@
   <!-- A list of maps a spawngroup controls-->
   <xs:complexType name="MapList">
     <xs:sequence>
-      <xs:element name="maps" type="creature:Map" minOccurs="1" maxOccurs="1"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <!-- Spawns -->
-  <xs:complexType name="Spawns">
-    <xs:sequence>
-      <xs:element name="spawn" type="creature:Spawn" minOccurs="1" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <!-- Maps in the spawngroup -->
-  <xs:complexType name="Map">
-    <xs:sequence>
       <xs:element name="map" type="hyb:String8" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
-  <!-- List of spawns in a spawngroup -->
+  <!-- Spawns -->
   <xs:complexType name="SpawnList">
     <xs:sequence>
-      <xs:element name="spawn" type="creature:Spawn" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="spawn" type="creature:Spawn" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
@@ -132,7 +118,7 @@
 
   <!-- Stats of a creature (only HP supported for now) -->
   <xs:complexType name="Stats">
-    <xs:attribute name="hp" type="xs:unsignedInt" default="0" use="optional"/>
+    <xs:attribute name="hp" type="xs:unsignedInt" use="required"/>
   </xs:complexType>
 
   <!-- List of loot tables which can be defined <table> or imported from external sources <import> -->
