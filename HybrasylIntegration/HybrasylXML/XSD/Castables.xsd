@@ -23,6 +23,19 @@
     </xs:restriction>
   </xs:simpleType>
 
+ <xs:simpleType name="SpellUseType">
+   <xs:restriction base="xs:token">
+     <xs:enumeration value="unusable"/>
+     <xs:enumeration value="prompt"/>
+     <xs:enumeration value="target"/>
+     <xs:enumeration value="fourdigit"/>
+     <xs:enumeration value="threedigit"/>
+     <xs:enumeration value="notarget"/>
+     <xs:enumeration value="twodigit"/>
+     <xs:enumeration value="onedigit"/>
+   </xs:restriction>
+ </xs:simpleType>
+  
  <!-- Element properties (adds belt / necklace) -->
  <xs:simpleType name="Element">
    <xs:restriction base="xs:token">
@@ -113,7 +126,7 @@
 
   <!-- Intent: What does the spell do, and whom does it affect? -->
   <xs:complexType name="Intent">
-    <xs:attribute name="isclick" type="xs:boolean" default="false" />
+    <xs:attribute name="usetype" type="actions:SpellUseType" default="notarget" use="optional"/>
     <xs:attribute name="radius" type="xs:unsignedByte" default="0" />
     <xs:attribute name="direction" type="actions:IntentDirection" default="front" />
     <xs:attribute name="target" type="actions:IntentTargetList" use="required" />
