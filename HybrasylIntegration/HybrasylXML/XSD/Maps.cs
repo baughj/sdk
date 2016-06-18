@@ -845,8 +845,8 @@ namespace Hybrasyl.XSD
         [XmlElementAttribute("description")]
         public string Description { get; set; }
 
-        [XmlElementAttribute("scriptname")]
-        public string Scriptname { get; set; }
+        [XmlElementAttribute("script")]
+        public string Script { get; set; }
 
         [XmlAttributeAttribute(AttributeName = "x")]
         public byte X { get; set; }
@@ -861,7 +861,7 @@ namespace Hybrasyl.XSD
         public bool DescriptionSpecified { get; set; }
 
         [XmlIgnore()]
-        public bool ScriptnameSpecified { get; set; }
+        public bool ScriptSpecified { get; set; }
 
         [XmlIgnore()]
         public bool XSpecified { get; set; }
@@ -881,8 +881,8 @@ namespace Hybrasyl.XSD
         [XmlElementAttribute("message")]
         public string Message { get; set; }
 
-        [XmlElementAttribute("scriptname")]
-        public string Scriptname { get; set; }
+        [XmlElementAttribute("script")]
+        public string Script { get; set; }
 
         [XmlAttributeAttribute(AttributeName = "x")]
         public byte X { get; set; }
@@ -894,7 +894,7 @@ namespace Hybrasyl.XSD
         public bool MessageSpecified { get; set; }
 
         [XmlIgnore()]
-        public bool ScriptnameSpecified { get; set; }
+        public bool ScriptSpecified { get; set; }
 
         [XmlIgnore()]
         public bool XSpecified { get; set; }
@@ -1094,8 +1094,8 @@ namespace Hybrasyl.XSD
         [XmlElementAttribute("description")]
         public string Description { get; set; }
 
-        [XmlElementAttribute("scriptname")]
-        public string Scriptname { get; set; }
+        [XmlElementAttribute("script")]
+        public string Script { get; set; }
 
         [XmlAttributeAttribute(AttributeName = "x")]
         public byte X { get; set; }
@@ -1111,7 +1111,7 @@ namespace Hybrasyl.XSD
         public bool DescriptionSpecified { get; set; }
 
         [XmlIgnore()]
-        public bool ScriptnameSpecified { get; set; }
+        public bool ScriptSpecified { get; set; }
 
         [XmlIgnore()]
         public bool XSpecified { get; set; }

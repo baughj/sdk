@@ -559,8 +559,8 @@ namespace Hybrasyl.XSD
         [XmlElementAttribute("heal", typeof(Heal))]
         public Heal Heal { get; set; }
 
-        [XmlElementAttribute("scriptname", typeof(string))]
-        public string ScriptName { get; set; }
+        [XmlElementAttribute("script", typeof(string))]
+        public string Script { get; set; }
 
         [XmlElementAttribute("sound", typeof(EffectsSound))]
         public EffectsSound Sound { get; set; }

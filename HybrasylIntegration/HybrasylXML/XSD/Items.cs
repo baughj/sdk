@@ -1260,15 +1260,15 @@ namespace Hybrasyl.XSD
 
         private ItemPropertiesUseSound _sound;
 
-        [XmlElementAttribute("scriptname")]
-        public string Scriptname { get; set; }
+        [XmlElementAttribute("script")]
+        public string Script { get; set; }
 
         [XmlAttributeAttribute(AttributeName = "consumed")]
         [DefaultValueAttribute(true)]
         public bool Consumed { get; set; }
 
         [XmlIgnore()]
-        public bool ScriptnameSpecified { get; set; }
+        public bool ScriptSpecified { get; set; }
 
         [XmlIgnore()]
         public bool TeleportSpecified { get; set; }

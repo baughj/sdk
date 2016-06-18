@@ -45,63 +45,18 @@
   <xs:complexType name="Reactor">
     <xs:sequence>
       <xs:element name="description" type="hyb:String16" minOccurs="0" maxOccurs="1" />
-      <xs:element name="scriptname" type="hyb:String8" minOccurs="1" maxOccurs="1" />
+      <xs:element name="script" type="hyb:String8" minOccurs="1" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="x" type="xs:unsignedByte" use="required" />
     <xs:attribute name="y" type="xs:unsignedByte" use="required" />
     <xs:attribute name="blocking" default="false" type="xs:boolean" />
   </xs:complexType>
 
-  <!-- SpawnModifiers subelement block -->
-  <xs:complexType name="SpawnModifiers">
-    <xs:sequence>
-      <xs:element name="speed" type="xs:float" minOccurs="0" maxOccurs="1" />
-      <xs:element name="passive" minOccurs="0" maxOccurs="1" />
-      <xs:element name="quantity" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:attribute name="min" type="xs:nonNegativeInteger" />
-          <xs:attribute name="max" type="xs:nonNegativeInteger" />
-          <xs:attribute name="percentage" type="xs:float" />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="zone" minOccurs="0" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:attribute name="start">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:pattern value="\d{0,3},\d{0,3}" />
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-          <xs:attribute name="end">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:pattern value="\d{0,3},\d{0,3}" />
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <!-- Spawn subelement -->
-  <xs:complexType name="Spawn">
-    <xs:sequence>
-      <xs:element name="name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
-      <xs:element name="description" type="hyb:String16" minOccurs="0" maxOccurs="1" />
-      <xs:element name="strategy" type="hyb:String8" default="random" minOccurs="0" maxOccurs="1" />
-      <xs:element name="spawnModifiers" type="maps:SpawnModifiers" minOccurs="0" maxOccurs="1" />
-    </xs:sequence>
-    <xs:attribute name="interval" type="xs:nonNegativeInteger" />
-    <xs:attribute name="checkInterval" type="xs:nonNegativeInteger" />
-  </xs:complexType>
-
   <!-- Signpost subelements -->
   <xs:complexType name="Signpost">
     <xs:sequence>
       <xs:element name="message" type="hyb:String16" minOccurs="1" maxOccurs="1" />
-      <xs:element name="scriptname" type="hyb:String8" minOccurs="0" maxOccurs="1" />
+      <xs:element name="script" type="hyb:String8" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="x" type="xs:unsignedByte" use="required" />
     <xs:attribute name="y" type="xs:unsignedByte" use="required" />
@@ -112,7 +67,7 @@
     <xs:sequence>
       <xs:element name="name" type="hyb:String8" />
       <xs:element name="description" type="hyb:String16" />
-      <xs:element name="scriptname" type="hyb:String8" />
+      <xs:element name="script" type="hyb:String8" />
     </xs:sequence>
     <xs:attribute name="x" type="xs:unsignedByte" use="required" />
     <xs:attribute name="y" type="xs:unsignedByte" use="required" />
@@ -132,13 +87,6 @@
   <xs:complexType name="Reactors">
     <xs:sequence>
       <xs:element name="reactor" type="maps:Reactor" minOccurs="1" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <!-- Spawns -->
-  <xs:complexType name="Spawns">
-    <xs:sequence>
-      <xs:element name="spawn" type="maps:Spawn" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
@@ -165,7 +113,6 @@
       <xs:element name="warps" type="maps:Warps" minOccurs="0" maxOccurs="1" />
       <xs:element name="reactors" type="maps:Reactors" minOccurs="0" maxOccurs="1" />
       <xs:element name="npcs" type="maps:Npcs" minOccurs="0" maxOccurs="1" />
-      <xs:element name="spawns" type="maps:Spawns" minOccurs="0" maxOccurs="1" />
       <xs:element name="signposts" type="maps:Signposts" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="id" type="xs:unsignedShort" use="required" />
@@ -210,24 +157,24 @@
 
   <!-- Worldmap point -->
   <xs:complexType name="WorldMapPoint">
-          <xs:sequence>
-            <xs:element name="description" minOccurs="0" maxOccurs="1" type="hyb:String8" />
-            <xs:element name="name" minOccurs="1" maxOccurs="1" type="hyb:String8" />
-            <xs:element name="target" minOccurs="1" maxOccurs="1">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="hyb:String8">
-                    <xs:attribute name="x" type="xs:unsignedByte" use="required" />
-                    <xs:attribute name="y" type="xs:unsignedByte" use="required" />
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="restrictions" minOccurs="0" maxOccurs="1" type="hyb:WarpRestrictions" />
-          </xs:sequence>
-          <xs:attribute name="x" type="xs:unsignedShort" use="required" />
-          <xs:attribute name="y" type="xs:unsignedShort" use="required" />
+    <xs:sequence>
+      <xs:element name="description" minOccurs="0" maxOccurs="1" type="hyb:String8" />
+      <xs:element name="name" minOccurs="1" maxOccurs="1" type="hyb:String8" />
+      <xs:element name="target" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="hyb:String8">
+              <xs:attribute name="x" type="xs:unsignedByte" use="required" />
+              <xs:attribute name="y" type="xs:unsignedByte" use="required" />
+            </xs:extension>
+          </xs:simpleContent>
         </xs:complexType>
+      </xs:element>
+      <xs:element name="restrictions" minOccurs="0" maxOccurs="1" type="hyb:WarpRestrictions" />
+    </xs:sequence>
+    <xs:attribute name="x" type="xs:unsignedShort" use="required" />
+    <xs:attribute name="y" type="xs:unsignedShort" use="required" />
+  </xs:complexType>
 
   <!-- Worldmap points (collection of worldmap points) -->
   <xs:complexType name="WorldMapPoints">
