@@ -302,7 +302,7 @@
           <xs:attribute name="id" type="xs:byte" use="required" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="scriptname" minOccurs="0" maxOccurs="1" type="hyb:String8" />
+      <xs:element name="script" minOccurs="0" maxOccurs="1" type="hyb:String8" />
       <xs:element name="heal" minOccurs="0" maxOccurs="1" type="actions:Heal" />
       <xs:element name="damage" minOccurs="0" maxOccurs="1" type="actions:Damage" />
       <xs:element name="stateffects" minOccurs="0" maxOccurs="1" type="actions:StatEffects" />
