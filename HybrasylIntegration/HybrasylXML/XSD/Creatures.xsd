@@ -101,24 +101,35 @@
     <xs:attribute name="percentage" type="xs:float" use="optional"/>
   </xs:complexType>
 
-  <!-- Damage a spawn can do (min/max, element, type (physical/magical etc)) -->
+  <!-- Damage a spawn can do (min/max, elment, type (physical/magical etc)) -->
   <xs:complexType name="Damage">
-    <xs:attribute name="min" type="xs:int" default="1" use="optional"/>
-    <xs:attribute name="max" type="xs:int" use="required"/>
+    <xs:sequence>
+      <xs:element name="small" type="creature:DamageAmount" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="large" type="creature:DamageAmount" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
     <xs:attribute name="element" type="hyb:Element" default="none" use="optional"/>
     <xs:attribute name="type" type="hyb:DamageType" default="physical" use="optional"/>
+    <xs:attribute name="dmg" type="xs:byte" use="optional" default="0"/>
+    <xs:attribute name="hit" type="xs:byte" use="optional" default="0"/>
   </xs:complexType>
 
+  <xs:complexType name="DamageAmount">
+    <xs:attribute name="min" type="xs:int" default="0" use="optional"/>
+    <xs:attribute name="max" type="xs:int" default="1" use="optional"/>
+  </xs:complexType>
+  
   <!-- A creature's defense, including element, magic resistance and armor class -->
   <xs:complexType name="Defense">
     <xs:attribute name="mr" type="xs:int" default="0" use="optional"/>
     <xs:attribute name="ac" type="xs:int" use="required"/>
     <xs:attribute name="element" type="hyb:Element" default="none" use="optional"/>
+    <xs:attribute name="regen" type="xs:byte" use="optional" default="0"/>
   </xs:complexType>
 
-  <!-- Stats of a creature (only HP supported for now) -->
+  <!-- Stats of a creature (a subset of player attributes are supported here) -->
   <xs:complexType name="Stats">
     <xs:attribute name="hp" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="mp" type="xs:unsignedInt" use="optional" default="0"/>
   </xs:complexType>
 
   <!-- List of loot tables which can be defined <table> or imported from external sources <import> -->
