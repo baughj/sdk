@@ -17,9 +17,14 @@
  *
  */
  
-using Hybrasyl.XSD;
+using Hybrasyl.Config;
+using Hybrasyl.Creatures;
+using Hybrasyl.Items;
+using Hybrasyl.Maps;
+using Hybrasyl.Nations;
 using System.Xml;
 using System.Xml.Serialization;
+using Castable = Hybrasyl.Castables.Castable;
 
 namespace Hybrasyl.XML
 {
@@ -41,13 +46,13 @@ namespace Hybrasyl.XML
             Writer.Serialize(xWrite, contents, ns);
         }
 
-        public static void Serialize(XmlWriter xWrite, Dropset contents)
-        {
-            XmlSerializer Writer = new XmlSerializer(contents.GetType());
-            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "http://www.hybrasyl.com/XML/Items");
-            Writer.Serialize(xWrite, contents, ns);
-        }
+        //public static void Serialize(XmlWriter xWrite, Dropset contents)
+        //{
+        //    XmlSerializer Writer = new XmlSerializer(contents.GetType());
+        //    XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+        //    ns.Add("", "http://www.hybrasyl.com/XML/Items");
+        //    Writer.Serialize(xWrite, contents, ns);
+        //}
 
         public static void Serialize(XmlWriter xWrite, ItemType contents)
         {
@@ -133,18 +138,18 @@ namespace Hybrasyl.XML
             return contents;
         }
 
-        public static Dropset Deserialize(XmlReader reader, Dropset contents = null)
-        {
-            //reader.Settings.IgnoreWhitespace = false;
-            if (contents == null) contents = new Dropset();
-            XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
-            if (XmlSerial.CanDeserialize(reader))
-            {
-                var xContents = XmlSerial.Deserialize(reader);
-                contents = (Dropset)xContents;
-            }
-            return contents;
-        }
+        //public static Dropset Deserialize(XmlReader reader, Dropset contents = null)
+        //{
+        //    //reader.Settings.IgnoreWhitespace = false;
+        //    if (contents == null) contents = new Dropset();
+        //    XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
+        //    if (XmlSerial.CanDeserialize(reader))
+        //    {
+        //        var xContents = XmlSerial.Deserialize(reader);
+        //        contents = (Dropset)xContents;
+        //    }
+        //    return contents;
+        //}
 
         public static ItemType Deserialize(XmlReader reader, ItemType contents = null)
         {
