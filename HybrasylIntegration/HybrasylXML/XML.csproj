@@ -50,13 +50,12 @@
     <Compile Include="XML\Serializer.cs" />
     <Compile Include="XML\Utf8StringWriter.cs" />
     <Compile Include="XML\XMLBase.cs" />
-    <Compile Include="XSD\Castables.cs" />
-    <Compile Include="XSD\Creatures.cs" />
-    <Compile Include="XSD\Extensions.cs" />
-    <Compile Include="XSD\hybrasylConfig.cs" />
-    <Compile Include="XSD\Items.cs" />
-    <Compile Include="XSD\Maps.cs" />
-    <Compile Include="XSD\Nations.cs" />
+    <Compile Include="XSD\Castables.Designer.cs" />
+    <Compile Include="XSD\Creatures.Designer.cs" />
+    <Compile Include="XSD\hybrasylConfig.Designer.cs" />
+    <Compile Include="XSD\Items.Designer.cs" />
+    <Compile Include="XSD\Maps.Designer.cs" />
+    <Compile Include="XSD\Nations.Designer.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
