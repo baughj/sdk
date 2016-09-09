@@ -14,54 +14,52 @@
   <!-- Skill/spell book location -->
   <xs:simpleType name="Book">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="primaryskill" />
-      <xs:enumeration value="secondaryskill" />
-      <xs:enumeration value="utilityskill" />
-      <xs:enumeration value="primaryspell" />
-      <xs:enumeration value="secondaryspell" />
-      <xs:enumeration value="utilityspell" />
+      <xs:enumeration value="PrimarySkill" />
+      <xs:enumeration value="SecondarySkill" />
+      <xs:enumeration value="UtilitySkill" />
+      <xs:enumeration value="PrimarySpell" />
+      <xs:enumeration value="SecondarySpell" />
+      <xs:enumeration value="UtilitySpell" />
     </xs:restriction>
   </xs:simpleType>
 
  <xs:simpleType name="SpellUseType">
    <xs:restriction base="xs:token">
-     <xs:enumeration value="unusable"/>
-     <xs:enumeration value="prompt"/>
-     <xs:enumeration value="target"/>
-     <xs:enumeration value="fourdigit"/>
-     <xs:enumeration value="threedigit"/>
-     <xs:enumeration value="notarget"/>
-     <xs:enumeration value="twodigit"/>
-     <xs:enumeration value="onedigit"/>
+     <xs:enumeration value="Unusable"/>
+     <xs:enumeration value="Prompt"/>
+     <xs:enumeration value="Target"/>
+     <xs:enumeration value="FourDigit"/>
+     <xs:enumeration value="ThreeDigit"/>
+     <xs:enumeration value="NoTarget"/>
+     <xs:enumeration value="TwoDigit"/>
+     <xs:enumeration value="Onedigit"/>
    </xs:restriction>
  </xs:simpleType>
   
  <!-- Element properties (adds belt / necklace) -->
  <xs:simpleType name="Element">
    <xs:restriction base="xs:token">
-     <xs:enumeration value="none" />
-     <xs:enumeration value="belt" />
-     <xs:enumeration value="necklace" />
-     <xs:enumeration value="fire" />
-     <xs:enumeration value="water" />
-     <xs:enumeration value="wind" />
-     <xs:enumeration value="earth" />
-     <xs:enumeration value="light" />
-     <xs:enumeration value="dark" />
-     <xs:enumeration value="wood" />
-     <xs:enumeration value="metal" />
-     <xs:enumeration value="undead" />
-     <xs:enumeration value="random" />
+     <xs:enumeration value="None" />
+     <xs:enumeration value="Fire" />
+     <xs:enumeration value="Water" />
+     <xs:enumeration value="Wind" />
+     <xs:enumeration value="Earth" />
+     <xs:enumeration value="Light" />
+     <xs:enumeration value="Dark" />
+     <xs:enumeration value="Wood" />
+     <xs:enumeration value="Metal" />
+     <xs:enumeration value="Undead" />
+     <xs:enumeration value="Random" />
    </xs:restriction>
  </xs:simpleType>
 
  <!-- Skill intent targets -->
  <xs:simpleType name="IntentTarget">
    <xs:restriction base="xs:token">
-     <xs:enumeration value="hostile" />
-     <xs:enumeration value="friendly" />
-     <xs:enumeration value="pvp" />
-     <xs:enumeration value="group" />
+     <xs:enumeration value="Hostile" />
+     <xs:enumeration value="Friendly" />
+     <xs:enumeration value="Pvp" />
+     <xs:enumeration value="Group" />
    </xs:restriction>
   </xs:simpleType>
 
@@ -78,11 +76,11 @@
   <!-- Intent direction type -->
  <xs:simpleType name="IntentDirection">
    <xs:restriction base="xs:token">
-     <xs:enumeration value="front" />
-     <xs:enumeration value="back" />
-     <xs:enumeration value="left" />
-     <xs:enumeration value="right" />
-     <xs:enumeration value="nearby" />
+     <xs:enumeration value="Front" />
+     <xs:enumeration value="Back" />
+     <xs:enumeration value="Left" />
+     <xs:enumeration value="Right" />
+     <xs:enumeration value="Nearby" />
    </xs:restriction>
   </xs:simpleType>
 
@@ -90,7 +88,7 @@
   <xs:complexType name="ItemSpecification">
     <xs:simpleContent>
       <xs:extension base="hyb:String8">
-        <xs:attribute name="quantity" default="1" type="xs:unsignedByte" />
+        <xs:attribute name="Quantity" default="1" type="xs:unsignedByte" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -98,93 +96,93 @@
   <!-- Item specifications container element -->
   <xs:complexType name="ItemsSpecification">
     <xs:sequence>
-      <xs:element name="item" type="actions:ItemSpecification" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Item" type="actions:ItemSpecification" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
   <!-- Casting cost -->
   <xs:complexType name="CastCost">
-    <xs:choice minOccurs="1" maxOccurs="3">
-      <xs:element name="items" minOccurs="0" maxOccurs="1" type="actions:ItemsSpecification" />
-      <xs:element name="stat" minOccurs="0" maxOccurs="1">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Items" minOccurs="0" maxOccurs="1" type="actions:ItemsSpecification" />
+      <xs:element name="Stat" minOccurs="0" maxOccurs="1">
         <xs:complexType>
           <!-- hp/mp can be expressed as percentages here -->
-          <xs:attribute name="hp" type="hyb:String8" default="0" />
-          <xs:attribute name="mp" type="hyb:String8" default="0" />
+          <xs:attribute name="Hp" type="hyb:String8" default="0" />
+          <xs:attribute name="Mp" type="hyb:String8" default="0" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="gold" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
-    </xs:choice>
+      <xs:element name="Gold" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- Intent container element -->
   <xs:complexType name="Intents">
     <xs:sequence>
-      <xs:element name="intent" type="actions:Intent" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Intent" type="actions:Intent" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
   <!-- Intent: What does the spell do, and whom does it affect? -->
   <xs:complexType name="Intent">
-    <xs:attribute name="usetype" type="actions:SpellUseType" default="notarget" use="optional"/>
-    <xs:attribute name="radius" type="xs:unsignedByte" default="0" />
-    <xs:attribute name="direction" type="actions:IntentDirection" default="front" />
-    <xs:attribute name="target" type="actions:IntentTargetList" use="required" />
-    <xs:attribute name="maxtargets" type="xs:unsignedByte" default="0" />
+    <xs:attribute name="Usetype" type="actions:SpellUseType" default="NoTarget" use="optional"/>
+    <xs:attribute name="Radius" type="xs:unsignedByte" default="0" />
+    <xs:attribute name="Direction" type="actions:IntentDirection" default="Front" />
+    <xs:attribute name="Target" type="actions:IntentTargetList" use="required" />
+    <xs:attribute name="MaxTargets" type="xs:unsignedByte" default="0" />
   </xs:complexType>
 
   <!-- MaxLevel type: each class can have various maximum levels for a spell -->
   <xs:complexType name="MaxLevel">
-    <xs:attribute name="monk" type="xs:unsignedByte" use="optional" />
-    <xs:attribute name="warrior" type="xs:unsignedByte" use="optional" />
-    <xs:attribute name="peasant" type="xs:unsignedByte" use="optional" />
-    <xs:attribute name="wizard" type="xs:unsignedByte" use="optional" />
-    <xs:attribute name="priest" type="xs:unsignedByte" use="optional" />
-    <xs:attribute name="rogue" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="Monk" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="Warrior" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="Peasant" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="Wizard" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="Priest" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="Rogue" type="xs:unsignedByte" use="optional" />
   </xs:complexType>
 
   <!-- Requirements: What does a player need to learn this spell? -->
   <xs:complexType name="Requirements">
-    <xs:choice minOccurs="1" maxOccurs="6">
+    <xs:sequence minOccurs="0" maxOccurs="1">
       <!-- Player level -->
-      <xs:element name="level" minOccurs="0" maxOccurs="1">
+      <xs:element name="Level" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="min" type="xs:unsignedByte" default="0" />
-          <xs:attribute name="max" type="xs:unsignedByte" default="255" />
+          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
         </xs:complexType>
       </xs:element>
       <!-- Player ability level -->
-      <xs:element name="ab" minOccurs="0" maxOccurs="1">
+      <xs:element name="Ab" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="min" type="xs:unsignedByte" default="0" />
-          <xs:attribute name="max" type="xs:unsignedByte" default="255" />
+          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
         </xs:complexType>
       </xs:element>
       <!-- Items needed to learn spell -->
-      <xs:element name="items" minOccurs="0" maxOccurs="1" type="actions:ItemsSpecification" />
+      <xs:element name="Items" minOccurs="0" maxOccurs="1" type="actions:ItemsSpecification" />
       <!-- Gold needed to learn spell -->
-      <xs:element name="gold" minOccurs="0" maxOccurs="1" type="xs:unsignedInt" />
+      <xs:element name="Gold" minOccurs="0" maxOccurs="1" type="xs:unsignedInt" />
       <!-- Stat requirements -->
-      <xs:element name="physical" minOccurs="0" maxOccurs="1">
+      <xs:element name="Physical" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="str" default="0" type="xs:unsignedByte" />
-          <xs:attribute name="int" default="0" type="xs:unsignedByte" />
-          <xs:attribute name="wis" default="0" type="xs:unsignedByte" />
-          <xs:attribute name="con" default="0" type="xs:unsignedByte" />
-          <xs:attribute name="dex" default="0" type="xs:unsignedByte" />
-          <xs:attribute name="hp" default="0" type="xs:unsignedInt" />
-          <xs:attribute name="mp" default="0" type="xs:unsignedInt" />
+          <xs:attribute name="Str" default="0" type="xs:unsignedByte" />
+          <xs:attribute name="Int" default="0" type="xs:unsignedByte" />
+          <xs:attribute name="Wis" default="0" type="xs:unsignedByte" />
+          <xs:attribute name="Con" default="0" type="xs:unsignedByte" />
+          <xs:attribute name="Dex" default="0" type="xs:unsignedByte" />
+          <xs:attribute name="Hp" default="0" type="xs:unsignedInt" />
+          <xs:attribute name="Mp" default="0" type="xs:unsignedInt" />
         </xs:complexType>
       </xs:element>
       <!-- Prerequisites (other spells which must be learned first) -->
-      <xs:element name="prerequisites" minOccurs="0" maxOccurs="0" type="actions:LearnPrerequisites" />
-    </xs:choice>
+      <xs:element name="Prerequisites" minOccurs="0" maxOccurs="0" type="actions:LearnPrerequisites" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- Prerequisites -->
   <xs:complexType name="LearnPrerequisites">
     <xs:sequence>
-      <xs:element name="prerequisite" minOccurs="1" maxOccurs="unbounded" type="actions:LearnPrerequisite" />
+      <xs:element name="Prerequisite" minOccurs="1" maxOccurs="unbounded" type="actions:LearnPrerequisite" />
     </xs:sequence>
   </xs:complexType>
 
@@ -192,7 +190,8 @@
   <xs:complexType name="LearnPrerequisite">
     <xs:simpleContent>
       <xs:extension base="hyb:String8">
-        <xs:attribute name="level" use="optional" type="xs:unsignedByte" />
+        <xs:attribute name="Level" use="optional" type="xs:unsignedByte" />
+        <xs:attribute name="Ab" use="optional" type="xs:unsignedByte"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -216,15 +215,15 @@
   </xs:simpleType>
 
   <xs:complexType name="SimpleQuantity">
-    <xs:attribute name="min" default="0" type="xs:nonNegativeInteger" />
-    <xs:attribute name="max" default="0" type="xs:nonNegativeInteger" />
+    <xs:attribute name="Min" default="0" type="xs:nonNegativeInteger" />
+    <xs:attribute name="Max" default="0" type="xs:nonNegativeInteger" />
   </xs:complexType>
 
   <xs:complexType name="HealthChange">
-    <xs:choice>
-      <xs:element name="simple" type="actions:SimpleQuantity" />
-      <xs:element name="formula" type="xs:string" />
-    </xs:choice>
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Simple" type="actions:SimpleQuantity" />
+      <xs:element name="Formula" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- Damage flags type -->
@@ -234,9 +233,9 @@
         <xs:list>
           <xs:simpleType>
             <xs:restriction base="xs:token">
-              <xs:enumeration value="scaled" />
-              <xs:enumeration value="resistance" />
-              <xs:enumeration value="threat" />
+              <xs:enumeration value="Scaled" />
+              <xs:enumeration value="Resistance" />
+              <xs:enumeration value="Threat" />
             </xs:restriction>
           </xs:simpleType>
         </xs:list>
@@ -246,102 +245,103 @@
 
   <!-- Damage effects type -->
   <xs:complexType name="Damage">
-    <xs:choice minOccurs="0" maxOccurs="2">
-      <xs:element name="flags" type="actions:DamageFlags" />
-      <xs:choice maxOccurs="1">
-        <xs:element name="simple" type="actions:SimpleQuantity" />
-        <xs:element name="formula" type="hyb:String16" />
-      </xs:choice>
-    </xs:choice>
-    <xs:attribute name="overtime" type="xs:boolean" />
-    <xs:attribute name="type" type="hyb:DamageType" />
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Flags" type="actions:DamageFlags" />
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="Simple" type="actions:SimpleQuantity" />
+        <xs:element name="Formula" type="hyb:String16" />
+      </xs:sequence>
+    </xs:sequence>
+    <xs:attribute name="TimeBased" type="xs:boolean"/>
+    <xs:attribute name="Duration" type="xs:unsignedInt" />
+    <xs:attribute name="Type" type="hyb:DamageType" />
   </xs:complexType>
 
   <!-- Heal effects type -->
   <xs:complexType name="Heal">
-    <xs:choice>
-      <xs:element name="simple" type="actions:SimpleQuantity" />
-      <xs:element name="formula" type="hyb:String16" />
-    </xs:choice>
-    <xs:attribute name="overtime" type="xs:boolean" />
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Simple" type="actions:SimpleQuantity" />
+      <xs:element name="Formula" type="hyb:String16" />
+    </xs:sequence>
+    <xs:attribute name="TimeBased" type="xs:boolean" />
+    <xs:attribute name="Duration" type="xs:unsignedInt" />
   </xs:complexType>
 
   <!-- Animations container element -->
   <xs:complexType name="Animations">
-    <xs:choice minOccurs="0" maxOccurs="3">
-      <xs:element name="oncast" type="actions:AnimationGroup" minOccurs="0" maxOccurs="1" />
-      <xs:element name="duration" type="actions:AnimationDurationGroup" minOccurs="0" maxOccurs="1" />
-      <xs:element name="end" type="actions:AnimationGroup" minOccurs="0" maxOccurs="1" />
-    </xs:choice>
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="OnCast" type="actions:AnimationGroup" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Duration" type="actions:AnimationDurationGroup" minOccurs="0" maxOccurs="1" />
+      <xs:element name="End" type="actions:AnimationGroup" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- Animation group -->
   <xs:complexType name="AnimationGroup">
-    <xs:choice minOccurs="0" maxOccurs="3">
-      <xs:element name="motion" type="actions:Animation" minOccurs="0" maxOccurs="1" />
-      <xs:element name="spelleffect" type="actions:Animation" minOccurs="0" maxOccurs="1" />
-      <xs:element name="target" type="actions:Animation" minOccurs="0" maxOccurs="1" />
-    </xs:choice>
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Motion" type="actions:Animation" minOccurs="0" maxOccurs="1" />
+      <xs:element name="SpellEffect" type="actions:Animation" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Target" type="actions:Animation" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- Animation group -->
   <xs:complexType name="AnimationDurationGroup">
-    <xs:choice minOccurs="0" maxOccurs="3">
-      <xs:element name="player" type="actions:AnimationDuration" minOccurs="0" maxOccurs="1" />
-      <xs:element name="spelleffect" type="actions:AnimationDuration" minOccurs="0" maxOccurs="1" />
-      <xs:element name="target" type="actions:AnimationDuration" minOccurs="0" maxOccurs="1" />
-    </xs:choice>
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Player" type="actions:AnimationDuration" minOccurs="0" maxOccurs="1" />
+      <xs:element name="SpellEffect" type="actions:AnimationDuration" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Target" type="actions:AnimationDuration" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- Animation set -->
   <xs:complexType name="Animation">
-    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
-    <xs:attribute name="speed" type="xs:unsignedShort" use="optional" default="100" />
+    <xs:attribute name="Id" type="xs:unsignedShort" use="required" />
+    <xs:attribute name="Speed" type="xs:unsignedShort" use="optional" default="100" />
   </xs:complexType>
 
   <!-- Animation set for duration -->
   <xs:complexType name="AnimationDuration">
-    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
-    <xs:attribute name="speed" type="xs:unsignedShort" use="optional" default="100" />
-    <xs:attribute name="every" type="xs:unsignedInt" />
+    <xs:attribute name="Id" type="xs:unsignedShort" use="required" />
+    <xs:attribute name="Speed" type="xs:unsignedShort" use="optional" default="100" />
+    <xs:attribute name="Tick" type="xs:unsignedInt" />
   </xs:complexType>
 
   <!-- Effects type -->
   <xs:complexType name="Effects">
-    <xs:choice minOccurs="1" maxOccurs="8">
-      <xs:element name="animations" type="actions:Animations" minOccurs="0" maxOccurs="1" />
-      <xs:element name="sound" minOccurs="0" maxOccurs="1">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Animations" type="actions:Animations" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Sound" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="id" type="xs:byte" use="required" />
+          <xs:attribute name="Id" type="xs:byte" use="required" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="script" minOccurs="0" maxOccurs="1" type="hyb:String8" />
-      <xs:element name="heal" minOccurs="0" maxOccurs="1" type="actions:Heal" />
-      <xs:element name="damage" minOccurs="0" maxOccurs="1" type="actions:Damage" />
-      <xs:element name="stateffects" minOccurs="0" maxOccurs="1" type="actions:StatEffects" />
-      <xs:element name="statuses" minOccurs="0" maxOccurs="0" type="actions:Statuses" />
-    </xs:choice>
-    <xs:attribute name="duration" type="xs:unsignedInt" />
+      <xs:element name="Script" minOccurs="0" maxOccurs="1" type="hyb:String8" />
+      <xs:element name="Heal" minOccurs="0" maxOccurs="1" type="actions:Heal" />
+      <xs:element name="Damage" minOccurs="0" maxOccurs="1" type="actions:Damage" />
+      <xs:element name="StatEffects" minOccurs="0" maxOccurs="1" type="actions:StatEffects" />
+      <xs:element name="Statuses" minOccurs="0" maxOccurs="0" type="actions:Statuses" />
+    </xs:sequence>
+    <xs:attribute name="Duration" type="xs:unsignedInt" />
   </xs:complexType>
 
   <xs:complexType name="Statuses">
-    <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="add" type="actions:AddStatus" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="remove" type="hyb:String8" minOccurs="0" maxOccurs="unbounded" />
-    </xs:choice>
-  </xs:complexType>
-
-  <xs:complexType name="Categories">
-    <xs:sequence minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="category">
-      </xs:element>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Add" type="actions:AddStatus" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Remove" type="hyb:String8" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="Category">
+  <xs:complexType name="Categories">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Category" type="actions:Category"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Category" >
     <xs:simpleContent>
       <xs:extension base="hyb:String8">
-        <xs:attribute name="unique" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="Unique" type="xs:boolean" default="false" use="optional" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -349,77 +349,77 @@
   <xs:complexType name="AddStatus">
      <xs:simpleContent>
        <xs:extension base="hyb:StatusEffectsList">
-         <xs:attribute name="modifier" type="xs:float" use="optional" />
-         <xs:attribute name="damagetype" type="hyb:DamageType" use="optional" />
-         <xs:attribute name="target" type="xs:token" use="optional" />
+         <xs:attribute name="Modifier" type="xs:float" use="optional" />
+         <xs:attribute name="DamageType" type="hyb:DamageType" use="optional" />
+         <xs:attribute name="Target" type="xs:token" use="optional" />
        </xs:extension>
      </xs:simpleContent>
   </xs:complexType>
 
   <!-- Stat effects (buffs or debuffs) container element -->
   <xs:complexType name="StatEffects">
-    <xs:sequence>
-      <xs:element name="stateffect" type="actions:StatEffect" minOccurs="1" maxOccurs="unbounded" />
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="StatEffect" type="actions:StatEffect" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="StatEffect">
-    <xs:attribute name="str" default="0" type="xs:byte" />
-    <xs:attribute name="int" default="0" type="xs:byte" />
-    <xs:attribute name="wis" default="0" type="xs:byte" />
-    <xs:attribute name="con" default="0" type="xs:byte" />
-    <xs:attribute name="dex" default="0" type="xs:byte" />
-    <xs:attribute name="hp" default="0" type="xs:int" />
-    <xs:attribute name="mp" default="0" type="xs:int" />
-    <xs:attribute name="hit" default="0" type="xs:byte" />
-    <xs:attribute name="dmg" default="0" type="xs:byte" />
-    <xs:attribute name="ac" default="0" type="xs:byte" />
-    <xs:attribute name="regen" default="0" type="xs:byte" />
-    <xs:attribute name="mr" default="0" type="xs:byte" />
-    <xs:attribute name="duration" default="0" type="xs:unsignedInt" />
+    <xs:attribute name="Str" default="0" type="xs:byte" />
+    <xs:attribute name="Int" default="0" type="xs:byte" />
+    <xs:attribute name="Wis" default="0" type="xs:byte" />
+    <xs:attribute name="Con" default="0" type="xs:byte" />
+    <xs:attribute name="Dex" default="0" type="xs:byte" />
+    <xs:attribute name="Hp" default="0" type="xs:int" />
+    <xs:attribute name="Mp" default="0" type="xs:int" />
+    <xs:attribute name="Hit" default="0" type="xs:byte" />
+    <xs:attribute name="Dmg" default="0" type="xs:byte" />
+    <xs:attribute name="Ac" default="0" type="xs:byte" />
+    <xs:attribute name="Regen" default="0" type="xs:byte" />
+    <xs:attribute name="Mr" default="0" type="xs:byte" />
+    <xs:attribute name="Duration" default="0" type="xs:unsignedInt" />
   </xs:complexType>
 
   <!-- Restrictions on casting, such as types of equipment, or
   existing spells -->
     <xs:complexType name="Restrictions">
-    <xs:choice minOccurs="1" maxOccurs="3">
-      <xs:element name="weapontype" type="hyb:WeaponType" maxOccurs="1" />
-      <xs:element name="equiptype" type="hyb:EquipmentSlot" maxOccurs="1" />
-    </xs:choice>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="WeaponType" type="hyb:WeaponType" maxOccurs="1" />
+      <xs:element name="EquipType" type="hyb:EquipmentSlot" maxOccurs="1" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- Castable type -->
   <xs:complexType name="Castable">
-    <xs:choice minOccurs="0" maxOccurs="8">
-      <xs:element name="description" type="hyb:String8" minOccurs="0" maxOccurs="1" />
-      <xs:element name="name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
-      <xs:element name="categories" type="actions:Categories" minOccurs="0" maxOccurs="1" />
-      <xs:element name="castcost" type="actions:CastCost" minOccurs="0" maxOccurs="1" />
-      <xs:element name="intents" type="actions:Intents" minOccurs="0" maxOccurs="1" />
-      <xs:element name="maxlevel" type="actions:MaxLevel" minOccurs="0" maxOccurs="1" />
-      <xs:element name="requirements" type="actions:Requirements" minOccurs="0" maxOccurs="1" />
-      <xs:element name="restrictions" type="actions:Restrictions" minOccurs="0" maxOccurs="1" />
-      <xs:element name="effects" type="actions:Effects" minOccurs="0" maxOccurs="1" />
-    </xs:choice>
+    <xs:all minOccurs="0" maxOccurs="1">
+      <xs:element name="Description" type="hyb:String8" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Categories" type="actions:Categories" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CastCost" type="actions:CastCost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Intents" type="actions:Intents" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MaxLevel" type="actions:MaxLevel" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Requirements" type="actions:Requirements" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Restrictions" type="actions:Restrictions" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Effects" type="actions:Effects" minOccurs="0" maxOccurs="1" />
+    </xs:all>
     <!-- Castable attributes -->
-    <xs:attribute name="type" use="required" />
-    <xs:attribute name="icon" type="xs:byte" use="required" />
-    <xs:attribute name="book" type="actions:Book" use="required" />
-    <xs:attribute name="element" use="optional">
+    <xs:attribute name="Type" use="required" />
+    <xs:attribute name="Icon" type="xs:byte" use="required" />
+    <xs:attribute name="Book" type="actions:Book" use="required" />
+    <xs:attribute name="Element" use="optional">
       <xs:simpleType>
         <xs:list itemType="actions:Element" />
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="lines" type="xs:byte" use="optional" default="0" />
-    <xs:attribute name="class" use="optional">
+    <xs:attribute name="Lines" type="xs:byte" use="optional" default="0" />
+    <xs:attribute name="Class" use="optional">
       <xs:simpleType>
         <xs:list itemType="hyb:Class" />
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="cooldown" use="optional" default="0" type="xs:int" />
-    <xs:attribute name="isassail" use="optional" default="false" />
+    <xs:attribute name="Cooldown" use="optional" default="0" type="xs:int" />
+    <xs:attribute name="IsAssail" use="optional" default="false" />
   </xs:complexType>
 
   <!-- Bring it all together -->
-  <xs:element name="castable" type="actions:Castable" />
+  <xs:element name="Castable" type="actions:Castable" />
 </xs:schema>

@@ -38,32 +38,32 @@
   <!-- Item colors -->
   <xs:simpleType name="ItemColor">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="none" />
-      <xs:enumeration value="black" />
-      <xs:enumeration value="red" />
-      <xs:enumeration value="orange" />
-      <xs:enumeration value="yellow" />
-      <xs:enumeration value="teal" />
-      <xs:enumeration value="blue" />
-      <xs:enumeration value="purple" />
-      <xs:enumeration value="darkgreen" />
-      <xs:enumeration value="green" />
-      <xs:enumeration value="lightorange" />
-      <xs:enumeration value="brown" />
-      <xs:enumeration value="grey" />
-      <xs:enumeration value="darkblue" />
-      <xs:enumeration value="tan" />
-      <xs:enumeration value="white" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Black" />
+      <xs:enumeration value="Red" />
+      <xs:enumeration value="Orange" />
+      <xs:enumeration value="Yellow" />
+      <xs:enumeration value="Teal" />
+      <xs:enumeration value="Blue" />
+      <xs:enumeration value="Purple" />
+      <xs:enumeration value="DarkGreen" />
+      <xs:enumeration value="Green" />
+      <xs:enumeration value="LightOrange" />
+      <xs:enumeration value="Brown" />
+      <xs:enumeration value="Grey" />
+      <xs:enumeration value="DarkBlue" />
+      <xs:enumeration value="Tan" />
+      <xs:enumeration value="White" />
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="ItemBodystyle">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="transparent" />
-      <xs:enumeration value="male" />
-      <xs:enumeration value="maleblack" />
-      <xs:enumeration value="malered" />
-      <xs:enumeration value="female" />
+      <xs:enumeration value="Transparent" />
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="MaleBlack" />
+      <xs:enumeration value="MaleRed" />
+      <xs:enumeration value="Female" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -73,19 +73,19 @@
         <xs:list>
           <xs:simpleType>
             <xs:restriction base="xs:token">
-              <xs:enumeration value="bound" />
-              <xs:enumeration value="depositable" />
-              <xs:enumeration value="enchantable" />
-              <xs:enumeration value="consecratable" />
-              <xs:enumeration value="tailorable" />
-              <xs:enumeration value="smithable" />
-              <xs:enumeration value="exchangeable" />
-              <xs:enumeration value="vendorable" />
-              <xs:enumeration value="perishable" />
-              <xs:enumeration value="unique" />
-              <xs:enumeration value="master" />
-              <xs:enumeration value="unique-equipped" />
-              <xs:enumeration value="master" />
+              <xs:enumeration value="Bound" />
+              <xs:enumeration value="Depositable" />
+              <xs:enumeration value="Enchantable" />
+              <xs:enumeration value="Consecratable" />
+              <xs:enumeration value="Tailorable" />
+              <xs:enumeration value="Smithable" />
+              <xs:enumeration value="Exchangeable" />
+              <xs:enumeration value="Vendorable" />
+              <xs:enumeration value="Perishable" />
+              <xs:enumeration value="Unique" />
+              <xs:enumeration value="Master" />
+              <xs:enumeration value="Unique-Equipped" />
+              <xs:enumeration value="Master" />
             </xs:restriction>
           </xs:simpleType>
         </xs:list>
@@ -101,25 +101,25 @@
         <xs:list>
           <xs:simpleType>
             <xs:restriction base="xs:token">
-              <xs:enumeration value="freeze" />
-              <xs:enumeration value="sleep" />
-              <xs:enumeration value="paralyze" />
-              <xs:enumeration value="blind" />
-              <xs:enumeration value="skull" />
-              <xs:enumeration value="poison" />
-              <xs:enumeration value="mist" />
-              <xs:enumeration value="regen" />
-              <xs:enumeration value="sight" />
-              <xs:enumeration value="invisible" />
-              <xs:enumeration value="mute" />
-              <xs:enumeration value="reflectphysical" />
-              <xs:enumeration value="reflectmagical" />
-              <xs:enumeration value="invulnerable" />
-              <xs:enumeration value="charm" />
-              <xs:enumeration value="increasedamage" />
-              <xs:enumeration value="reducedamage" />
-              <xs:enumeration value="prohibitusage" />
-              <xs:enumeration value="absorbspell" />
+              <xs:enumeration value="Freeze" />
+              <xs:enumeration value="Sleep" />
+              <xs:enumeration value="Paralyze" />
+              <xs:enumeration value="Blind" />
+              <xs:enumeration value="Skull" />
+              <xs:enumeration value="Poison" />
+              <xs:enumeration value="Mist" />
+              <xs:enumeration value="Regen" />
+              <xs:enumeration value="Sight" />
+              <xs:enumeration value="Invisible" />
+              <xs:enumeration value="Mute" />
+              <xs:enumeration value="ReflectPhysical" />
+              <xs:enumeration value="ReflectMagical" />
+              <xs:enumeration value="Invulnerable" />
+              <xs:enumeration value="Charm" />
+              <xs:enumeration value="IncreaseDamage" />
+              <xs:enumeration value="ReduceDamage" />
+              <xs:enumeration value="ProhibitUsage" />
+              <xs:enumeration value="AbsorbSpell" />
             </xs:restriction>
           </xs:simpleType>
         </xs:list>
@@ -131,101 +131,101 @@
   <!-- Classes (for item restrictions) -->
   <xs:simpleType name="Class">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="peasant" />
-      <xs:enumeration value="warrior" />
-      <xs:enumeration value="rogue" />
-      <xs:enumeration value="wizard" />
-      <xs:enumeration value="priest" />
-      <xs:enumeration value="monk" />
+      <xs:enumeration value="Peasant" />
+      <xs:enumeration value="Warrior" />
+      <xs:enumeration value="Rogue" />
+      <xs:enumeration value="Wizard" />
+      <xs:enumeration value="Priest" />
+      <xs:enumeration value="Monk" />
     </xs:restriction>
   </xs:simpleType>
 
   <!--  Gender (for item restrictions) -->
   <xs:simpleType name="Gender">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="neutral" />
-      <xs:enumeration value="male" />
-      <xs:enumeration value="female" />
+      <xs:enumeration value="Neutral" />
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
     </xs:restriction>
   </xs:simpleType>
 
   <!-- Elements -->
   <xs:simpleType name="Element">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="none" />
-      <xs:enumeration value="fire" />
-      <xs:enumeration value="water" />
-      <xs:enumeration value="wind" />
-      <xs:enumeration value="earth" />
-      <xs:enumeration value="light" />
-      <xs:enumeration value="dark" />
-      <xs:enumeration value="wood" />
-      <xs:enumeration value="metal" />
-      <xs:enumeration value="undead" />
-      <xs:enumeration value="random" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Fire" />
+      <xs:enumeration value="Water" />
+      <xs:enumeration value="Wind" />
+      <xs:enumeration value="Earth" />
+      <xs:enumeration value="Light" />
+      <xs:enumeration value="Dark" />
+      <xs:enumeration value="Wood" />
+      <xs:enumeration value="Metal" />
+      <xs:enumeration value="Undead" />
+      <xs:enumeration value="Random" />
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="IntentType">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="hostile"/> <!-- Hostile to players and can be attacked -->
-      <xs:enumeration value="passive"/> <!-- Passive to players and cannot be attacked -->
-      <xs:enumeration value="neutral"/> <!-- Passive to players and can be attacked -->
+      <xs:enumeration value="Hostile"/> <!-- Hostile to players and can be attacked -->
+      <xs:enumeration value="Passive"/> <!-- Passive to players and cannot be attacked -->
+      <xs:enumeration value="Neutral"/> <!-- Passive to players and can be attacked -->
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="WeaponType">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="onehand" />
-      <xs:enumeration value="twohand" />
-      <xs:enumeration value="dagger" />
-      <xs:enumeration value="staff" />
-      <xs:enumeration value="claw" />
+      <xs:enumeration value="OneHand" />
+      <xs:enumeration value="TwoHand" />
+      <xs:enumeration value="Dagger" />
+      <xs:enumeration value="Staff" />
+      <xs:enumeration value="Claw" />
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="DamageType">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="direct" />
-      <xs:enumeration value="physical" />
-      <xs:enumeration value="magical" />
-      <xs:enumeration value="elemental" />
+      <xs:enumeration value="Direct" />
+      <xs:enumeration value="Physical" />
+      <xs:enumeration value="Magical" />
+      <xs:enumeration value="Elemental" />
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="EquipmentSlot">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="none" />
-      <xs:enumeration value="weapon" />
-      <xs:enumeration value="armor" />
-      <xs:enumeration value="shield" />
-      <xs:enumeration value="helmet" />
-      <xs:enumeration value="earring" />
-      <xs:enumeration value="necklace" />
-      <xs:enumeration value="lefthand" />
-      <xs:enumeration value="righthand" />
-      <xs:enumeration value="leftarm" />
-      <xs:enumeration value="rightarm" />
-      <xs:enumeration value="waist" />
-      <xs:enumeration value="leg" />
-      <xs:enumeration value="foot" />
-      <xs:enumeration value="firstacc" />
-      <xs:enumeration value="trousers" />
-      <xs:enumeration value="coat" />
-      <xs:enumeration value="secondacc" />
-      <xs:enumeration value="thirdacc" />
-      <xs:enumeration value="gauntlet" />
-      <xs:enumeration value="ring" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Weapon" />
+      <xs:enumeration value="Armor" />
+      <xs:enumeration value="Shield" />
+      <xs:enumeration value="Helmet" />
+      <xs:enumeration value="Earring" />
+      <xs:enumeration value="Necklace" />
+      <xs:enumeration value="LeftHand" />
+      <xs:enumeration value="RightHand" />
+      <xs:enumeration value="LeftArm" />
+      <xs:enumeration value="RightArm" />
+      <xs:enumeration value="Waist" />
+      <xs:enumeration value="Leg" />
+      <xs:enumeration value="Foot" />
+      <xs:enumeration value="FirstAcc" />
+      <xs:enumeration value="Trousers" />
+      <xs:enumeration value="Coat" />
+      <xs:enumeration value="SecondAcc" />
+      <xs:enumeration value="ThirdAcc" />
+      <xs:enumeration value="Gauntlet" />
+      <xs:enumeration value="Ring" />
     </xs:restriction>
   </xs:simpleType>
 
   <!-- Direction type -->
   <xs:simpleType name="Direction">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="north" />
-      <xs:enumeration value="south" />
-      <xs:enumeration value="east" />
-      <xs:enumeration value="west" />
+      <xs:enumeration value="North" />
+      <xs:enumeration value="South" />
+      <xs:enumeration value="East" />
+      <xs:enumeration value="West" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -236,11 +236,11 @@
         <xs:list>
           <xs:simpleType>
             <xs:restriction base="xs:token">
-              <xs:enumeration value="snow" />
-              <xs:enumeration value="rain" />
-              <xs:enumeration value="dark" />
-              <xs:enumeration value="nomap" />
-              <xs:enumeration value="winter" />
+              <xs:enumeration value="Snow" />
+              <xs:enumeration value="Rain" />
+              <xs:enumeration value="Dark" />
+              <xs:enumeration value="NoMap" />
+              <xs:enumeration value="Winter" />
             </xs:restriction>
           </xs:simpleType>
         </xs:list>
@@ -256,11 +256,11 @@
         <xs:list>
           <xs:simpleType>
             <xs:restriction base="xs:token">
-              <xs:enumeration value="vend" />
-              <xs:enumeration value="bank" />
-              <xs:enumeration value="train" />
-              <xs:enumeration value="repair" />
-              <xs:enumeration value="post" />
+              <xs:enumeration value="Vend" />
+              <xs:enumeration value="Bank" />
+              <xs:enumeration value="Train" />
+              <xs:enumeration value="Repair" />
+              <xs:enumeration value="Post" />
             </xs:restriction>
           </xs:simpleType>
         </xs:list>
@@ -271,20 +271,20 @@
 
   <!-- Map warp restrictions type (used by warps/worldwarps) -->
   <xs:complexType name="WarpRestrictions">
-    <xs:sequence>
-      <xs:element name="level" minOccurs="0" maxOccurs="1">
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="Level" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="min" type="xs:unsignedByte" default="0" />
-          <xs:attribute name="max" type="xs:unsignedByte" default="255" />
+          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ab" minOccurs="0" maxOccurs="1">
+      <xs:element name="Ab" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="min" type="xs:unsignedByte" default="0" />
-          <xs:attribute name="max" type="xs:unsignedByte" default="255" />
+          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="noMobUse" minOccurs="0" maxOccurs="1" />
+      <xs:element name="NoMobUse" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
     </xs:sequence>
   </xs:complexType>
 
