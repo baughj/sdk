@@ -571,6 +571,68 @@ namespace Hybrasyl.Config
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Config")]
+    public partial class ServerStart
+    {
+
+        private string _defaultAge;
+
+        private int _defaultYear;
+
+        private System.DateTime _value;
+
+        public ServerStart()
+        {
+            this._defaultAge = "Hybrasyl";
+            this._defaultYear = 1;
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute("Hybrasyl")]
+        public string DefaultAge
+        {
+            get
+            {
+                return this._defaultAge;
+            }
+            set
+            {
+                this._defaultAge = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(1)]
+        public int DefaultYear
+        {
+            get
+            {
+                return this._defaultYear;
+            }
+            set
+            {
+                this._defaultYear = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public System.DateTime Value
+        {
+            get
+            {
+                return this._value;
+            }
+            set
+            {
+                this._value = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Config")]
     public partial class HybrasylAge
     {
 
@@ -641,8 +703,13 @@ namespace Hybrasyl.Config
 
         private List<HybrasylAge> _ages;
 
+        private System.DateTime _startDate;
+
+        private ServerStart _serverStart;
+
         public Time()
         {
+            this._serverStart = new ServerStart();
             this._ages = new List<HybrasylAge>();
         }
 
@@ -656,6 +723,30 @@ namespace Hybrasyl.Config
             set
             {
                 this._ages = value;
+            }
+        }
+
+        public System.DateTime StartDate
+        {
+            get
+            {
+                return this._startDate;
+            }
+            set
+            {
+                this._startDate = value;
+            }
+        }
+
+        public ServerStart ServerStart
+        {
+            get
+            {
+                return this._serverStart;
+            }
+            set
+            {
+                this._serverStart = value;
             }
         }
     }

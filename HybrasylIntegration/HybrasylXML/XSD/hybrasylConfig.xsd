@@ -100,6 +100,8 @@
   <xs:complexType name="Time">
     <xs:sequence>
       <xs:element name="Ages" type="config:HybrasylAges" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ServerStart" type="config:ServerStart" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
 
