@@ -53,6 +53,7 @@
     <Compile Include="XSD\Castables.Designer.cs" />
     <Compile Include="XSD\Creatures.Designer.cs" />
     <Compile Include="XSD\hybrasylConfig.Designer.cs" />
+    <Compile Include="XSD\hybrasylExtensions.cs" />
     <Compile Include="XSD\Items.Designer.cs" />
     <Compile Include="XSD\Maps.Designer.cs" />
     <Compile Include="XSD\Nations.Designer.cs" />

@@ -38,7 +38,7 @@ namespace Hybrasyl.XML
             Writer.Serialize(xWrite, contents, ns);
         }
 
-        public static void Serialize(XmlWriter xWrite, Mob contents)
+        public static void Serialize(XmlWriter xWrite, Creature contents)
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
@@ -46,15 +46,23 @@ namespace Hybrasyl.XML
             Writer.Serialize(xWrite, contents, ns);
         }
 
-        //public static void Serialize(XmlWriter xWrite, Dropset contents)
-        //{
-        //    XmlSerializer Writer = new XmlSerializer(contents.GetType());
-        //    XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-        //    ns.Add("", "http://www.hybrasyl.com/XML/Items");
-        //    Writer.Serialize(xWrite, contents, ns);
-        //}
+        public static void Serialize(XmlWriter xWrite, Spawn contents)
+        {
+            XmlSerializer Writer = new XmlSerializer(contents.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "http://www.hybrasyl.com/XML/Creatures");
+            Writer.Serialize(xWrite, contents, ns);
+        }
 
-        public static void Serialize(XmlWriter xWrite, ItemType contents)
+        public static void Serialize(XmlWriter xWrite, SpawnGroup contents)
+        {
+            XmlSerializer Writer = new XmlSerializer(contents.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "http://www.hybrasyl.com/XML/Creatures");
+            Writer.Serialize(xWrite, contents, ns);
+        }
+
+        public static void Serialize(XmlWriter xWrite, Item contents)
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
@@ -62,7 +70,7 @@ namespace Hybrasyl.XML
             Writer.Serialize(xWrite, contents, ns);
         }
 
-        public static void Serialize(XmlWriter xWrite, VariantGroupType contents)
+        public static void Serialize(XmlWriter xWrite, VariantGroup contents)
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
@@ -125,54 +133,67 @@ namespace Hybrasyl.XML
             return contents;
         }
 
-        public static Mob Deserialize(XmlReader reader, Mob contents = null)
+        public static Creature Deserialize(XmlReader reader, Creature contents = null)
         {
             //reader.Settings.IgnoreWhitespace = false;
-            if (contents == null) contents = new Mob();
+            if (contents == null) contents = new Creature();
             XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
             if (XmlSerial.CanDeserialize(reader))
             {
                 var xContents = XmlSerial.Deserialize(reader);
-                contents = (Mob)xContents;
+                contents = (Creature)xContents;
             }
             return contents;
         }
 
-        //public static Dropset Deserialize(XmlReader reader, Dropset contents = null)
-        //{
-        //    //reader.Settings.IgnoreWhitespace = false;
-        //    if (contents == null) contents = new Dropset();
-        //    XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
-        //    if (XmlSerial.CanDeserialize(reader))
-        //    {
-        //        var xContents = XmlSerial.Deserialize(reader);
-        //        contents = (Dropset)xContents;
-        //    }
-        //    return contents;
-        //}
-
-        public static ItemType Deserialize(XmlReader reader, ItemType contents = null)
+        public static Spawn Deserialize(XmlReader reader, Spawn contents = null)
         {
             //reader.Settings.IgnoreWhitespace = false;
-            if (contents == null) contents = new ItemType();
+            if (contents == null) contents = new Spawn();
             XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
             if (XmlSerial.CanDeserialize(reader))
             {
                 var xContents = XmlSerial.Deserialize(reader);
-                contents = (ItemType)xContents;
+                contents = (Spawn)xContents;
             }
             return contents;
         }
 
-        public static VariantGroupType Deserialize(XmlReader reader, VariantGroupType contents = null)
+        public static SpawnGroup Deserialize(XmlReader reader, SpawnGroup contents = null)
         {
             //reader.Settings.IgnoreWhitespace = false;
-            if (contents == null) contents = new VariantGroupType();
+            if (contents == null) contents = new SpawnGroup();
             XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
             if (XmlSerial.CanDeserialize(reader))
             {
                 var xContents = XmlSerial.Deserialize(reader);
-                contents = (VariantGroupType)xContents;
+                contents = (SpawnGroup)xContents;
+            }
+            return contents;
+        }
+
+        public static Item Deserialize(XmlReader reader, Item contents = null)
+        {
+            //reader.Settings.IgnoreWhitespace = false;
+            if (contents == null) contents = new Item();
+            XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
+            if (XmlSerial.CanDeserialize(reader))
+            {
+                var xContents = XmlSerial.Deserialize(reader);
+                contents = (Item)xContents;
+            }
+            return contents;
+        }
+
+        public static VariantGroup Deserialize(XmlReader reader, VariantGroup contents = null)
+        {
+            //reader.Settings.IgnoreWhitespace = false;
+            if (contents == null) contents = new VariantGroup();
+            XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
+            if (XmlSerial.CanDeserialize(reader))
+            {
+                var xContents = XmlSerial.Deserialize(reader);
+                contents = (VariantGroup)xContents;
             }
             return contents;
         }
