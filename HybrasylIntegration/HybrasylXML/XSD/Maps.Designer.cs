@@ -38,7 +38,7 @@ namespace Hybrasyl.Maps
 
         private List<Npc> _npcs;
 
-        private Signposts _signposts;
+        private Signs _signs;
 
         private ushort _id;
 
@@ -50,7 +50,7 @@ namespace Hybrasyl.Maps
 
         public Map()
         {
-            this._signposts = new Signposts();
+            this._signs = new Signs();
             this._npcs = new List<Npc>();
             this._reactors = new List<Reactor>();
             this._warps = new List<Warp>();
@@ -132,15 +132,15 @@ namespace Hybrasyl.Maps
             }
         }
 
-        public Signposts Signposts
+        public Signs Signs
         {
             get
             {
-                return this._signposts;
+                return this._signs;
             }
             set
             {
-                this._signposts = value;
+                this._signs = value;
             }
         }
 
@@ -529,42 +529,42 @@ namespace Hybrasyl.Maps
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
-    public partial class Signposts
+    public partial class Signs
     {
 
-        private List<Signpost> _signpost;
+        private List<Signpost> _signposts;
 
-        private List<MessageBoard> _messageBoard;
+        private List<MessageBoard> _messageBoards;
 
-        public Signposts()
+        public Signs()
         {
-            this._messageBoard = new List<MessageBoard>();
-            this._signpost = new List<Signpost>();
+            this._messageBoards = new List<MessageBoard>();
+            this._signposts = new List<Signpost>();
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("Signpost")]
-        public List<Signpost> Signpost
+        [System.Xml.Serialization.XmlElementAttribute("Signposts")]
+        public List<Signpost> Signposts
         {
             get
             {
-                return this._signpost;
+                return this._signposts;
             }
             set
             {
-                this._signpost = value;
+                this._signposts = value;
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("MessageBoard")]
-        public List<MessageBoard> MessageBoard
+        [System.Xml.Serialization.XmlElementAttribute("MessageBoards")]
+        public List<MessageBoard> MessageBoards
         {
             get
             {
-                return this._messageBoard;
+                return this._messageBoards;
             }
             set
             {
-                this._messageBoard = value;
+                this._messageBoards = value;
             }
         }
     }

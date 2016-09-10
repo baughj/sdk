@@ -27,13 +27,7 @@
             </xs:simpleContent>
           </xs:complexType>
         </xs:element>
-          <xs:element name="WorldMapTarget">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:minLength value="1" />
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
+          <xs:element name="WorldMapTarget" type="hyb:String8"/>
       </xs:sequence>
       <xs:element name="Restrictions" minOccurs="0" maxOccurs="1" type="hyb:WarpRestrictions" />
     </xs:sequence>
@@ -74,11 +68,11 @@
   </xs:complexType>
 
   <!-- Signposts (collections of messageboard / signpost elements) -->
-  <xs:complexType name="Signposts">
+  <xs:complexType name="Signs">
     <xs:sequence>
       <xs:sequence minOccurs="1" maxOccurs="unbounded">
-        <xs:element name="Signpost" type="maps:Signpost" />
-        <xs:element name="MessageBoard" type="maps:MessageBoard" />
+        <xs:element name="Signposts" type="maps:Signpost" />
+        <xs:element name="MessageBoards" type="maps:MessageBoard" />
       </xs:sequence>
     </xs:sequence>
   </xs:complexType>
@@ -113,7 +107,7 @@
       <xs:element name="Warps" type="maps:Warps" minOccurs="0" maxOccurs="1" />
       <xs:element name="Reactors" type="maps:Reactors" minOccurs="0" maxOccurs="1" />
       <xs:element name="Npcs" type="maps:Npcs" minOccurs="0" maxOccurs="1" />
-      <xs:element name="Signposts" type="maps:Signposts" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Signs" type="maps:Signs" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="Id" type="xs:unsignedShort" use="required" />
     <xs:attribute name="Music" type="xs:unsignedByte" default="0" />

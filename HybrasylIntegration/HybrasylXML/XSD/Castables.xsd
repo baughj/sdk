@@ -124,7 +124,7 @@
 
   <!-- Intent: What does the spell do, and whom does it affect? -->
   <xs:complexType name="Intent">
-    <xs:attribute name="Usetype" type="actions:SpellUseType" default="NoTarget" use="optional"/>
+    <xs:attribute name="UseType" type="actions:SpellUseType" default="NoTarget" use="optional"/>
     <xs:attribute name="Radius" type="xs:unsignedByte" default="0" />
     <xs:attribute name="Direction" type="actions:IntentDirection" default="Front" />
     <xs:attribute name="Target" type="actions:IntentTargetList" use="required" />
@@ -348,7 +348,7 @@
 
   <xs:complexType name="AddStatus">
      <xs:simpleContent>
-       <xs:extension base="hyb:StatusEffectsList">
+       <xs:extension base="hyb:StatusEffectList">
          <xs:attribute name="Modifier" type="xs:float" use="optional" />
          <xs:attribute name="DamageType" type="hyb:DamageType" use="optional" />
          <xs:attribute name="Target" type="xs:token" use="optional" />

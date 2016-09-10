@@ -42,14 +42,14 @@
           <xs:sequence>
             <xs:element name="Small" minOccurs="1">
               <xs:complexType>
-                <xs:attribute name="Min" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Max" default="0" type="hyb:VariantProperty" />
+                <xs:attribute name="Min" default="0" type="xs:unsignedShort" />
+                <xs:attribute name="Max" default="0" type="xs:unsignedShort" />
               </xs:complexType>
             </xs:element>
             <xs:element name="Large">
               <xs:complexType>
-                <xs:attribute name="Min" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Max" default="0" type="hyb:VariantProperty" />
+                <xs:attribute name="Min" default="0" type="xs:unsignedShort" />
+                <xs:attribute name="Max" default="0" type="xs:unsignedShort" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
@@ -58,9 +58,9 @@
       <xs:element name="Flags" minOccurs="0" maxOccurs="1" type="hyb:ItemFlags" />
       <xs:element name="Physical" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="Value" default="0" type="hyb:VariantProperty" />
-          <xs:attribute name="Weight" default="1" type="hyb:VariantProperty" />
-          <xs:attribute name="Durability" default="1" type="hyb:VariantProperty" />
+          <xs:attribute name="Value" default="0" type="xs:unsignedInt" />
+          <xs:attribute name="Weight" default="1" type="xs:int" />
+          <xs:attribute name="Durability" default="1" type="xs:unsignedInt" />
           <xs:attribute name="Perishable" type="xs:boolean" default="false" />
           <xs:attribute name="Vendorable" type="xs:boolean" default="true" />
           <xs:attribute name="Bound" type="xs:boolean" default="false" />
@@ -71,14 +71,14 @@
           <xs:sequence>
             <xs:element name="Level" minOccurs="0" maxOccurs="1">
               <xs:complexType>
-                <xs:attribute name="Min" type="hyb:VariantProperty" default="0" />
-                <xs:attribute name="Max" type="hyb:VariantProperty" default="255" />
+                <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+                <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
               </xs:complexType>
             </xs:element>
             <xs:element name="Ab" minOccurs="0" maxOccurs="1">
               <xs:complexType>
-                <xs:attribute name="Min" type="hyb:VariantProperty" default="0" />
-                <xs:attribute name="Max" type="hyb:VariantProperty" default="255" />
+                <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+                <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
               </xs:complexType>
             </xs:element>
             <xs:element name="Class" minOccurs="0" maxOccurs="1" type="hyb:Class" />
@@ -97,22 +97,22 @@
           <xs:sequence>
             <xs:element name="Base" minOccurs="0" maxOccurs="1">
               <xs:complexType>
-                <xs:attribute name="Str" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Int" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Wis" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Con" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Dex" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Hp" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Mp" default="0" type="hyb:VariantProperty" />
+                <xs:attribute name="Str" default="0" type="xs:byte" />
+                <xs:attribute name="Int" default="0" type="xs:byte" />
+                <xs:attribute name="Wis" default="0" type="xs:byte" />
+                <xs:attribute name="Con" default="0" type="xs:byte" />
+                <xs:attribute name="Dex" default="0" type="xs:byte" />
+                <xs:attribute name="Hp" default="0" type="xs:int" />
+                <xs:attribute name="Mp" default="0" type="xs:int" />
               </xs:complexType>
             </xs:element>
             <xs:element name="Combat" minOccurs="0" maxOccurs="1">
               <xs:complexType>
-                <xs:attribute name="Hit" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Dmg" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Ac" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Regen" default="0" type="hyb:VariantProperty" />
-                <xs:attribute name="Mr" default="0" type="hyb:VariantProperty" />
+                <xs:attribute name="Hit" default="0" type="xs:byte" />
+                <xs:attribute name="Dmg" default="0" type="xs:byte" />
+                <xs:attribute name="Ac" default="0" type="xs:byte" />
+                <xs:attribute name="Regen" default="0" type="xs:byte" />
+                <xs:attribute name="Mr" default="0" type="xs:byte" />
               </xs:complexType>
             </xs:element>
             <xs:element name="Element" minOccurs="0" maxOccurs="1">

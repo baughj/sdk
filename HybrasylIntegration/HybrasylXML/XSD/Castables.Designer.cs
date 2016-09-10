@@ -380,7 +380,7 @@ namespace Hybrasyl.Castables
 
         private string _target;
 
-        private StatusEffectsList _value;
+        private StatusEffectList _value;
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public float Modifier
@@ -422,7 +422,7 @@ namespace Hybrasyl.Castables
         }
 
         [System.Xml.Serialization.XmlTextAttribute()]
-        public StatusEffectsList Value
+        public StatusEffectList Value
         {
             get
             {
@@ -458,7 +458,7 @@ namespace Hybrasyl.Castables
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
-    public enum StatusEffectsList
+    public enum StatusEffectList
     {
 
         /// <remarks/>
@@ -1536,6 +1536,9 @@ namespace Hybrasyl.Castables
 
         /// <remarks/>
         Claw,
+
+        /// <remarks/>
+        None,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
@@ -2144,7 +2147,7 @@ namespace Hybrasyl.Castables
     public partial class Intent
     {
 
-        private SpellUseType _usetype;
+        private SpellUseType _useType;
 
         private byte _radius;
 
@@ -2157,7 +2160,7 @@ namespace Hybrasyl.Castables
         public Intent()
         {
             this._target = new List<IntentTarget>();
-            this._usetype = SpellUseType.NoTarget;
+            this._useType = SpellUseType.NoTarget;
             this._radius = ((byte)(0));
             this._direction = IntentDirection.Front;
             this._maxTargets = ((byte)(0));
@@ -2165,15 +2168,15 @@ namespace Hybrasyl.Castables
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(SpellUseType.NoTarget)]
-        public SpellUseType Usetype
+        public SpellUseType UseType
         {
             get
             {
-                return this._usetype;
+                return this._useType;
             }
             set
             {
-                this._usetype = value;
+                this._useType = value;
             }
         }
 

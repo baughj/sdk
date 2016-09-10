@@ -845,6 +845,9 @@ namespace Hybrasyl.Items
 
         /// <remarks/>
         Claw,
+
+        /// <remarks/>
+        None,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
@@ -2348,19 +2351,19 @@ namespace Hybrasyl.Items
     public partial class VariantPropertiesDamageSmall
     {
 
-        private string _min;
+        private ushort _min;
 
-        private string _max;
+        private ushort _max;
 
         public VariantPropertiesDamageSmall()
         {
-            this._min = "0";
-            this._max = "0";
+            this._min = ((ushort)(0));
+            this._max = ((ushort)(0));
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Min
+        [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
+        public ushort Min
         {
             get
             {
@@ -2373,8 +2376,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Max
+        [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
+        public ushort Max
         {
             get
             {
@@ -2395,19 +2398,19 @@ namespace Hybrasyl.Items
     public partial class VariantPropertiesDamageLarge
     {
 
-        private string _min;
+        private ushort _min;
 
-        private string _max;
+        private ushort _max;
 
         public VariantPropertiesDamageLarge()
         {
-            this._min = "0";
-            this._max = "0";
+            this._min = ((ushort)(0));
+            this._max = ((ushort)(0));
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Min
+        [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
+        public ushort Min
         {
             get
             {
@@ -2420,8 +2423,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Max
+        [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
+        public ushort Max
         {
             get
             {
@@ -2442,11 +2445,11 @@ namespace Hybrasyl.Items
     public partial class VariantPropertiesPhysical
     {
 
-        private string _value;
+        private uint _value;
 
-        private string _weight;
+        private int _weight;
 
-        private string _durability;
+        private uint _durability;
 
         private bool _perishable;
 
@@ -2456,17 +2459,17 @@ namespace Hybrasyl.Items
 
         public VariantPropertiesPhysical()
         {
-            this._value = "0";
-            this._weight = "1";
-            this._durability = "1";
+            this._value = ((uint)(0));
+            this._weight = 1;
+            this._durability = ((uint)(1));
             this._perishable = false;
             this._vendorable = true;
             this._bound = false;
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Value
+        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
+        public uint Value
         {
             get
             {
@@ -2479,8 +2482,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("1")]
-        public string Weight
+        [System.ComponentModel.DefaultValueAttribute(1)]
+        public int Weight
         {
             get
             {
@@ -2493,8 +2496,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("1")]
-        public string Durability
+        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "1")]
+        public uint Durability
         {
             get
             {
@@ -2630,19 +2633,19 @@ namespace Hybrasyl.Items
     public partial class VariantPropertiesRestrictionsLevel
     {
 
-        private string _min;
+        private byte _min;
 
-        private string _max;
+        private byte _max;
 
         public VariantPropertiesRestrictionsLevel()
         {
-            this._min = "0";
-            this._max = "255";
+            this._min = ((byte)(0));
+            this._max = ((byte)(255));
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Min
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
+        public byte Min
         {
             get
             {
@@ -2655,8 +2658,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("255")]
-        public string Max
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
+        public byte Max
         {
             get
             {
@@ -2677,19 +2680,19 @@ namespace Hybrasyl.Items
     public partial class VariantPropertiesRestrictionsAB
     {
 
-        private string _min;
+        private byte _min;
 
-        private string _max;
+        private byte _max;
 
         public VariantPropertiesRestrictionsAB()
         {
-            this._min = "0";
-            this._max = "255";
+            this._min = ((byte)(0));
+            this._max = ((byte)(255));
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Min
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
+        public byte Min
         {
             get
             {
@@ -2702,8 +2705,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("255")]
-        public string Max
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
+        public byte Max
         {
             get
             {
@@ -2806,34 +2809,34 @@ namespace Hybrasyl.Items
     public partial class VariantPropertiesStatEffectsBase
     {
 
-        private string _str;
+        private sbyte _str;
 
-        private string _int;
+        private sbyte _int;
 
-        private string _wis;
+        private sbyte _wis;
 
-        private string _con;
+        private sbyte _con;
 
-        private string _dex;
+        private sbyte _dex;
 
-        private string _hp;
+        private int _hp;
 
-        private string _mp;
+        private int _mp;
 
         public VariantPropertiesStatEffectsBase()
         {
-            this._str = "0";
-            this._int = "0";
-            this._wis = "0";
-            this._con = "0";
-            this._dex = "0";
-            this._hp = "0";
-            this._mp = "0";
+            this._str = ((sbyte)(0));
+            this._int = ((sbyte)(0));
+            this._wis = ((sbyte)(0));
+            this._con = ((sbyte)(0));
+            this._dex = ((sbyte)(0));
+            this._hp = 0;
+            this._mp = 0;
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Str
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Str
         {
             get
             {
@@ -2846,8 +2849,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Int
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Int
         {
             get
             {
@@ -2860,8 +2863,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Wis
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Wis
         {
             get
             {
@@ -2874,8 +2877,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Con
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Con
         {
             get
             {
@@ -2888,8 +2891,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Dex
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Dex
         {
             get
             {
@@ -2902,8 +2905,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Hp
+        [System.ComponentModel.DefaultValueAttribute(0)]
+        public int Hp
         {
             get
             {
@@ -2916,8 +2919,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Mp
+        [System.ComponentModel.DefaultValueAttribute(0)]
+        public int Mp
         {
             get
             {
@@ -2938,28 +2941,28 @@ namespace Hybrasyl.Items
     public partial class VariantPropertiesStatEffectsCombat
     {
 
-        private string _hit;
+        private sbyte _hit;
 
-        private string _dmg;
+        private sbyte _dmg;
 
-        private string _ac;
+        private sbyte _ac;
 
-        private string _regen;
+        private sbyte _regen;
 
-        private string _mr;
+        private sbyte _mr;
 
         public VariantPropertiesStatEffectsCombat()
         {
-            this._hit = "0";
-            this._dmg = "0";
-            this._ac = "0";
-            this._regen = "0";
-            this._mr = "0";
+            this._hit = ((sbyte)(0));
+            this._dmg = ((sbyte)(0));
+            this._ac = ((sbyte)(0));
+            this._regen = ((sbyte)(0));
+            this._mr = ((sbyte)(0));
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Hit
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Hit
         {
             get
             {
@@ -2972,8 +2975,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Dmg
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Dmg
         {
             get
             {
@@ -2986,8 +2989,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Ac
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Ac
         {
             get
             {
@@ -3000,8 +3003,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Regen
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Regen
         {
             get
             {
@@ -3014,8 +3017,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("0")]
-        public string Mr
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Mr
         {
             get
             {
