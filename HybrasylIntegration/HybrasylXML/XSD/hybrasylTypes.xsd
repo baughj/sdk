@@ -57,7 +57,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="ItemBodystyle">
+  <xs:simpleType name="ItemBodyStyle">
     <xs:restriction base="xs:token">
       <xs:enumeration value="Transparent" />
       <xs:enumeration value="Male" />
@@ -95,7 +95,7 @@
 
   <!-- Status effects -->
 
-  <xs:simpleType name="StatusEffectsList">
+  <xs:simpleType name="StatusEffectList">
     <xs:restriction>
       <xs:simpleType>
         <xs:list>

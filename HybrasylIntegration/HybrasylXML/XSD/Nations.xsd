@@ -14,7 +14,7 @@
 
   <xs:complexType name="SpawnPoints">
     <xs:sequence>
-      <xs:element name="spawnpoint" minOccurs="1" maxOccurs="unbounded" type="nations:SpawnPoint">
+      <xs:element name="SpawnPoint" minOccurs="1" maxOccurs="unbounded" type="nations:SpawnPoint">
       </xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -22,22 +22,22 @@
   <xs:complexType name="SpawnPoint">
     <xs:simpleContent>
       <xs:extension base="hyb:String8">
-        <xs:attribute name="mapname" type="xs:string" use="required" />
-        <xs:attribute name="x" type="xs:unsignedByte" use="required" />
-        <xs:attribute name="y" type="xs:unsignedByte" use="required" />
+        <xs:attribute name="MapName" type="xs:string" use="required" />
+        <xs:attribute name="X" type="xs:unsignedByte" use="required" />
+        <xs:attribute name="Y" type="xs:unsignedByte" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="nation">
+  <xs:element name="Nation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
-        <xs:element name="description" type="hyb:String8" minOccurs="0" maxOccurs="1" />
-        <xs:element name="default" minOccurs="0" maxOccurs="1" />
-        <xs:element name="spawnpoints" type="nations:SpawnPoints" minOccurs="0" maxOccurs="1" />
+        <xs:element name="Name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
+        <xs:element name="Description" type="hyb:String8" minOccurs="0" maxOccurs="1" />
+        <xs:element name="Default" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+        <xs:element name="SpawnPoints" type="nations:SpawnPoints" minOccurs="0" maxOccurs="1" />
       </xs:sequence>
-      <xs:attribute name="flag" type="xs:unsignedByte" use="required" />
+      <xs:attribute name="Flag" type="xs:unsignedByte" use="required" />
     </xs:complexType>
   </xs:element>
 </xs:schema>
