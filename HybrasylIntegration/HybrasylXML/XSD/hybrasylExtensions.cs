@@ -93,3 +93,17 @@ namespace Hybrasyl.Castables
         public byte CastableLevel { get; set; }
     }
 }
+
+namespace Hybrasyl.Config
+{
+    public partial class HybrasylAge
+    {
+
+        public bool DateInAge(DateTime datetime)
+        {
+            if (EndDate == null) return datetime.Ticks > StartDate.Ticks;
+            var endDate = (DateTime)EndDate;
+            return datetime.Ticks >= StartDate.Ticks && datetime.Ticks <= endDate.Ticks;
+        }
+    }
+}
