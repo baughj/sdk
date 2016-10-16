@@ -1268,10 +1268,6 @@ namespace Hybrasyl.Items
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("Unique-Equipped")]
         UniqueEquipped = 2048,
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("Master")]
-        Master1 = 4096,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
