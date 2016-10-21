@@ -79,7 +79,7 @@
               <xs:enumeration value="Consecratable" />
               <xs:enumeration value="Tailorable" />
               <xs:enumeration value="Smithable" />
-              <xs:enumeration value="Exchangeable" />
+              <xs:enumeration value="Exchangable" />
               <xs:enumeration value="Vendorable" />
               <xs:enumeration value="Perishable" />
               <xs:enumeration value="Unique" />
