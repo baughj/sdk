@@ -1288,18 +1288,18 @@ namespace Hybrasyl.Creatures
     public partial class SpawnGroup
     {
 
-        private List<string> _maps;
+        private List<Map> _maps;
 
         private List<Spawn> _spawns;
 
         public SpawnGroup()
         {
             this._spawns = new List<Spawn>();
-            this._maps = new List<string>();
+            this._maps = new List<Map>();
         }
 
-        [System.Xml.Serialization.XmlArrayItemAttribute("Map", IsNullable = false)]
-        public List<string> Maps
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        public List<Map> Maps
         {
             get
             {
@@ -1321,6 +1321,45 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._spawns = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class Map
+    {
+
+        private string _name;
+
+        private string _maxSpawns;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
+        public string MaxSpawns
+        {
+            get
+            {
+                return this._maxSpawns;
+            }
+            set
+            {
+                this._maxSpawns = value;
             }
         }
     }

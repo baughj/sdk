@@ -25,6 +25,7 @@ using Hybrasyl.Nations;
 using System.Xml;
 using System.Xml.Serialization;
 using Castable = Hybrasyl.Castables.Castable;
+using Map = Hybrasyl.Maps.Map;
 
 namespace Hybrasyl.XML
 {
@@ -42,7 +43,7 @@ namespace Hybrasyl.XML
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "http://www.hybrasyl.com/XML/Creatures");
+            ns.Add("", "http://www.hybrasyl.com/XML/Creature");
             Writer.Serialize(xWrite, contents, ns);
         }
 
@@ -50,7 +51,7 @@ namespace Hybrasyl.XML
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "http://www.hybrasyl.com/XML/Creatures");
+            ns.Add("", "http://www.hybrasyl.com/XML/Creature");
             Writer.Serialize(xWrite, contents, ns);
         }
 
@@ -58,7 +59,7 @@ namespace Hybrasyl.XML
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "http://www.hybrasyl.com/XML/Creatures");
+            ns.Add("", "http://www.hybrasyl.com/XML/Creature");
             Writer.Serialize(xWrite, contents, ns);
         }
 

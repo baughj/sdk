@@ -32,8 +32,13 @@
   <!-- A list of maps a spawngroup controls-->
   <xs:complexType name="MapList">
     <xs:sequence>
-      <xs:element name="Map" type="hyb:String8" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="Map" type="creature:Map" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Map">
+    <xs:attribute name="Name" type="hyb:String8" use ="required"/>
+    <xs:attribute name="MaxSpawns" type="xs:integer" use ="required"/>
   </xs:complexType>
 
   <!-- Spawns -->
