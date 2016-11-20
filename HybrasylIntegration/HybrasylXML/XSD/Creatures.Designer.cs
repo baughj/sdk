@@ -1335,7 +1335,7 @@ namespace Hybrasyl.Creatures
 
         private string _name;
 
-        private string _maxSpawns;
+        private int _maxSpawns;
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
@@ -1350,8 +1350,8 @@ namespace Hybrasyl.Creatures
             }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
-        public string MaxSpawns
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int MaxSpawns
         {
             get
             {
