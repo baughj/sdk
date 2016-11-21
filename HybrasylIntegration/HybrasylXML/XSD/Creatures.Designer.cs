@@ -1288,18 +1288,18 @@ namespace Hybrasyl.Creatures
     public partial class SpawnGroup
     {
 
-        private List<string> _maps;
+        private List<Map> _maps;
 
         private List<Spawn> _spawns;
 
         public SpawnGroup()
         {
             this._spawns = new List<Spawn>();
-            this._maps = new List<string>();
+            this._maps = new List<Map>();
         }
 
-        [System.Xml.Serialization.XmlArrayItemAttribute("Map", IsNullable = false)]
-        public List<string> Maps
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        public List<Map> Maps
         {
             get
             {
@@ -1321,6 +1321,90 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._spawns = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class Map
+    {
+
+        private string _name;
+
+        private int _minSpawn;
+
+        private int _maxSpawn;
+
+        private int _limit;
+
+        private int _interval;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int MinSpawn
+        {
+            get
+            {
+                return this._minSpawn;
+            }
+            set
+            {
+                this._minSpawn = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int MaxSpawn
+        {
+            get
+            {
+                return this._maxSpawn;
+            }
+            set
+            {
+                this._maxSpawn = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Limit
+        {
+            get
+            {
+                return this._limit;
+            }
+            set
+            {
+                this._limit = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Interval
+        {
+            get
+            {
+                return this._interval;
+            }
+            set
+            {
+                this._interval = value;
             }
         }
     }
