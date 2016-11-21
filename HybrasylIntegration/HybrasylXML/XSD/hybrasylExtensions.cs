@@ -107,3 +107,13 @@ namespace Hybrasyl.Config
         }
     }
 }
+
+namespace Hybrasyl.Creatures
+{
+    public partial class Map
+    {
+        public DateTime LastSpawn { get; set; }
+        public int Id { get; set; }
+    }
+
+}
