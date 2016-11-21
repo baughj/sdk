@@ -757,6 +757,18 @@ namespace Hybrasyl.Creatures
 
         private uint _mp;
 
+        private byte _level;
+
+        private byte _str;
+
+        private byte _int;
+
+        private byte _wis;
+
+        private byte _con;
+
+        private byte _dex;
+
         public Stats()
         {
             this._mp = ((uint)(0));
@@ -786,6 +798,84 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._mp = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte Level
+        {
+            get
+            {
+                return this._level;
+            }
+            set
+            {
+                this._level = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte Str
+        {
+            get
+            {
+                return this._str;
+            }
+            set
+            {
+                this._str = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte Int
+        {
+            get
+            {
+                return this._int;
+            }
+            set
+            {
+                this._int = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte Wis
+        {
+            get
+            {
+                return this._wis;
+            }
+            set
+            {
+                this._wis = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte Con
+        {
+            get
+            {
+                return this._con;
+            }
+            set
+            {
+                this._con = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte Dex
+        {
+            get
+            {
+                return this._dex;
+            }
+            set
+            {
+                this._dex = value;
             }
         }
     }

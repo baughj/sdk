@@ -138,6 +138,12 @@
   <xs:complexType name="Stats">
     <xs:attribute name="Hp" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="Mp" type="xs:unsignedInt" use="optional" default="0"/>
+    <xs:attribute name="Level" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Str" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Int" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Wis" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Con" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Dex" type="xs:unsignedByte" use="required" />
   </xs:complexType>
 
   <!-- List of loot tables which can be defined <table> or imported from external sources <import> -->
