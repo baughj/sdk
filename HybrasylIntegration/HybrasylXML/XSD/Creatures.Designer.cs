@@ -1335,7 +1335,13 @@ namespace Hybrasyl.Creatures
 
         private string _name;
 
-        private int _maxSpawns;
+        private int _minSpawn;
+
+        private int _maxSpawn;
+
+        private int _limit;
+
+        private int _interval;
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
@@ -1351,15 +1357,54 @@ namespace Hybrasyl.Creatures
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int MaxSpawns
+        public int MinSpawn
         {
             get
             {
-                return this._maxSpawns;
+                return this._minSpawn;
             }
             set
             {
-                this._maxSpawns = value;
+                this._minSpawn = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int MaxSpawn
+        {
+            get
+            {
+                return this._maxSpawn;
+            }
+            set
+            {
+                this._maxSpawn = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Limit
+        {
+            get
+            {
+                return this._limit;
+            }
+            set
+            {
+                this._limit = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Interval
+        {
+            get
+            {
+                return this._interval;
+            }
+            set
+            {
+                this._interval = value;
             }
         }
     }
