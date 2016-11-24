@@ -26,7 +26,7 @@ namespace Hybrasyl.Castables
     public partial class Castable
     {
 
-        private string _description;
+        private List<Description> _descriptions;
 
         private string _name;
 
@@ -38,7 +38,7 @@ namespace Hybrasyl.Castables
 
         private MaxLevel _maxLevel;
 
-        private Requirements _requirements;
+        private List<Requirement> _requirements;
 
         private Restrictions _restrictions;
 
@@ -66,25 +66,27 @@ namespace Hybrasyl.Castables
             this._element = new List<Element>();
             this._effects = new Effects();
             this._restrictions = new Restrictions();
-            this._requirements = new Requirements();
+            this._requirements = new List<Requirement>();
             this._maxLevel = new MaxLevel();
             this._intents = new List<Intent>();
             this._castCost = new CastCost();
             this._categories = new Categories();
+            this._descriptions = new List<Description>();
             this._lines = ((sbyte)(0));
             this._cooldown = 0;
             this._isAssail = "false";
         }
 
-        public string Description
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        public List<Description> Descriptions
         {
             get
             {
-                return this._description;
+                return this._descriptions;
             }
             set
             {
-                this._description = value;
+                this._descriptions = value;
             }
         }
 
@@ -149,7 +151,8 @@ namespace Hybrasyl.Castables
             }
         }
 
-        public Requirements Requirements
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        public List<Requirement> Requirements
         {
             get
             {
@@ -298,57 +301,23 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class Categories
+    public partial class Description
     {
 
-        private Category _category;
-
-        public Categories()
-        {
-            this._category = new Category();
-        }
-
-        public Category Category
-        {
-            get
-            {
-                return this._category;
-            }
-            set
-            {
-                this._category = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class Category
-    {
-
-        private bool _unique;
+        private Class _class;
 
         private string _value;
 
-        public Category()
-        {
-            this._unique = false;
-        }
-
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool Unique
+        public Class Class
         {
             get
             {
-                return this._unique;
+                return this._class;
             }
             set
             {
-                this._unique = value;
+                this._class = value;
             }
         }
 
@@ -364,6 +333,31 @@ namespace Hybrasyl.Castables
                 this._value = value;
             }
         }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    public enum Class
+    {
+
+        /// <remarks/>
+        Peasant,
+
+        /// <remarks/>
+        Warrior,
+
+        /// <remarks/>
+        Rogue,
+
+        /// <remarks/>
+        Wizard,
+
+        /// <remarks/>
+        Priest,
+
+        /// <remarks/>
+        Monk,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
@@ -1203,10 +1197,92 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class Motion
+    {
+
+        private Class _class;
+
+        private int _id;
+
+        private int _speed;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public Class Class
+        {
+            get
+            {
+                return this._class;
+            }
+            set
+            {
+                this._class = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                this._id = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Speed
+        {
+            get
+            {
+                return this._speed;
+            }
+            set
+            {
+                this._speed = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class MotionsList
+    {
+
+        private Motion _motion;
+
+        public MotionsList()
+        {
+            this._motion = new Motion();
+        }
+
+        public Motion Motion
+        {
+            get
+            {
+                return this._motion;
+            }
+            set
+            {
+                this._motion = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
     public partial class AnimationGroup
     {
 
-        private Animation _motion;
+        private MotionsList _motions;
 
         private Animation _spellEffect;
 
@@ -1216,18 +1292,18 @@ namespace Hybrasyl.Castables
         {
             this._target = new Animation();
             this._spellEffect = new Animation();
-            this._motion = new Animation();
+            this._motions = new MotionsList();
         }
 
-        public Animation Motion
+        public MotionsList Motions
         {
             get
             {
-                return this._motion;
+                return this._motions;
             }
             set
             {
-                this._motion = value;
+                this._motions = value;
             }
         }
 
@@ -1665,36 +1741,37 @@ namespace Hybrasyl.Castables
         }
     }
 
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Requirement))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class Requirements
+    public partial class ClassRequirement
     {
 
-        private RequirementsLevel _level;
+        private ClassRequirementLevel _level;
 
-        private RequirementsAB _ab;
+        private ClassRequirementAB _ab;
 
         private List<ItemSpecification> _items;
 
         private uint _gold;
 
-        private RequirementsPhysical _physical;
+        private ClassRequirementPhysical _physical;
 
         private List<LearnPrerequisite> _prerequisites;
 
-        public Requirements()
+        public ClassRequirement()
         {
             this._prerequisites = new List<LearnPrerequisite>();
-            this._physical = new RequirementsPhysical();
+            this._physical = new ClassRequirementPhysical();
             this._items = new List<ItemSpecification>();
-            this._ab = new RequirementsAB();
-            this._level = new RequirementsLevel();
+            this._ab = new ClassRequirementAB();
+            this._level = new ClassRequirementLevel();
         }
 
-        public RequirementsLevel Level
+        public ClassRequirementLevel Level
         {
             get
             {
@@ -1706,7 +1783,7 @@ namespace Hybrasyl.Castables
             }
         }
 
-        public RequirementsAB Ab
+        public ClassRequirementAB Ab
         {
             get
             {
@@ -1743,7 +1820,7 @@ namespace Hybrasyl.Castables
             }
         }
 
-        public RequirementsPhysical Physical
+        public ClassRequirementPhysical Physical
         {
             get
             {
@@ -1774,14 +1851,14 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class RequirementsLevel
+    public partial class ClassRequirementLevel
     {
 
         private byte _min;
 
         private byte _max;
 
-        public RequirementsLevel()
+        public ClassRequirementLevel()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
@@ -1821,14 +1898,14 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class RequirementsAB
+    public partial class ClassRequirementAB
     {
 
         private byte _min;
 
         private byte _max;
 
-        public RequirementsAB()
+        public ClassRequirementAB()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
@@ -1913,7 +1990,7 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class RequirementsPhysical
+    public partial class ClassRequirementPhysical
     {
 
         private byte _str;
@@ -1930,7 +2007,7 @@ namespace Hybrasyl.Castables
 
         private uint _mp;
 
-        public RequirementsPhysical()
+        public ClassRequirementPhysical()
         {
             this._str = ((byte)(0));
             this._int = ((byte)(0));
@@ -2036,6 +2113,30 @@ namespace Hybrasyl.Castables
             set
             {
                 this._mp = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class Requirement : ClassRequirement
+    {
+
+        private Class _class;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public Class Class
+        {
+            get
+            {
+                return this._class;
+            }
+            set
+            {
+                this._class = value;
             }
         }
     }
@@ -2415,6 +2516,79 @@ namespace Hybrasyl.Castables
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class Category
+    {
+
+        private bool _unique;
+
+        private string _value;
+
+        public Category()
+        {
+            this._unique = false;
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool Unique
+        {
+            get
+            {
+                return this._unique;
+            }
+            set
+            {
+                this._unique = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this._value;
+            }
+            set
+            {
+                this._value = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class Categories
+    {
+
+        private Category _category;
+
+        public Categories()
+        {
+            this._category = new Category();
+        }
+
+        public Category Category
+        {
+            get
+            {
+                return this._category;
+            }
+            set
+            {
+                this._category = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
     public enum Book
     {
@@ -2476,31 +2650,6 @@ namespace Hybrasyl.Castables
 
         /// <remarks/>
         Random,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
-    public enum Class
-    {
-
-        /// <remarks/>
-        Peasant,
-
-        /// <remarks/>
-        Warrior,
-
-        /// <remarks/>
-        Rogue,
-
-        /// <remarks/>
-        Wizard,
-
-        /// <remarks/>
-        Priest,
-
-        /// <remarks/>
-        Monk,
     }
 }
 #pragma warning restore

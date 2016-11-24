@@ -35,6 +35,7 @@
      <xs:enumeration value="Onedigit"/>
    </xs:restriction>
  </xs:simpleType>
+ 
   
  <!-- Element properties (adds belt / necklace) -->
  <xs:simpleType name="Element">
@@ -83,6 +84,18 @@
      <xs:enumeration value="Nearby" />
    </xs:restriction>
   </xs:simpleType>
+
+  <xs:complexType name="Motion">
+    <xs:attribute name="Class" type="hyb:Class"/>
+    <xs:attribute name="Id" type="xs:int"/>
+    <xs:attribute name="Speed" type="xs:int"/>
+  </xs:complexType>
+
+  <xs:complexType name="MotionsList">
+    <xs:sequence>
+      <xs:element name="Motion" type="actions:Motion"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <!-- Item specification (used for requirements / cast cost) -->
   <xs:complexType name="ItemSpecification">
@@ -142,7 +155,7 @@
   </xs:complexType>
 
   <!-- Requirements: What does a player need to learn this spell? -->
-  <xs:complexType name="Requirements">
+  <xs:complexType name="ClassRequirement">
     <xs:sequence minOccurs="0" maxOccurs="1">
       <!-- Player level -->
       <xs:element name="Level" minOccurs="0" maxOccurs="1">
@@ -176,6 +189,20 @@
       </xs:element>
       <!-- Prerequisites (other spells which must be learned first) -->
       <xs:element name="Prerequisites" minOccurs="0" maxOccurs="0" type="actions:LearnPrerequisites" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Requirement">
+    <xs:complexContent>
+      <xs:extension base="actions:ClassRequirement">
+        <xs:attribute name="Class" type="hyb:Class"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Requirements">
+    <xs:sequence>
+      <xs:element name="Requirement" type="actions:Requirement" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -279,7 +306,7 @@
   <!-- Animation group -->
   <xs:complexType name="AnimationGroup">
     <xs:sequence minOccurs="0" maxOccurs="1">
-      <xs:element name="Motion" type="actions:Animation" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Motions" type="actions:MotionsList" minOccurs="0" maxOccurs="1" />
       <xs:element name="SpellEffect" type="actions:Animation" minOccurs="0" maxOccurs="1" />
       <xs:element name="Target" type="actions:Animation" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
@@ -388,10 +415,24 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="Description">
+    <xs:simpleContent>
+      <xs:extension base="hyb:String8">
+        <xs:attribute name="Class" type="hyb:Class"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DescriptionList">
+    <xs:sequence>
+      <xs:element name="Description" type="actions:Description" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <!-- Castable type -->
   <xs:complexType name="Castable">
     <xs:all minOccurs="0" maxOccurs="1">
-      <xs:element name="Description" type="hyb:String8" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Descriptions" type="actions:DescriptionList" minOccurs="0" maxOccurs="1" />
       <xs:element name="Name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
       <xs:element name="Categories" type="actions:Categories" minOccurs="0" maxOccurs="1" />
       <xs:element name="CastCost" type="actions:CastCost" minOccurs="0" maxOccurs="1" />
