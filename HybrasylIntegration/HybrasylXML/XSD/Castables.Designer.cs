@@ -2520,6 +2520,58 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class CastCost : ClassCastCost
+    {
+
+        private Class _class;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public Class Class
+        {
+            get
+            {
+                return this._class;
+            }
+            set
+            {
+                this._class = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class CastCostList
+    {
+
+        private CastCost _castCost;
+
+        public CastCostList()
+        {
+            this._castCost = new CastCost();
+        }
+
+        public CastCost CastCost
+        {
+            get
+            {
+                return this._castCost;
+            }
+            set
+            {
+                this._castCost = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
     public partial class Category
     {
 
