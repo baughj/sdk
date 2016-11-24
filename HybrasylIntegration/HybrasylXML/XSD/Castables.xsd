@@ -114,7 +114,7 @@
   </xs:complexType>
 
   <!-- Casting cost -->
-  <xs:complexType name="CastCost">
+  <xs:complexType name="ClassCastCost">
     <xs:sequence minOccurs="0" maxOccurs="1">
       <xs:element name="Items" minOccurs="0" maxOccurs="1" type="actions:ItemsSpecification" />
       <xs:element name="Stat" minOccurs="0" maxOccurs="1">
@@ -125,6 +125,20 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="Gold" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CastCost">
+    <xs:complexContent>
+      <xs:extension base="actions:ClassCastCost">
+        <xs:attribute name="Class" type="hyb:Class"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CastCostList">
+    <xs:sequence>
+      <xs:element name="CastCost" type="actions:CastCost"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -435,7 +449,7 @@
       <xs:element name="Descriptions" type="actions:DescriptionList" minOccurs="0" maxOccurs="1" />
       <xs:element name="Name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
       <xs:element name="Categories" type="actions:Categories" minOccurs="0" maxOccurs="1" />
-      <xs:element name="CastCost" type="actions:CastCost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CastCosts" type="actions:CastCostList" minOccurs="0" maxOccurs="1" />
       <xs:element name="Intents" type="actions:Intents" minOccurs="0" maxOccurs="1" />
       <xs:element name="MaxLevel" type="actions:MaxLevel" minOccurs="0" maxOccurs="1" />
       <xs:element name="Requirements" type="actions:Requirements" minOccurs="0" maxOccurs="1" />

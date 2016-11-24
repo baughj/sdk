@@ -32,7 +32,7 @@ namespace Hybrasyl.Castables
 
         private Categories _categories;
 
-        private CastCost _castCost;
+        private CastCostList _castCosts;
 
         private List<Intent> _intents;
 
@@ -69,7 +69,7 @@ namespace Hybrasyl.Castables
             this._requirements = new List<Requirement>();
             this._maxLevel = new MaxLevel();
             this._intents = new List<Intent>();
-            this._castCost = new CastCost();
+            this._castCosts = new CastCostList();
             this._categories = new Categories();
             this._descriptions = new List<Description>();
             this._lines = ((sbyte)(0));
@@ -114,15 +114,15 @@ namespace Hybrasyl.Castables
             }
         }
 
-        public CastCost CastCost
+        public CastCostList CastCosts
         {
             get
             {
-                return this._castCost;
+                return this._castCosts;
             }
             set
             {
-                this._castCost = value;
+                this._castCosts = value;
             }
         }
 
@@ -2409,23 +2409,24 @@ namespace Hybrasyl.Castables
         Group,
     }
 
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CastCost))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class CastCost
+    public partial class ClassCastCost
     {
 
         private List<ItemSpecification> _items;
 
-        private CastCostStat _stat;
+        private ClassCastCostStat _stat;
 
         private uint _gold;
 
-        public CastCost()
+        public ClassCastCost()
         {
-            this._stat = new CastCostStat();
+            this._stat = new ClassCastCostStat();
             this._items = new List<ItemSpecification>();
         }
 
@@ -2442,7 +2443,7 @@ namespace Hybrasyl.Castables
             }
         }
 
-        public CastCostStat Stat
+        public ClassCastCostStat Stat
         {
             get
             {
@@ -2472,14 +2473,14 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Actions")]
-    public partial class CastCostStat
+    public partial class ClassCastCostStat
     {
 
         private string _hp;
 
         private string _mp;
 
-        public CastCostStat()
+        public ClassCastCostStat()
         {
             this._hp = "0";
             this._mp = "0";
@@ -2510,6 +2511,58 @@ namespace Hybrasyl.Castables
             set
             {
                 this._mp = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class CastCost : ClassCastCost
+    {
+
+        private Class _class;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public Class Class
+        {
+            get
+            {
+                return this._class;
+            }
+            set
+            {
+                this._class = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class CastCostList
+    {
+
+        private CastCost _castCost;
+
+        public CastCostList()
+        {
+            this._castCost = new CastCost();
+        }
+
+        public CastCost CastCost
+        {
+            get
+            {
+                return this._castCost;
+            }
+            set
+            {
+                this._castCost = value;
             }
         }
     }
