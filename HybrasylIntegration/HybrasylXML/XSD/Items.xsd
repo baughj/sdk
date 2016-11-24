@@ -126,6 +126,15 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="Motion">
+    <xs:attribute name="Id"/>
+    <xs:attribute name="Speed"/>
+  </xs:complexType>
+  <xs:complexType name="MotionList">
+    <xs:sequence>
+      <xs:element name="Motion" type="items:Motion" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="ItemProperties">
     <xs:sequence>
@@ -286,6 +295,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="Motions" minOccurs="1" maxOccurs="1" type="items:MotionList"/>
     </xs:sequence>
   </xs:complexType>
 

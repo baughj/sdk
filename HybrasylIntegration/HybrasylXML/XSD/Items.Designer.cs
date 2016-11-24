@@ -106,8 +106,11 @@ namespace Hybrasyl.Items
 
         private ItemPropertiesRestrictions _restrictions;
 
+        private List<Motion> _motions;
+
         public ItemProperties()
         {
+            this._motions = new List<Motion>();
             this._restrictions = new ItemPropertiesRestrictions();
             this._use = new ItemPropertiesUse();
             this._damage = new ItemPropertiesDamage();
@@ -263,6 +266,19 @@ namespace Hybrasyl.Items
             set
             {
                 this._restrictions = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        public List<Motion> Motions
+        {
+            get
+            {
+                return this._motions;
+            }
+            set
+            {
+                this._motions = value;
             }
         }
     }
@@ -434,6 +450,45 @@ namespace Hybrasyl.Items
 
         /// <remarks/>
         White,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
+    public partial class Motion
+    {
+
+        private string _id;
+
+        private string _speed;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                this._id = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Speed
+        {
+            get
+            {
+                return this._speed;
+            }
+            set
+            {
+                this._speed = value;
+            }
+        }
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]

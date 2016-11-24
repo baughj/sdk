@@ -1203,10 +1203,117 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class Motion
+    {
+
+        private Class _class;
+
+        private int _id;
+
+        private int _speed;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public Class Class
+        {
+            get
+            {
+                return this._class;
+            }
+            set
+            {
+                this._class = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                this._id = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Speed
+        {
+            get
+            {
+                return this._speed;
+            }
+            set
+            {
+                this._speed = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    public enum Class
+    {
+
+        /// <remarks/>
+        Peasant,
+
+        /// <remarks/>
+        Warrior,
+
+        /// <remarks/>
+        Rogue,
+
+        /// <remarks/>
+        Wizard,
+
+        /// <remarks/>
+        Priest,
+
+        /// <remarks/>
+        Monk,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
+    public partial class MotionsList
+    {
+
+        private Motion _motion;
+
+        public MotionsList()
+        {
+            this._motion = new Motion();
+        }
+
+        public Motion Motion
+        {
+            get
+            {
+                return this._motion;
+            }
+            set
+            {
+                this._motion = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Actions")]
     public partial class AnimationGroup
     {
 
-        private Animation _motion;
+        private MotionsList _motions;
 
         private Animation _spellEffect;
 
@@ -1216,18 +1323,18 @@ namespace Hybrasyl.Castables
         {
             this._target = new Animation();
             this._spellEffect = new Animation();
-            this._motion = new Animation();
+            this._motions = new MotionsList();
         }
 
-        public Animation Motion
+        public MotionsList Motions
         {
             get
             {
-                return this._motion;
+                return this._motions;
             }
             set
             {
-                this._motion = value;
+                this._motions = value;
             }
         }
 
@@ -2476,31 +2583,6 @@ namespace Hybrasyl.Castables
 
         /// <remarks/>
         Random,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
-    public enum Class
-    {
-
-        /// <remarks/>
-        Peasant,
-
-        /// <remarks/>
-        Warrior,
-
-        /// <remarks/>
-        Rogue,
-
-        /// <remarks/>
-        Wizard,
-
-        /// <remarks/>
-        Priest,
-
-        /// <remarks/>
-        Monk,
     }
 }
 #pragma warning restore
