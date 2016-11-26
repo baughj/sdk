@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="XSD\Castables.xsd">
       <SubType>Designer</SubType>
     </None>
