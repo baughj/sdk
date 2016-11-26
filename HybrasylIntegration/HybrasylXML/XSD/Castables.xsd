@@ -472,7 +472,7 @@
       </xs:simpleType>
     </xs:attribute>
     <xs:attribute name="Cooldown" use="optional" default="0" type="xs:int" />
-    <xs:attribute name="IsAssail" use="optional" default="false" />
+    <xs:attribute name="IsAssail" use="optional" default="false" type="xs:boolean"/>
   </xs:complexType>
 
   <!-- Bring it all together -->

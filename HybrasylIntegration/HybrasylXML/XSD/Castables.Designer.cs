@@ -58,7 +58,7 @@ namespace Hybrasyl.Castables
 
         private int _cooldown;
 
-        private string _isAssail;
+        private bool _isAssail;
 
         public Castable()
         {
@@ -74,7 +74,7 @@ namespace Hybrasyl.Castables
             this._descriptions = new List<Description>();
             this._lines = ((sbyte)(0));
             this._cooldown = 0;
-            this._isAssail = "false";
+            this._isAssail = false;
         }
 
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
@@ -282,8 +282,8 @@ namespace Hybrasyl.Castables
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("false")]
-        public string IsAssail
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool IsAssail
         {
             get
             {
