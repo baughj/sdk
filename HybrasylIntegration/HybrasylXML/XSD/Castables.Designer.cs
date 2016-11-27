@@ -1277,7 +1277,7 @@ namespace Hybrasyl.Castables
     public partial class AnimationGroup
     {
         
-        private MotionsList _motions;
+        private List<MotionsList> _motions;
         
         private Animation _spellEffect;
         
@@ -1287,10 +1287,11 @@ namespace Hybrasyl.Castables
         {
             this._target = new Animation();
             this._spellEffect = new Animation();
-            this._motions = new MotionsList();
+            this._motions = new List<MotionsList>();
         }
         
-        public MotionsList Motions
+        [System.Xml.Serialization.XmlElementAttribute("Motions")]
+        public List<MotionsList> Motions
         {
             get
             {
