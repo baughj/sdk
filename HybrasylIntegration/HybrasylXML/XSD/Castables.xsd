@@ -86,7 +86,11 @@
   </xs:simpleType>
 
   <xs:complexType name="Motion">
-    <xs:attribute name="Class" type="hyb:Class"/>
+    <xs:attribute name="Class" use="optional">
+      <xs:simpleType>
+        <xs:list itemType="hyb:Class" />
+      </xs:simpleType>
+    </xs:attribute>
     <xs:attribute name="Id" type="xs:int"/>
     <xs:attribute name="Speed" type="xs:int"/>
   </xs:complexType>
@@ -131,7 +135,11 @@
   <xs:complexType name="CastCost">
     <xs:complexContent>
       <xs:extension base="actions:ClassCastCost">
-        <xs:attribute name="Class" type="hyb:Class"/>
+        <xs:attribute name="Class" use="optional">
+          <xs:simpleType>
+            <xs:list itemType="hyb:Class" />
+          </xs:simpleType>
+        </xs:attribute>      
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -209,7 +217,11 @@
   <xs:complexType name="Requirement">
     <xs:complexContent>
       <xs:extension base="actions:ClassRequirement">
-        <xs:attribute name="Class" type="hyb:Class"/>
+        <xs:attribute name="Class" use="optional">
+          <xs:simpleType>
+            <xs:list itemType="hyb:Class" />
+          </xs:simpleType>
+        </xs:attribute>      
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -430,11 +442,11 @@
   </xs:complexType>
 
   <xs:complexType name="Description">
-    <xs:simpleContent>
-      <xs:extension base="hyb:String8">
-        <xs:attribute name="Class" type="hyb:Class"/>
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:attribute name="Class" use="optional">
+      <xs:simpleType>
+        <xs:list itemType="hyb:Class" />
+      </xs:simpleType>
+    </xs:attribute>
   </xs:complexType>
 
   <xs:complexType name="DescriptionList">
