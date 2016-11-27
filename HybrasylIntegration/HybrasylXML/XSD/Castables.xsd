@@ -97,7 +97,7 @@
 
   <xs:complexType name="MotionsList">
     <xs:sequence>
-      <xs:element name="Motion" type="actions:Motion"/>
+      <xs:element name="Motion" type="actions:Motion" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -332,7 +332,7 @@
   <!-- Animation group -->
   <xs:complexType name="AnimationGroup">
     <xs:sequence minOccurs="0" maxOccurs="1">
-      <xs:element name="Motions" type="actions:MotionsList" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Motions" type="actions:MotionsList" minOccurs="0" maxOccurs="1" />
       <xs:element name="SpellEffect" type="actions:Animation" minOccurs="0" maxOccurs="1" />
       <xs:element name="Target" type="actions:Animation" minOccurs="0" maxOccurs="1" />
     </xs:sequence>

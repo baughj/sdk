@@ -1246,38 +1246,10 @@ namespace Hybrasyl.Castables
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Actions")]
-    public partial class MotionsList
-    {
-        
-        private Motion _motion;
-        
-        public MotionsList()
-        {
-            this._motion = new Motion();
-        }
-        
-        public Motion Motion
-        {
-            get
-            {
-                return this._motion;
-            }
-            set
-            {
-                this._motion = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Actions")]
     public partial class AnimationGroup
     {
         
-        private List<MotionsList> _motions;
+        private List<Motion> _motions;
         
         private Animation _spellEffect;
         
@@ -1287,11 +1259,11 @@ namespace Hybrasyl.Castables
         {
             this._target = new Animation();
             this._spellEffect = new Animation();
-            this._motions = new List<MotionsList>();
+            this._motions = new List<Motion>();
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("Motions")]
-        public List<MotionsList> Motions
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public List<Motion> Motions
         {
             get
             {

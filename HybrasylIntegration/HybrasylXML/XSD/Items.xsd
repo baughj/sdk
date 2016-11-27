@@ -295,7 +295,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="Motions" minOccurs="1" maxOccurs="1" type="items:MotionList"/>
+      <xs:element name="Motions" minOccurs="0" maxOccurs="1" type="items:MotionList"/>
     </xs:sequence>
   </xs:complexType>
 

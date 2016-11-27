@@ -15,28 +15,28 @@ namespace Hybrasyl.Items
     using System.ComponentModel;
     using System.Xml;
     using System.Collections.Generic;
-
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Items", IsNullable = false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Items", IsNullable=false)]
     public partial class Item
     {
-
+        
         private string _name;
-
+        
         private string _comment;
-
+        
         private ItemProperties _properties;
-
+        
         public Item()
         {
             this._properties = new ItemProperties();
         }
-
+        
         public string Name
         {
             get
@@ -48,7 +48,7 @@ namespace Hybrasyl.Items
                 this._name = value;
             }
         }
-
+        
         public string Comment
         {
             get
@@ -60,7 +60,7 @@ namespace Hybrasyl.Items
                 this._comment = value;
             }
         }
-
+        
         public ItemProperties Properties
         {
             get
@@ -73,41 +73,41 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemProperties
     {
-
+        
         private ItemPropertiesAppearance _appearance;
-
+        
         private List<CastModifiersLines> _castModifiers;
-
+        
         private ItemPropertiesStackable _stackable;
-
+        
         private ItemPropertiesPhysical _physical;
-
+        
         private ItemPropertiesEquipment _equipment;
-
+        
         private ItemPropertiesStatEffects _statEffects;
-
+        
         private ItemFlags _flags;
-
+        
         private ItemPropertiesVariants _variants;
-
+        
         private ItemPropertiesVendor _vendor;
-
+        
         private ItemPropertiesDamage _damage;
-
+        
         private ItemPropertiesUse _use;
-
+        
         private ItemPropertiesRestrictions _restrictions;
-
+        
         private List<Motion> _motions;
-
+        
         public ItemProperties()
         {
             this._motions = new List<Motion>();
@@ -123,7 +123,7 @@ namespace Hybrasyl.Items
             this._castModifiers = new List<CastModifiersLines>();
             this._appearance = new ItemPropertiesAppearance();
         }
-
+        
         public ItemPropertiesAppearance Appearance
         {
             get
@@ -135,8 +135,8 @@ namespace Hybrasyl.Items
                 this._appearance = value;
             }
         }
-
-        [System.Xml.Serialization.XmlArrayItemAttribute("Lines", IsNullable = false)]
+        
+        [System.Xml.Serialization.XmlArrayItemAttribute("Lines", IsNullable=false)]
         public List<CastModifiersLines> CastModifiers
         {
             get
@@ -148,7 +148,7 @@ namespace Hybrasyl.Items
                 this._castModifiers = value;
             }
         }
-
+        
         public ItemPropertiesStackable Stackable
         {
             get
@@ -160,7 +160,7 @@ namespace Hybrasyl.Items
                 this._stackable = value;
             }
         }
-
+        
         public ItemPropertiesPhysical Physical
         {
             get
@@ -172,7 +172,7 @@ namespace Hybrasyl.Items
                 this._physical = value;
             }
         }
-
+        
         public ItemPropertiesEquipment Equipment
         {
             get
@@ -184,7 +184,7 @@ namespace Hybrasyl.Items
                 this._equipment = value;
             }
         }
-
+        
         public ItemPropertiesStatEffects StatEffects
         {
             get
@@ -196,7 +196,7 @@ namespace Hybrasyl.Items
                 this._statEffects = value;
             }
         }
-
+        
         public ItemFlags Flags
         {
             get
@@ -208,7 +208,7 @@ namespace Hybrasyl.Items
                 this._flags = value;
             }
         }
-
+        
         public ItemPropertiesVariants Variants
         {
             get
@@ -220,7 +220,7 @@ namespace Hybrasyl.Items
                 this._variants = value;
             }
         }
-
+        
         public ItemPropertiesVendor Vendor
         {
             get
@@ -232,7 +232,7 @@ namespace Hybrasyl.Items
                 this._vendor = value;
             }
         }
-
+        
         public ItemPropertiesDamage Damage
         {
             get
@@ -244,7 +244,7 @@ namespace Hybrasyl.Items
                 this._damage = value;
             }
         }
-
+        
         public ItemPropertiesUse Use
         {
             get
@@ -256,7 +256,7 @@ namespace Hybrasyl.Items
                 this._use = value;
             }
         }
-
+        
         public ItemPropertiesRestrictions Restrictions
         {
             get
@@ -268,8 +268,8 @@ namespace Hybrasyl.Items
                 this._restrictions = value;
             }
         }
-
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public List<Motion> Motions
         {
             get
@@ -282,31 +282,31 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesAppearance
     {
-
+        
         private ushort _sprite;
-
+        
         private ushort _equipSprite;
-
+        
         private ushort _displaySprite;
-
+        
         private ItemBodyStyle _bodyStyle;
-
+        
         private ItemColor _color;
-
+        
         public ItemPropertiesAppearance()
         {
             this._bodyStyle = ItemBodyStyle.Transparent;
             this._color = ItemColor.None;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort Sprite
         {
@@ -319,7 +319,7 @@ namespace Hybrasyl.Items
                 this._sprite = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort EquipSprite
         {
@@ -332,7 +332,7 @@ namespace Hybrasyl.Items
                 this._equipSprite = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort DisplaySprite
         {
@@ -345,7 +345,7 @@ namespace Hybrasyl.Items
                 this._displaySprite = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(ItemBodyStyle.Transparent)]
         public ItemBodyStyle BodyStyle
@@ -359,7 +359,7 @@ namespace Hybrasyl.Items
                 this._bodyStyle = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(ItemColor.None)]
         public ItemColor Color
@@ -374,96 +374,96 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum ItemBodyStyle
     {
-
+        
         /// <remarks/>
         Transparent,
-
+        
         /// <remarks/>
         Male,
-
+        
         /// <remarks/>
         MaleBlack,
-
+        
         /// <remarks/>
         MaleRed,
-
+        
         /// <remarks/>
         Female,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum ItemColor
     {
-
+        
         /// <remarks/>
         None,
-
+        
         /// <remarks/>
         Black,
-
+        
         /// <remarks/>
         Red,
-
+        
         /// <remarks/>
         Orange,
-
+        
         /// <remarks/>
         Yellow,
-
+        
         /// <remarks/>
         Teal,
-
+        
         /// <remarks/>
         Blue,
-
+        
         /// <remarks/>
         Purple,
-
+        
         /// <remarks/>
         DarkGreen,
-
+        
         /// <remarks/>
         Green,
-
+        
         /// <remarks/>
         LightOrange,
-
+        
         /// <remarks/>
         Brown,
-
+        
         /// <remarks/>
         Grey,
-
+        
         /// <remarks/>
         DarkBlue,
-
+        
         /// <remarks/>
         Tan,
-
+        
         /// <remarks/>
         White,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class Motion
     {
-
+        
         private string _id;
-
+        
         private string _speed;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Id
         {
@@ -476,7 +476,7 @@ namespace Hybrasyl.Items
                 this._id = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Speed
         {
@@ -490,34 +490,34 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class CastModifiersLines
     {
-
+        
         private sbyte _offset;
-
+        
         private sbyte _number;
-
+        
         private sbyte _modifier;
-
+        
         private bool _global;
-
+        
         private string _spellGroup;
-
+        
         private sbyte _min;
-
+        
         private sbyte _max;
-
+        
         public CastModifiersLines()
         {
             this._global = false;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public sbyte Offset
         {
@@ -530,7 +530,7 @@ namespace Hybrasyl.Items
                 this._offset = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public sbyte Number
         {
@@ -543,7 +543,7 @@ namespace Hybrasyl.Items
                 this._number = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public sbyte Modifier
         {
@@ -556,7 +556,7 @@ namespace Hybrasyl.Items
                 this._modifier = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Global
@@ -570,8 +570,8 @@ namespace Hybrasyl.Items
                 this._global = value;
             }
         }
-
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "token")]
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="token")]
         public string SpellGroup
         {
             get
@@ -583,7 +583,7 @@ namespace Hybrasyl.Items
                 this._spellGroup = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public sbyte Min
         {
@@ -596,7 +596,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public sbyte Max
         {
@@ -610,17 +610,17 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesStackable
     {
-
+        
         private byte _max;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Max
         {
@@ -634,27 +634,27 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesPhysical
     {
-
+        
         private uint _value;
-
+        
         private int _weight;
-
+        
         private uint _durability;
-
+        
         private bool _perishable;
-
+        
         private bool _vendorable;
-
+        
         private bool _bound;
-
+        
         public ItemPropertiesPhysical()
         {
             this._value = ((uint)(0));
@@ -664,7 +664,7 @@ namespace Hybrasyl.Items
             this._vendorable = true;
             this._bound = false;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         public uint Value
@@ -678,7 +678,7 @@ namespace Hybrasyl.Items
                 this._value = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Weight
@@ -692,7 +692,7 @@ namespace Hybrasyl.Items
                 this._weight = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "1")]
         public uint Durability
@@ -706,7 +706,7 @@ namespace Hybrasyl.Items
                 this._durability = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Perishable
@@ -720,7 +720,7 @@ namespace Hybrasyl.Items
                 this._perishable = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(true)]
         public bool Vendorable
@@ -734,7 +734,7 @@ namespace Hybrasyl.Items
                 this._vendorable = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Bound
@@ -749,26 +749,26 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesEquipment
     {
-
+        
         private EquipmentSlot _slot;
-
+        
         private bool _unique;
-
+        
         private WeaponType _weaponType;
-
+        
         public ItemPropertiesEquipment()
         {
             this._unique = false;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public EquipmentSlot Slot
         {
@@ -781,7 +781,7 @@ namespace Hybrasyl.Items
                 this._slot = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Unique
@@ -795,7 +795,7 @@ namespace Hybrasyl.Items
                 this._unique = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public WeaponType WeaponType
         {
@@ -809,123 +809,123 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum EquipmentSlot
     {
-
+        
         /// <remarks/>
         None,
-
+        
         /// <remarks/>
         Weapon,
-
+        
         /// <remarks/>
         Armor,
-
+        
         /// <remarks/>
         Shield,
-
+        
         /// <remarks/>
         Helmet,
-
+        
         /// <remarks/>
         Earring,
-
+        
         /// <remarks/>
         Necklace,
-
+        
         /// <remarks/>
         LeftHand,
-
+        
         /// <remarks/>
         RightHand,
-
+        
         /// <remarks/>
         LeftArm,
-
+        
         /// <remarks/>
         RightArm,
-
+        
         /// <remarks/>
         Waist,
-
+        
         /// <remarks/>
         Leg,
-
+        
         /// <remarks/>
         Foot,
-
+        
         /// <remarks/>
         FirstAcc,
-
+        
         /// <remarks/>
         Trousers,
-
+        
         /// <remarks/>
         Coat,
-
+        
         /// <remarks/>
         SecondAcc,
-
+        
         /// <remarks/>
         ThirdAcc,
-
+        
         /// <remarks/>
         Gauntlet,
-
+        
         /// <remarks/>
         Ring,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum WeaponType
     {
-
+        
         /// <remarks/>
         OneHand,
-
+        
         /// <remarks/>
         TwoHand,
-
+        
         /// <remarks/>
         Dagger,
-
+        
         /// <remarks/>
         Staff,
-
+        
         /// <remarks/>
         Claw,
-
+        
         /// <remarks/>
         None,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesStatEffects
     {
-
+        
         private ItemPropertiesStatEffectsBase _base;
-
+        
         private ItemPropertiesStatEffectsCombat _combat;
-
+        
         private ItemPropertiesStatEffectsElement _element;
-
+        
         public ItemPropertiesStatEffects()
         {
             this._element = new ItemPropertiesStatEffectsElement();
             this._combat = new ItemPropertiesStatEffectsCombat();
             this._base = new ItemPropertiesStatEffectsBase();
         }
-
+        
         public ItemPropertiesStatEffectsBase Base
         {
             get
@@ -937,7 +937,7 @@ namespace Hybrasyl.Items
                 this._base = value;
             }
         }
-
+        
         public ItemPropertiesStatEffectsCombat Combat
         {
             get
@@ -949,7 +949,7 @@ namespace Hybrasyl.Items
                 this._combat = value;
             }
         }
-
+        
         public ItemPropertiesStatEffectsElement Element
         {
             get
@@ -962,29 +962,29 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesStatEffectsBase
     {
-
+        
         private sbyte _str;
-
+        
         private sbyte _int;
-
+        
         private sbyte _wis;
-
+        
         private sbyte _con;
-
+        
         private sbyte _dex;
-
+        
         private int _hp;
-
+        
         private int _mp;
-
+        
         public ItemPropertiesStatEffectsBase()
         {
             this._str = ((sbyte)(0));
@@ -995,7 +995,7 @@ namespace Hybrasyl.Items
             this._hp = 0;
             this._mp = 0;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Str
@@ -1009,7 +1009,7 @@ namespace Hybrasyl.Items
                 this._str = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Int
@@ -1023,7 +1023,7 @@ namespace Hybrasyl.Items
                 this._int = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Wis
@@ -1037,7 +1037,7 @@ namespace Hybrasyl.Items
                 this._wis = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Con
@@ -1051,7 +1051,7 @@ namespace Hybrasyl.Items
                 this._con = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Dex
@@ -1065,7 +1065,7 @@ namespace Hybrasyl.Items
                 this._dex = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Hp
@@ -1079,7 +1079,7 @@ namespace Hybrasyl.Items
                 this._hp = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Mp
@@ -1094,25 +1094,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesStatEffectsCombat
     {
-
+        
         private sbyte _hit;
-
+        
         private sbyte _dmg;
-
+        
         private sbyte _ac;
-
+        
         private sbyte _regen;
-
+        
         private sbyte _mr;
-
+        
         public ItemPropertiesStatEffectsCombat()
         {
             this._hit = ((sbyte)(0));
@@ -1121,7 +1121,7 @@ namespace Hybrasyl.Items
             this._regen = ((sbyte)(0));
             this._mr = ((sbyte)(0));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Hit
@@ -1135,7 +1135,7 @@ namespace Hybrasyl.Items
                 this._hit = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Dmg
@@ -1149,7 +1149,7 @@ namespace Hybrasyl.Items
                 this._dmg = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Ac
@@ -1163,7 +1163,7 @@ namespace Hybrasyl.Items
                 this._ac = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Regen
@@ -1177,7 +1177,7 @@ namespace Hybrasyl.Items
                 this._regen = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Mr
@@ -1192,25 +1192,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesStatEffectsElement
     {
-
+        
         private Element _offense;
-
+        
         private Element _defense;
-
+        
         public ItemPropertiesStatEffectsElement()
         {
             this._offense = Element.None;
             this._defense = Element.None;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(Element.None)]
         public Element Offense
@@ -1224,7 +1224,7 @@ namespace Hybrasyl.Items
                 this._offense = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(Element.None)]
         public Element Defense
@@ -1239,110 +1239,110 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum Element
     {
-
+        
         /// <remarks/>
         None,
-
+        
         /// <remarks/>
         Fire,
-
+        
         /// <remarks/>
         Water,
-
+        
         /// <remarks/>
         Wind,
-
+        
         /// <remarks/>
         Earth,
-
+        
         /// <remarks/>
         Light,
-
+        
         /// <remarks/>
         Dark,
-
+        
         /// <remarks/>
         Wood,
-
+        
         /// <remarks/>
         Metal,
-
+        
         /// <remarks/>
         Undead,
-
+        
         /// <remarks/>
         Random,
     }
-
+    
     [System.FlagsAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum ItemFlags
     {
-
+        
         /// <remarks/>
         Bound = 1,
-
+        
         /// <remarks/>
         Depositable = 2,
-
+        
         /// <remarks/>
         Enchantable = 4,
-
+        
         /// <remarks/>
         Consecratable = 8,
-
+        
         /// <remarks/>
         Tailorable = 16,
-
+        
         /// <remarks/>
         Smithable = 32,
-
+        
         /// <remarks/>
         Exchangeable = 64,
-
+        
         /// <remarks/>
         Vendorable = 128,
-
+        
         /// <remarks/>
         Perishable = 256,
-
+        
         /// <remarks/>
         Unique = 512,
-
+        
         /// <remarks/>
         Master = 1024,
-
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("Unique-Equipped")]
         UniqueEquipped = 2048,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesVariants
     {
-
+        
         private List<string> _name;
-
+        
         private List<string> _group;
-
+        
         public ItemPropertiesVariants()
         {
             this._group = new List<string>();
             this._name = new List<string>();
         }
-
+        
         [System.Xml.Serialization.XmlElementAttribute("Name")]
         public List<string> Name
         {
@@ -1355,7 +1355,7 @@ namespace Hybrasyl.Items
                 this._name = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlElementAttribute("Group")]
         public List<string> Group
         {
@@ -1369,24 +1369,24 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesVendor
     {
-
+        
         private string _description;
-
+        
         private sbyte _shopTab;
-
+        
         public ItemPropertiesVendor()
         {
             this._description = "item";
         }
-
+        
         public string Description
         {
             get
@@ -1398,7 +1398,7 @@ namespace Hybrasyl.Items
                 this._description = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public sbyte ShopTab
         {
@@ -1412,25 +1412,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesDamage
     {
-
+        
         private ItemPropertiesDamageSmall _small;
-
+        
         private ItemPropertiesDamageLarge _large;
-
+        
         public ItemPropertiesDamage()
         {
             this._large = new ItemPropertiesDamageLarge();
             this._small = new ItemPropertiesDamageSmall();
         }
-
+        
         public ItemPropertiesDamageSmall Small
         {
             get
@@ -1442,7 +1442,7 @@ namespace Hybrasyl.Items
                 this._small = value;
             }
         }
-
+        
         public ItemPropertiesDamageLarge Large
         {
             get
@@ -1455,25 +1455,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesDamageSmall
     {
-
+        
         private ushort _min;
-
+        
         private ushort _max;
-
+        
         public ItemPropertiesDamageSmall()
         {
             this._min = ((ushort)(0));
             this._max = ((ushort)(0));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Min
@@ -1487,7 +1487,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Max
@@ -1502,25 +1502,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesDamageLarge
     {
-
+        
         private ushort _min;
-
+        
         private ushort _max;
-
+        
         public ItemPropertiesDamageLarge()
         {
             this._min = ((ushort)(0));
             this._max = ((ushort)(0));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Min
@@ -1534,7 +1534,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Max
@@ -1549,27 +1549,27 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesUse
     {
-
+        
         private string _script;
-
+        
         private ItemPropertiesUseTeleport _teleport;
-
+        
         private ItemPropertiesUsePlayerEffect _playerEffect;
-
+        
         private ItemPropertiesUseEffect _effect;
-
+        
         private ItemPropertiesUseSound _sound;
-
+        
         private bool _consumed;
-
+        
         public ItemPropertiesUse()
         {
             this._sound = new ItemPropertiesUseSound();
@@ -1578,7 +1578,7 @@ namespace Hybrasyl.Items
             this._teleport = new ItemPropertiesUseTeleport();
             this._consumed = true;
         }
-
+        
         public string Script
         {
             get
@@ -1590,7 +1590,7 @@ namespace Hybrasyl.Items
                 this._script = value;
             }
         }
-
+        
         public ItemPropertiesUseTeleport Teleport
         {
             get
@@ -1602,7 +1602,7 @@ namespace Hybrasyl.Items
                 this._teleport = value;
             }
         }
-
+        
         public ItemPropertiesUsePlayerEffect PlayerEffect
         {
             get
@@ -1614,7 +1614,7 @@ namespace Hybrasyl.Items
                 this._playerEffect = value;
             }
         }
-
+        
         public ItemPropertiesUseEffect Effect
         {
             get
@@ -1626,7 +1626,7 @@ namespace Hybrasyl.Items
                 this._effect = value;
             }
         }
-
+        
         public ItemPropertiesUseSound Sound
         {
             get
@@ -1638,7 +1638,7 @@ namespace Hybrasyl.Items
                 this._sound = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(true)]
         public bool Consumed
@@ -1653,21 +1653,21 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesUseTeleport
     {
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         private string _value;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -1680,7 +1680,7 @@ namespace Hybrasyl.Items
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -1693,7 +1693,7 @@ namespace Hybrasyl.Items
                 this._y = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -1707,23 +1707,23 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesUsePlayerEffect
     {
-
+        
         private int _gold;
-
+        
         private int _hp;
-
+        
         private int _mp;
-
+        
         private int _xp;
-
+        
         public ItemPropertiesUsePlayerEffect()
         {
             this._gold = 0;
@@ -1731,7 +1731,7 @@ namespace Hybrasyl.Items
             this._mp = 0;
             this._xp = 0;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Gold
@@ -1745,7 +1745,7 @@ namespace Hybrasyl.Items
                 this._gold = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Hp
@@ -1759,7 +1759,7 @@ namespace Hybrasyl.Items
                 this._hp = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Mp
@@ -1773,7 +1773,7 @@ namespace Hybrasyl.Items
                 this._mp = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Xp
@@ -1788,24 +1788,24 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesUseEffect
     {
-
+        
         private ushort _id;
-
+        
         private sbyte _speed;
-
+        
         public ItemPropertiesUseEffect()
         {
             this._speed = ((sbyte)(100));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort Id
         {
@@ -1818,7 +1818,7 @@ namespace Hybrasyl.Items
                 this._id = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "100")]
         public sbyte Speed
@@ -1833,17 +1833,17 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesUseSound
     {
-
+        
         private sbyte _id;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public sbyte Id
         {
@@ -1857,30 +1857,30 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesRestrictions
     {
-
+        
         private ItemPropertiesRestrictionsLevel _level;
-
+        
         private ItemPropertiesRestrictionsAB _ab;
-
+        
         private Class _class;
-
+        
         private Gender _gender;
-
+        
         public ItemPropertiesRestrictions()
         {
             this._ab = new ItemPropertiesRestrictionsAB();
             this._level = new ItemPropertiesRestrictionsLevel();
             this._gender = Gender.Neutral;
         }
-
+        
         public ItemPropertiesRestrictionsLevel Level
         {
             get
@@ -1892,7 +1892,7 @@ namespace Hybrasyl.Items
                 this._level = value;
             }
         }
-
+        
         public ItemPropertiesRestrictionsAB Ab
         {
             get
@@ -1904,7 +1904,7 @@ namespace Hybrasyl.Items
                 this._ab = value;
             }
         }
-
+        
         public Class Class
         {
             get
@@ -1916,7 +1916,7 @@ namespace Hybrasyl.Items
                 this._class = value;
             }
         }
-
+        
         [System.ComponentModel.DefaultValueAttribute(Gender.Neutral)]
         public Gender Gender
         {
@@ -1930,25 +1930,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesRestrictionsLevel
     {
-
+        
         private byte _min;
-
+        
         private byte _max;
-
+        
         public ItemPropertiesRestrictionsLevel()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Min
@@ -1962,7 +1962,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
         public byte Max
@@ -1977,25 +1977,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class ItemPropertiesRestrictionsAB
     {
-
+        
         private byte _min;
-
+        
         private byte _max;
-
+        
         public ItemPropertiesRestrictionsAB()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Min
@@ -2009,7 +2009,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
         public byte Max
@@ -2024,66 +2024,66 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum Class
     {
-
+        
         /// <remarks/>
         Peasant,
-
+        
         /// <remarks/>
         Warrior,
-
+        
         /// <remarks/>
         Rogue,
-
+        
         /// <remarks/>
         Wizard,
-
+        
         /// <remarks/>
         Priest,
-
+        
         /// <remarks/>
         Monk,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum Gender
     {
-
+        
         /// <remarks/>
         Neutral,
-
+        
         /// <remarks/>
         Male,
-
+        
         /// <remarks/>
         Female,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Items", IsNullable = false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Items", IsNullable=false)]
     public partial class VariantGroup
     {
-
+        
         private string _name;
-
+        
         private List<Variant> _variant;
-
+        
         public VariantGroup()
         {
             this._variant = new List<Variant>();
         }
-
+        
         public string Name
         {
             get
@@ -2095,7 +2095,7 @@ namespace Hybrasyl.Items
                 this._name = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlElementAttribute("Variant")]
         public List<Variant> Variant
         {
@@ -2109,29 +2109,29 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Items", IsNullable = false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Items", IsNullable=false)]
     public partial class Variant
     {
-
+        
         private string _name;
-
+        
         private string _modifier;
-
+        
         private string _comment;
-
+        
         private VariantProperties _properties;
-
+        
         public Variant()
         {
             this._properties = new VariantProperties();
         }
-
+        
         public string Name
         {
             get
@@ -2143,7 +2143,7 @@ namespace Hybrasyl.Items
                 this._name = value;
             }
         }
-
+        
         public string Modifier
         {
             get
@@ -2155,7 +2155,7 @@ namespace Hybrasyl.Items
                 this._modifier = value;
             }
         }
-
+        
         public string Comment
         {
             get
@@ -2167,7 +2167,7 @@ namespace Hybrasyl.Items
                 this._comment = value;
             }
         }
-
+        
         public VariantProperties Properties
         {
             get
@@ -2180,31 +2180,31 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantProperties
     {
-
+        
         private VariantPropertiesAppearance _appearance;
-
+        
         private VariantPropertiesDamage _damage;
-
+        
         private ItemFlags _flags;
-
+        
         private VariantPropertiesPhysical _physical;
-
+        
         private VariantPropertiesRestrictions _restrictions;
-
+        
         private string _script;
-
+        
         private VariantPropertiesStackable _stackable;
-
+        
         private VariantPropertiesStatEffects _statEffects;
-
+        
         public VariantProperties()
         {
             this._statEffects = new VariantPropertiesStatEffects();
@@ -2214,7 +2214,7 @@ namespace Hybrasyl.Items
             this._damage = new VariantPropertiesDamage();
             this._appearance = new VariantPropertiesAppearance();
         }
-
+        
         public VariantPropertiesAppearance Appearance
         {
             get
@@ -2226,7 +2226,7 @@ namespace Hybrasyl.Items
                 this._appearance = value;
             }
         }
-
+        
         public VariantPropertiesDamage Damage
         {
             get
@@ -2238,7 +2238,7 @@ namespace Hybrasyl.Items
                 this._damage = value;
             }
         }
-
+        
         public ItemFlags Flags
         {
             get
@@ -2250,7 +2250,7 @@ namespace Hybrasyl.Items
                 this._flags = value;
             }
         }
-
+        
         public VariantPropertiesPhysical Physical
         {
             get
@@ -2262,7 +2262,7 @@ namespace Hybrasyl.Items
                 this._physical = value;
             }
         }
-
+        
         public VariantPropertiesRestrictions Restrictions
         {
             get
@@ -2274,7 +2274,7 @@ namespace Hybrasyl.Items
                 this._restrictions = value;
             }
         }
-
+        
         public string Script
         {
             get
@@ -2286,7 +2286,7 @@ namespace Hybrasyl.Items
                 this._script = value;
             }
         }
-
+        
         public VariantPropertiesStackable Stackable
         {
             get
@@ -2298,7 +2298,7 @@ namespace Hybrasyl.Items
                 this._stackable = value;
             }
         }
-
+        
         public VariantPropertiesStatEffects StatEffects
         {
             get
@@ -2311,19 +2311,19 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesAppearance
     {
-
+        
         private ItemBodyStyle _bodyStyle;
-
+        
         private ItemColor _color;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ItemBodyStyle BodyStyle
         {
@@ -2336,7 +2336,7 @@ namespace Hybrasyl.Items
                 this._bodyStyle = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ItemColor Color
         {
@@ -2350,25 +2350,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesDamage
     {
-
+        
         private VariantPropertiesDamageSmall _small;
-
+        
         private VariantPropertiesDamageLarge _large;
-
+        
         public VariantPropertiesDamage()
         {
             this._large = new VariantPropertiesDamageLarge();
             this._small = new VariantPropertiesDamageSmall();
         }
-
+        
         public VariantPropertiesDamageSmall Small
         {
             get
@@ -2380,7 +2380,7 @@ namespace Hybrasyl.Items
                 this._small = value;
             }
         }
-
+        
         public VariantPropertiesDamageLarge Large
         {
             get
@@ -2393,25 +2393,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesDamageSmall
     {
-
+        
         private ushort _min;
-
+        
         private ushort _max;
-
+        
         public VariantPropertiesDamageSmall()
         {
             this._min = ((ushort)(0));
             this._max = ((ushort)(0));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Min
@@ -2425,7 +2425,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Max
@@ -2440,25 +2440,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesDamageLarge
     {
-
+        
         private ushort _min;
-
+        
         private ushort _max;
-
+        
         public VariantPropertiesDamageLarge()
         {
             this._min = ((ushort)(0));
             this._max = ((ushort)(0));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Min
@@ -2472,7 +2472,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(ushort), "0")]
         public ushort Max
@@ -2487,27 +2487,27 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesPhysical
     {
-
+        
         private uint _value;
-
+        
         private int _weight;
-
+        
         private uint _durability;
-
+        
         private bool _perishable;
-
+        
         private bool _vendorable;
-
+        
         private bool _bound;
-
+        
         public VariantPropertiesPhysical()
         {
             this._value = ((uint)(0));
@@ -2517,7 +2517,7 @@ namespace Hybrasyl.Items
             this._vendorable = true;
             this._bound = false;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         public uint Value
@@ -2531,7 +2531,7 @@ namespace Hybrasyl.Items
                 this._value = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Weight
@@ -2545,7 +2545,7 @@ namespace Hybrasyl.Items
                 this._weight = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "1")]
         public uint Durability
@@ -2559,7 +2559,7 @@ namespace Hybrasyl.Items
                 this._durability = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Perishable
@@ -2573,7 +2573,7 @@ namespace Hybrasyl.Items
                 this._perishable = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(true)]
         public bool Vendorable
@@ -2587,7 +2587,7 @@ namespace Hybrasyl.Items
                 this._vendorable = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Bound
@@ -2602,30 +2602,30 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesRestrictions
     {
-
+        
         private VariantPropertiesRestrictionsLevel _level;
-
+        
         private VariantPropertiesRestrictionsAB _ab;
-
+        
         private Class _class;
-
+        
         private Gender _gender;
-
+        
         public VariantPropertiesRestrictions()
         {
             this._ab = new VariantPropertiesRestrictionsAB();
             this._level = new VariantPropertiesRestrictionsLevel();
             this._gender = Gender.Neutral;
         }
-
+        
         public VariantPropertiesRestrictionsLevel Level
         {
             get
@@ -2637,7 +2637,7 @@ namespace Hybrasyl.Items
                 this._level = value;
             }
         }
-
+        
         public VariantPropertiesRestrictionsAB Ab
         {
             get
@@ -2649,7 +2649,7 @@ namespace Hybrasyl.Items
                 this._ab = value;
             }
         }
-
+        
         public Class Class
         {
             get
@@ -2661,7 +2661,7 @@ namespace Hybrasyl.Items
                 this._class = value;
             }
         }
-
+        
         [System.ComponentModel.DefaultValueAttribute(Gender.Neutral)]
         public Gender Gender
         {
@@ -2675,25 +2675,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesRestrictionsLevel
     {
-
+        
         private byte _min;
-
+        
         private byte _max;
-
+        
         public VariantPropertiesRestrictionsLevel()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Min
@@ -2707,7 +2707,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
         public byte Max
@@ -2722,25 +2722,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesRestrictionsAB
     {
-
+        
         private byte _min;
-
+        
         private byte _max;
-
+        
         public VariantPropertiesRestrictionsAB()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Min
@@ -2754,7 +2754,7 @@ namespace Hybrasyl.Items
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
         public byte Max
@@ -2769,17 +2769,17 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesStackable
     {
-
+        
         private string _max;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Max
         {
@@ -2793,28 +2793,28 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesStatEffects
     {
-
+        
         private VariantPropertiesStatEffectsBase _base;
-
+        
         private VariantPropertiesStatEffectsCombat _combat;
-
+        
         private VariantPropertiesStatEffectsElement _element;
-
+        
         public VariantPropertiesStatEffects()
         {
             this._element = new VariantPropertiesStatEffectsElement();
             this._combat = new VariantPropertiesStatEffectsCombat();
             this._base = new VariantPropertiesStatEffectsBase();
         }
-
+        
         public VariantPropertiesStatEffectsBase Base
         {
             get
@@ -2826,7 +2826,7 @@ namespace Hybrasyl.Items
                 this._base = value;
             }
         }
-
+        
         public VariantPropertiesStatEffectsCombat Combat
         {
             get
@@ -2838,7 +2838,7 @@ namespace Hybrasyl.Items
                 this._combat = value;
             }
         }
-
+        
         public VariantPropertiesStatEffectsElement Element
         {
             get
@@ -2851,29 +2851,29 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesStatEffectsBase
     {
-
+        
         private sbyte _str;
-
+        
         private sbyte _int;
-
+        
         private sbyte _wis;
-
+        
         private sbyte _con;
-
+        
         private sbyte _dex;
-
+        
         private int _hp;
-
+        
         private int _mp;
-
+        
         public VariantPropertiesStatEffectsBase()
         {
             this._str = ((sbyte)(0));
@@ -2884,7 +2884,7 @@ namespace Hybrasyl.Items
             this._hp = 0;
             this._mp = 0;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Str
@@ -2898,7 +2898,7 @@ namespace Hybrasyl.Items
                 this._str = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Int
@@ -2912,7 +2912,7 @@ namespace Hybrasyl.Items
                 this._int = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Wis
@@ -2926,7 +2926,7 @@ namespace Hybrasyl.Items
                 this._wis = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Con
@@ -2940,7 +2940,7 @@ namespace Hybrasyl.Items
                 this._con = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Dex
@@ -2954,7 +2954,7 @@ namespace Hybrasyl.Items
                 this._dex = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Hp
@@ -2968,7 +2968,7 @@ namespace Hybrasyl.Items
                 this._hp = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Mp
@@ -2983,25 +2983,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesStatEffectsCombat
     {
-
+        
         private sbyte _hit;
-
+        
         private sbyte _dmg;
-
+        
         private sbyte _ac;
-
+        
         private sbyte _regen;
-
+        
         private sbyte _mr;
-
+        
         public VariantPropertiesStatEffectsCombat()
         {
             this._hit = ((sbyte)(0));
@@ -3010,7 +3010,7 @@ namespace Hybrasyl.Items
             this._regen = ((sbyte)(0));
             this._mr = ((sbyte)(0));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Hit
@@ -3024,7 +3024,7 @@ namespace Hybrasyl.Items
                 this._hit = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Dmg
@@ -3038,7 +3038,7 @@ namespace Hybrasyl.Items
                 this._dmg = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Ac
@@ -3052,7 +3052,7 @@ namespace Hybrasyl.Items
                 this._ac = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Regen
@@ -3066,7 +3066,7 @@ namespace Hybrasyl.Items
                 this._regen = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
         public sbyte Mr
@@ -3081,25 +3081,25 @@ namespace Hybrasyl.Items
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Items")]
     public partial class VariantPropertiesStatEffectsElement
     {
-
+        
         private Element _offense;
-
+        
         private Element _defense;
-
+        
         public VariantPropertiesStatEffectsElement()
         {
             this._offense = Element.None;
             this._defense = Element.None;
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(Element.None)]
         public Element Offense
@@ -3113,7 +3113,7 @@ namespace Hybrasyl.Items
                 this._offense = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(Element.None)]
         public Element Defense
