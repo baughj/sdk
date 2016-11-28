@@ -34,10 +34,10 @@
       <xs:sequence>
         <xs:element name="Name" type="hyb:String8" minOccurs="1" maxOccurs="1" />
         <xs:element name="Description" type="hyb:String8" minOccurs="0" maxOccurs="1" />
-        <xs:element name="Default" type="xs:boolean" minOccurs="0" maxOccurs="1" />
         <xs:element name="SpawnPoints" type="nations:SpawnPoints" minOccurs="0" maxOccurs="1" />
       </xs:sequence>
       <xs:attribute name="Flag" type="xs:unsignedByte" use="required" />
+      <xs:attribute name="Default" type="xs:boolean" default="false"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>
