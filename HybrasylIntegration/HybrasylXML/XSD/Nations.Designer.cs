@@ -30,15 +30,16 @@ namespace Hybrasyl.Nations
 
         private string _description;
 
-        private bool _default;
-
         private List<SpawnPoint> _spawnPoints;
 
         private byte _flag;
 
+        private bool _default;
+
         public Nation()
         {
             this._spawnPoints = new List<SpawnPoint>();
+            this._default = false;
         }
 
         public string Name
@@ -65,18 +66,6 @@ namespace Hybrasyl.Nations
             }
         }
 
-        public bool Default
-        {
-            get
-            {
-                return this._default;
-            }
-            set
-            {
-                this._default = value;
-            }
-        }
-
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
         public List<SpawnPoint> SpawnPoints
         {
@@ -100,6 +89,20 @@ namespace Hybrasyl.Nations
             set
             {
                 this._flag = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool Default
+        {
+            get
+            {
+                return this._default;
+            }
+            set
+            {
+                this._default = value;
             }
         }
     }
