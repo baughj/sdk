@@ -121,8 +121,6 @@ namespace Hybrasyl.Nations
 
         private byte _y;
 
-        private string _value;
-
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string MapName
         {
@@ -159,19 +157,6 @@ namespace Hybrasyl.Nations
             set
             {
                 this._y = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this._value;
-            }
-            set
-            {
-                this._value = value;
             }
         }
     }

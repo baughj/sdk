@@ -20,13 +20,9 @@
   </xs:complexType>
 
   <xs:complexType name="SpawnPoint">
-    <xs:simpleContent>
-      <xs:extension base="hyb:String8">
-        <xs:attribute name="MapName" type="xs:string" use="required" />
-        <xs:attribute name="X" type="xs:unsignedByte" use="required" />
-        <xs:attribute name="Y" type="xs:unsignedByte" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
+    <xs:attribute name="MapName" type="hyb:String8" use="required" />
+    <xs:attribute name="X" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Y" type="xs:unsignedByte" use="required" />
   </xs:complexType>
 
   <xs:element name="Nation">
