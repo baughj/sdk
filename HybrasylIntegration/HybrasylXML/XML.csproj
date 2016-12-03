@@ -55,6 +55,7 @@
     <Compile Include="XSD\hybrasylConfig.Designer.cs" />
     <Compile Include="XSD\hybrasylExtensions.cs" />
     <Compile Include="XSD\Items.Designer.cs" />
+    <Compile Include="XSD\Loot.Designer.cs" />
     <Compile Include="XSD\Maps.Designer.cs" />
     <Compile Include="XSD\Nations.Designer.cs" />
   </ItemGroup>
@@ -74,6 +75,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="XSD\Items.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Loot.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="XSD\Maps.xsd">

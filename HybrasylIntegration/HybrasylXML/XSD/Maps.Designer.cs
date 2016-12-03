@@ -579,24 +579,18 @@ namespace Hybrasyl.Maps
 
         private string _name;
 
-        private string _displayname;
-
-        private NpcAppearance _appearance;
-
-        private NpcJobList _jobs;
-
-        private NpcInventory _inventory;
-
         private byte _x;
 
         private byte _y;
 
+        private byte _direction;
+
         public Npc()
         {
-            this._inventory = new NpcInventory();
-            this._appearance = new NpcAppearance();
+            this._direction = ((byte)(0));
         }
 
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
             get
@@ -606,54 +600,6 @@ namespace Hybrasyl.Maps
             set
             {
                 this._name = value;
-            }
-        }
-
-        public string Displayname
-        {
-            get
-            {
-                return this._displayname;
-            }
-            set
-            {
-                this._displayname = value;
-            }
-        }
-
-        public NpcAppearance Appearance
-        {
-            get
-            {
-                return this._appearance;
-            }
-            set
-            {
-                this._appearance = value;
-            }
-        }
-
-        public NpcJobList Jobs
-        {
-            get
-            {
-                return this._jobs;
-            }
-            set
-            {
-                this._jobs = value;
-            }
-        }
-
-        public NpcInventory Inventory
-        {
-            get
-            {
-                return this._inventory;
-            }
-            set
-            {
-                this._inventory = value;
             }
         }
 
@@ -682,49 +628,9 @@ namespace Hybrasyl.Maps
                 this._y = value;
             }
         }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Maps")]
-    public partial class NpcAppearance
-    {
-
-        private ushort _sprite;
-
-        private string _portrait;
-
-        private byte _direction;
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort Sprite
-        {
-            get
-            {
-                return this._sprite;
-            }
-            set
-            {
-                this._sprite = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Portrait
-        {
-            get
-            {
-                return this._portrait;
-            }
-            set
-            {
-                this._portrait = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Direction
         {
             get
@@ -734,133 +640,6 @@ namespace Hybrasyl.Maps
             set
             {
                 this._direction = value;
-            }
-        }
-    }
-
-    [System.FlagsAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
-    public enum NpcJobList
-    {
-
-        /// <remarks/>
-        Vend = 1,
-
-        /// <remarks/>
-        Bank = 2,
-
-        /// <remarks/>
-        Train = 4,
-
-        /// <remarks/>
-        Repair = 8,
-
-        /// <remarks/>
-        Post = 16,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Maps")]
-    public partial class NpcInventory
-    {
-
-        private NpcInventoryItem _item;
-
-        private byte _gold;
-
-        public NpcInventory()
-        {
-            this._item = new NpcInventoryItem();
-        }
-
-        public NpcInventoryItem Item
-        {
-            get
-            {
-                return this._item;
-            }
-            set
-            {
-                this._item = value;
-            }
-        }
-
-        public byte Gold
-        {
-            get
-            {
-                return this._gold;
-            }
-            set
-            {
-                this._gold = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Maps")]
-    public partial class NpcInventoryItem
-    {
-
-        private uint _quantity;
-
-        private uint _refresh;
-
-        private string _value;
-
-        public NpcInventoryItem()
-        {
-            this._quantity = ((uint)(0));
-            this._refresh = ((uint)(0));
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
-        public uint Quantity
-        {
-            get
-            {
-                return this._quantity;
-            }
-            set
-            {
-                this._quantity = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
-        public uint Refresh
-        {
-            get
-            {
-                return this._refresh;
-            }
-            set
-            {
-                this._refresh = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this._value;
-            }
-            set
-            {
-                this._value = value;
             }
         }
     }

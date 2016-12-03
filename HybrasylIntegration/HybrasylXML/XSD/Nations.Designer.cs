@@ -160,5 +160,50 @@ namespace Hybrasyl.Nations
             }
         }
     }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Nations")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Nations", IsNullable = false)]
+    public partial class Territory
+    {
+
+        private List<object> _map;
+
+        private string _nation;
+
+        public Territory()
+        {
+            this._map = new List<object>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("Map")]
+        public List<object> Map
+        {
+            get
+            {
+                return this._map;
+            }
+            set
+            {
+                this._map = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Nation
+        {
+            get
+            {
+                return this._nation;
+            }
+            set
+            {
+                this._nation = value;
+            }
+        }
+    }
 }
 #pragma warning restore

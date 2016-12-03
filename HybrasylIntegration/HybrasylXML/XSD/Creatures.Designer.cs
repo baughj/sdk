@@ -310,13 +310,10 @@ namespace Hybrasyl.Creatures
 
         private int _max;
 
-        private bool _unique;
-
         public LootGold()
         {
             this._min = 1;
             this._max = 1;
-            this._unique = false;
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -344,20 +341,6 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._max = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool Unique
-        {
-            get
-            {
-                return this._unique;
-            }
-            set
-            {
-                this._unique = value;
             }
         }
     }
@@ -472,20 +455,14 @@ namespace Hybrasyl.Creatures
 
         private int _rolls;
 
-        private float _chance;
-
-        private string _name;
-
-        private bool _always;
+        private double _chance;
 
         public LootTable()
         {
             this._gold = new LootGold();
             this._item = new List<LootItem>();
             this._rolls = 1;
-            this._chance = ((float)(1F));
-            this._name = "false";
-            this._always = false;
+            this._chance = 1D;
         }
 
         [System.Xml.Serialization.XmlElementAttribute("Item")]
@@ -528,8 +505,8 @@ namespace Hybrasyl.Creatures
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(float), "1")]
-        public float Chance
+        [System.ComponentModel.DefaultValueAttribute(1D)]
+        public double Chance
         {
             get
             {
@@ -538,34 +515,6 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._chance = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("false")]
-        public string Name
-        {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                this._name = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool Always
-        {
-            get
-            {
-                return this._always;
-            }
-            set
-            {
-                this._always = value;
             }
         }
     }
@@ -578,90 +527,18 @@ namespace Hybrasyl.Creatures
     public partial class LootImport
     {
 
-        private int _rolls;
-
-        private float _chance;
-
-        private bool _override;
-
-        private bool _guaranteed;
-
-        private string _value;
-
-        public LootImport()
-        {
-            this._rolls = 1;
-            this._chance = ((float)(1F));
-            this._override = false;
-            this._guaranteed = false;
-        }
+        private string _name;
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(1)]
-        public int Rolls
+        public string Name
         {
             get
             {
-                return this._rolls;
+                return this._name;
             }
             set
             {
-                this._rolls = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(float), "1")]
-        public float Chance
-        {
-            get
-            {
-                return this._chance;
-            }
-            set
-            {
-                this._chance = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool Override
-        {
-            get
-            {
-                return this._override;
-            }
-            set
-            {
-                this._override = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool Guaranteed
-        {
-            get
-            {
-                return this._guaranteed;
-            }
-            set
-            {
-                this._guaranteed = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this._value;
-            }
-            set
-            {
-                this._value = value;
+                this._name = value;
             }
         }
     }
@@ -674,7 +551,7 @@ namespace Hybrasyl.Creatures
     public partial class LootList
     {
 
-        private List<LootImport> _import;
+        private List<LootImport> _set;
 
         private List<LootTable> _table;
 
@@ -685,21 +562,21 @@ namespace Hybrasyl.Creatures
         public LootList()
         {
             this._table = new List<LootTable>();
-            this._import = new List<LootImport>();
+            this._set = new List<LootImport>();
             this._xp = ((uint)(0));
             this._gold = ((uint)(0));
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("Import")]
-        public List<LootImport> Import
+        [System.Xml.Serialization.XmlElementAttribute("Set")]
+        public List<LootImport> Set
         {
             get
             {
-                return this._import;
+                return this._set;
             }
             set
             {
-                this._import = value;
+                this._set = value;
             }
         }
 
@@ -1548,6 +1425,631 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._sprite = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature", IsNullable = false)]
+    public partial class Npc
+    {
+
+        private string _name;
+
+        private string _displayname;
+
+        private NpcAppearance _appearance;
+
+        private NpcRoleList _roles;
+
+        private NpcInventory _inventory;
+
+        private byte _x;
+
+        private byte _y;
+
+        public Npc()
+        {
+            this._inventory = new NpcInventory();
+            this._roles = new NpcRoleList();
+            this._appearance = new NpcAppearance();
+        }
+
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        public string Displayname
+        {
+            get
+            {
+                return this._displayname;
+            }
+            set
+            {
+                this._displayname = value;
+            }
+        }
+
+        public NpcAppearance Appearance
+        {
+            get
+            {
+                return this._appearance;
+            }
+            set
+            {
+                this._appearance = value;
+            }
+        }
+
+        public NpcRoleList Roles
+        {
+            get
+            {
+                return this._roles;
+            }
+            set
+            {
+                this._roles = value;
+            }
+        }
+
+        public NpcInventory Inventory
+        {
+            get
+            {
+                return this._inventory;
+            }
+            set
+            {
+                this._inventory = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte X
+        {
+            get
+            {
+                return this._x;
+            }
+            set
+            {
+                this._x = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public byte Y
+        {
+            get
+            {
+                return this._y;
+            }
+            set
+            {
+                this._y = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcAppearance
+    {
+
+        private ushort _sprite;
+
+        private string _portrait;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ushort Sprite
+        {
+            get
+            {
+                return this._sprite;
+            }
+            set
+            {
+                this._sprite = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Portrait
+        {
+            get
+            {
+                return this._portrait;
+            }
+            set
+            {
+                this._portrait = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRoleList
+    {
+
+        private List<NpcRoleTrainCastable> _train;
+
+        private List<NpcRoleVendItem> _vend;
+
+        private NpcRolePost _post;
+
+        private NpcRoleRepair _repair;
+
+        private NpcRoleRepair _bank;
+
+        public NpcRoleList()
+        {
+            this._bank = new NpcRoleRepair();
+            this._repair = new NpcRoleRepair();
+            this._post = new NpcRolePost();
+            this._vend = new List<NpcRoleVendItem>();
+            this._train = new List<NpcRoleTrainCastable>();
+        }
+
+        [System.Xml.Serialization.XmlArrayItemAttribute("Castable", IsNullable = false)]
+        public List<NpcRoleTrainCastable> Train
+        {
+            get
+            {
+                return this._train;
+            }
+            set
+            {
+                this._train = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable = false)]
+        public List<NpcRoleVendItem> Vend
+        {
+            get
+            {
+                return this._vend;
+            }
+            set
+            {
+                this._vend = value;
+            }
+        }
+
+        public NpcRolePost Post
+        {
+            get
+            {
+                return this._post;
+            }
+            set
+            {
+                this._post = value;
+            }
+        }
+
+        public NpcRoleRepair Repair
+        {
+            get
+            {
+                return this._repair;
+            }
+            set
+            {
+                this._repair = value;
+            }
+        }
+
+        public NpcRoleRepair Bank
+        {
+            get
+            {
+                return this._bank;
+            }
+            set
+            {
+                this._bank = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRoleTrainCastable
+    {
+
+        private string _type;
+
+        private Class _class;
+
+        private string _name;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type
+        {
+            get
+            {
+                return this._type;
+            }
+            set
+            {
+                this._type = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public Class Class
+        {
+            get
+            {
+                return this._class;
+            }
+            set
+            {
+                this._class = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    public enum Class
+    {
+
+        /// <remarks/>
+        Peasant,
+
+        /// <remarks/>
+        Warrior,
+
+        /// <remarks/>
+        Rogue,
+
+        /// <remarks/>
+        Wizard,
+
+        /// <remarks/>
+        Priest,
+
+        /// <remarks/>
+        Monk,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRoleVendItem
+    {
+
+        private string _name;
+
+        private int _quantity;
+
+        private int _restock;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Quantity
+        {
+            get
+            {
+                return this._quantity;
+            }
+            set
+            {
+                this._quantity = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Restock
+        {
+            get
+            {
+                return this._restock;
+            }
+            set
+            {
+                this._restock = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRolePost
+    {
+
+        private List<NpcRolePostSurcharge> _surcharge;
+
+        private string _receive;
+
+        public NpcRolePost()
+        {
+            this._surcharge = new List<NpcRolePostSurcharge>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("Surcharge")]
+        public List<NpcRolePostSurcharge> Surcharge
+        {
+            get
+            {
+                return this._surcharge;
+            }
+            set
+            {
+                this._surcharge = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Receive
+        {
+            get
+            {
+                return this._receive;
+            }
+            set
+            {
+                this._receive = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRolePostSurcharge
+    {
+
+        private string _nation;
+
+        private int _percent;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Nation
+        {
+            get
+            {
+                return this._nation;
+            }
+            set
+            {
+                this._nation = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Percent
+        {
+            get
+            {
+                return this._percent;
+            }
+            set
+            {
+                this._percent = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRoleRepair
+    {
+
+        private string _nation;
+
+        private int _discount;
+
+        private List<string> _type;
+
+        public NpcRoleRepair()
+        {
+            this._type = new List<string>();
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Nation
+        {
+            get
+            {
+                return this._nation;
+            }
+            set
+            {
+                this._nation = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Discount
+        {
+            get
+            {
+                return this._discount;
+            }
+            set
+            {
+                this._discount = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public List<string> Type
+        {
+            get
+            {
+                return this._type;
+            }
+            set
+            {
+                this._type = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcInventory
+    {
+
+        private NpcInventoryItem _item;
+
+        private byte _gold;
+
+        public NpcInventory()
+        {
+            this._item = new NpcInventoryItem();
+        }
+
+        public NpcInventoryItem Item
+        {
+            get
+            {
+                return this._item;
+            }
+            set
+            {
+                this._item = value;
+            }
+        }
+
+        public byte Gold
+        {
+            get
+            {
+                return this._gold;
+            }
+            set
+            {
+                this._gold = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcInventoryItem
+    {
+
+        private uint _quantity;
+
+        private uint _refresh;
+
+        private string _value;
+
+        public NpcInventoryItem()
+        {
+            this._quantity = ((uint)(0));
+            this._refresh = ((uint)(0));
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
+        public uint Quantity
+        {
+            get
+            {
+                return this._quantity;
+            }
+            set
+            {
+                this._quantity = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
+        public uint Refresh
+        {
+            get
+            {
+                return this._refresh;
+            }
+            set
+            {
+                this._refresh = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this._value;
+            }
+            set
+            {
+                this._value = value;
             }
         }
     }

@@ -26,6 +26,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using Castable = Hybrasyl.Castables.Castable;
 using Map = Hybrasyl.Maps.Map;
+using Npc = Hybrasyl.Creatures.Npc;
 
 namespace Hybrasyl.XML
 {
@@ -56,6 +57,14 @@ namespace Hybrasyl.XML
         }
 
         public static void Serialize(XmlWriter xWrite, SpawnGroup contents)
+        {
+            XmlSerializer Writer = new XmlSerializer(contents.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "http://www.hybrasyl.com/XML/Creature");
+            Writer.Serialize(xWrite, contents, ns);
+        }
+
+        public static void Serialize(XmlWriter xWrite, Npc contents)
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
@@ -100,6 +109,22 @@ namespace Hybrasyl.XML
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
             ns.Add("", "http://www.hybrasyl.com/XML/Nations");
+            Writer.Serialize(xWrite, contents, ns);
+        }
+
+        public static void Serialize(XmlWriter xWrite, Territory contents)
+        {
+            XmlSerializer Writer = new XmlSerializer(contents.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "http://www.hybrasyl.com/XML/Nations");
+            Writer.Serialize(xWrite, contents, ns);
+        }
+
+        public static void Serialize(XmlWriter xWrite, LootSet contents)
+        {
+            XmlSerializer Writer = new XmlSerializer(contents.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "http://www.hybrasyl.com/XML/Loot");
             Writer.Serialize(xWrite, contents, ns);
         }
 
@@ -173,6 +198,19 @@ namespace Hybrasyl.XML
             return contents;
         }
 
+        public static Npc Deserialize(XmlReader reader, Npc contents = null)
+        {
+            //reader.Settings.IgnoreWhitespace = false;
+            if (contents == null) contents = new Npc();
+            XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
+            if (XmlSerial.CanDeserialize(reader))
+            {
+                var xContents = XmlSerial.Deserialize(reader);
+                contents = (Npc)xContents;
+            }
+            return contents;
+        }
+
         public static Item Deserialize(XmlReader reader, Item contents = null)
         {
             //reader.Settings.IgnoreWhitespace = false;
@@ -234,6 +272,32 @@ namespace Hybrasyl.XML
             {
                 var xContents = XmlSerial.Deserialize(reader);
                 contents = (Nation)xContents;
+            }
+            return contents;
+        }
+
+        public static Territory Deserialize(XmlReader reader, Territory contents = null)
+        {
+            //reader.Settings.IgnoreWhitespace = false;
+            if (contents == null) contents = new Territory();
+            XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
+            if (XmlSerial.CanDeserialize(reader))
+            {
+                var xContents = XmlSerial.Deserialize(reader);
+                contents = (Territory)xContents;
+            }
+            return contents;
+        }
+
+        public static LootSet Deserialize(XmlReader reader, LootSet contents = null)
+        {
+            //reader.Settings.IgnoreWhitespace = false;
+            if (contents == null) contents = new LootSet();
+            XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
+            if (XmlSerial.CanDeserialize(reader))
+            {
+                var xContents = XmlSerial.Deserialize(reader);
+                contents = (LootSet)xContents;
             }
             return contents;
         }
