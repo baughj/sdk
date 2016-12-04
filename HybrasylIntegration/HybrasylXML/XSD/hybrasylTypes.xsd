@@ -269,6 +269,14 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="NpcRepairType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Armor"/>
+      <xs:enumeration value="Weapon"/>
+      <xs:enumeration value="All"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- Map warp restrictions type (used by warps/worldwarps) -->
   <xs:complexType name="WarpRestrictions">
     <xs:sequence minOccurs="0" maxOccurs="1">

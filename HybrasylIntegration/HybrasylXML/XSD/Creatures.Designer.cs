@@ -1440,7 +1440,7 @@ namespace Hybrasyl.Creatures
 
         private string _name;
 
-        private string _displayname;
+        private string _displayName;
 
         private NpcAppearance _appearance;
 
@@ -1471,15 +1471,15 @@ namespace Hybrasyl.Creatures
             }
         }
 
-        public string Displayname
+        public string DisplayName
         {
             get
             {
-                return this._displayname;
+                return this._displayName;
             }
             set
             {
-                this._displayname = value;
+                this._displayName = value;
             }
         }
 
@@ -1601,11 +1601,11 @@ namespace Hybrasyl.Creatures
 
         private NpcRoleRepair _repair;
 
-        private NpcRoleRepair _bank;
+        private NpcRoleBank _bank;
 
         public NpcRoleList()
         {
-            this._bank = new NpcRoleRepair();
+            this._bank = new NpcRoleBank();
             this._repair = new NpcRoleRepair();
             this._post = new NpcRolePost();
             this._vend = new List<NpcRoleVendItem>();
@@ -1662,7 +1662,7 @@ namespace Hybrasyl.Creatures
             }
         }
 
-        public NpcRoleRepair Bank
+        public NpcRoleBank Bank
         {
             get
             {
@@ -1903,11 +1903,11 @@ namespace Hybrasyl.Creatures
 
         private int _discount;
 
-        private List<string> _type;
+        private List<NpcRepairType> _type;
 
         public NpcRoleRepair()
         {
-            this._type = new List<string>();
+            this._type = new List<NpcRepairType>();
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -1937,7 +1937,7 @@ namespace Hybrasyl.Creatures
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public List<string> Type
+        public List<NpcRepairType> Type
         {
             get
             {
@@ -1946,6 +1946,46 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._type = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    public enum NpcRepairType
+    {
+
+        /// <remarks/>
+        Armor,
+
+        /// <remarks/>
+        Weapon,
+
+        /// <remarks/>
+        All,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRoleBank
+    {
+
+        private string _discount;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Discount
+        {
+            get
+            {
+                return this._discount;
+            }
+            set
+            {
+                this._discount = value;
             }
         }
     }

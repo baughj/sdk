@@ -247,7 +247,7 @@
     <xs:attribute name="Discount" type="xs:int"/>
     <xs:attribute name="Type">
       <xs:simpleType>
-        <xs:list itemType="hyb:String8"/>
+        <xs:list itemType="hyb:NpcRepairType"/>
       </xs:simpleType>
     </xs:attribute>
   </xs:complexType>
@@ -263,14 +263,14 @@
       <xs:element name="Vend" type="creature:NpcRoleVend" maxOccurs="1" minOccurs="0" />
       <xs:element name="Post" type="creature:NpcRolePost" maxOccurs="1" minOccurs="0" />
       <xs:element name="Repair" type="creature:NpcRoleRepair" maxOccurs="1" minOccurs="0" />
-      <xs:element name="Bank" type="creature:NpcRoleRepair" maxOccurs="1" minOccurs="0" />
+      <xs:element name="Bank" type="creature:NpcRoleBank" maxOccurs="1" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="Npc">
     <xs:sequence>
       <xs:element name="Name" minOccurs="1" maxOccurs="1" type="hyb:String8" />
-      <xs:element name="Displayname" minOccurs="0" maxOccurs="1" type="hyb:String8" />
+      <xs:element name="DisplayName" minOccurs="0" maxOccurs="1" type="hyb:String8" />
       <xs:element name="Appearance" minOccurs="0" maxOccurs="1">
         <xs:complexType>
           <xs:attribute name="Sprite" type="xs:unsignedShort" use="required" />
