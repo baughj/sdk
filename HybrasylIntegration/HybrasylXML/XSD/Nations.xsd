@@ -25,6 +25,18 @@
     <xs:attribute name="Y" type="xs:unsignedByte" use="required" />
   </xs:complexType>
 
+
+  <xs:complexType name="Map">
+    <xs:attribute name="Name" type="hyb:String8"/>
+  </xs:complexType>
+  
+  <xs:complexType name="Territory">
+    <xs:sequence>
+      <xs:element name="Map" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Nation" type="hyb:String8"/>
+  </xs:complexType>
+
   <xs:element name="Nation">
     <xs:complexType>
       <xs:sequence>
@@ -36,4 +48,7 @@
       <xs:attribute name="Default" type="xs:boolean" default="false"/>
     </xs:complexType>
   </xs:element>
+  
+  <xs:element name="Territory" type="nations:Territory"/>
+  
 </xs:schema>

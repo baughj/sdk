@@ -116,37 +116,10 @@
   </xs:complexType>
 
   <xs:complexType name="Npc">
-    <xs:sequence>
-      <xs:element name="Name" minOccurs="1" maxOccurs="1" type="hyb:String8" />
-      <xs:element name="Displayname" minOccurs="0" maxOccurs="1" type="hyb:String8" />
-      <xs:element name="Appearance" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:attribute name="Sprite" type="xs:unsignedShort" use="required" />
-          <xs:attribute name="Portrait" type="hyb:String8" use="optional" />
-          <xs:attribute name="Direction" type="xs:unsignedByte" use="required" />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="Jobs" type="hyb:NpcJobList" minOccurs="0" maxOccurs="1" />
-      <xs:element name="Inventory" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:sequence minOccurs="0" maxOccurs="1">
-            <xs:element name="Item">
-                <xs:complexType>
-                  <xs:simpleContent>
-                    <xs:extension base="hyb:String8">
-                      <xs:attribute name="Quantity" type="xs:unsignedInt" use="optional" default="0" />
-                      <xs:attribute name="Refresh" type="xs:unsignedInt" use="optional" default="0" />
-                    </xs:extension>
-                  </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="Gold" type="xs:unsignedByte" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="X" type="xs:unsignedByte" use="required" />
-    <xs:attribute name="Y" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Name" type="hyb:String8"/>
+    <xs:attribute name="X" type="xs:unsignedByte"/>
+    <xs:attribute name="Y" type="xs:unsignedByte"/>
+    <xs:attribute name="Direction" type="xs:unsignedByte" default="0"/>
   </xs:complexType>
 
   <!-- Worldmap point -->
