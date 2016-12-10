@@ -48,6 +48,8 @@ namespace Hybrasyl.Maps
 
         private byte _y;
 
+        private bool _isEnabled;
+
         public Map()
         {
             this._signs = new Signs();
@@ -55,6 +57,7 @@ namespace Hybrasyl.Maps
             this._reactors = new List<Reactor>();
             this._warps = new List<Warp>();
             this._music = ((byte)(0));
+            this._isEnabled = true;
         }
 
         public string Name
@@ -194,6 +197,20 @@ namespace Hybrasyl.Maps
             set
             {
                 this._y = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool IsEnabled
+        {
+            get
+            {
+                return this._isEnabled;
+            }
+            set
+            {
+                this._isEnabled = value;
             }
         }
     }
