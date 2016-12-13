@@ -366,7 +366,7 @@
       <xs:element name="Animations" type="actions:Animations" minOccurs="0" maxOccurs="1" />
       <xs:element name="Sound" minOccurs="0" maxOccurs="1">
         <xs:complexType>
-          <xs:attribute name="Id" type="xs:byte" use="required" />
+          <xs:attribute name="Id" type="xs:unsignedByte" use="required" />
         </xs:complexType>
       </xs:element>
       <xs:element name="Script" minOccurs="0" maxOccurs="1" type="hyb:String8" />
@@ -417,18 +417,18 @@
   </xs:complexType>
 
   <xs:complexType name="StatEffect">
-    <xs:attribute name="Str" default="0" type="xs:byte" />
-    <xs:attribute name="Int" default="0" type="xs:byte" />
-    <xs:attribute name="Wis" default="0" type="xs:byte" />
-    <xs:attribute name="Con" default="0" type="xs:byte" />
-    <xs:attribute name="Dex" default="0" type="xs:byte" />
+    <xs:attribute name="Str" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Int" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Wis" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Con" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Dex" default="0" type="xs:unsignedByte" />
     <xs:attribute name="Hp" default="0" type="xs:int" />
     <xs:attribute name="Mp" default="0" type="xs:int" />
-    <xs:attribute name="Hit" default="0" type="xs:byte" />
-    <xs:attribute name="Dmg" default="0" type="xs:byte" />
-    <xs:attribute name="Ac" default="0" type="xs:byte" />
-    <xs:attribute name="Regen" default="0" type="xs:byte" />
-    <xs:attribute name="Mr" default="0" type="xs:byte" />
+    <xs:attribute name="Hit" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Dmg" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Ac" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Regen" default="0" type="xs:unsignedByte" />
+    <xs:attribute name="Mr" default="0" type="xs:unsignedByte" />
     <xs:attribute name="Duration" default="0" type="xs:unsignedInt" />
   </xs:complexType>
 
@@ -470,14 +470,14 @@
     </xs:all>
     <!-- Castable attributes -->
     <xs:attribute name="Type" use="required" />
-    <xs:attribute name="Icon" type="xs:byte" use="required" />
+    <xs:attribute name="Icon" type="xs:unsignedByte" use="required" />
     <xs:attribute name="Book" type="actions:Book" use="required" />
     <xs:attribute name="Element" use="optional">
       <xs:simpleType>
         <xs:list itemType="actions:Element" />
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="Lines" type="xs:byte" use="optional" default="0" />
+    <xs:attribute name="Lines" type="xs:unsignedByte" use="optional" default="0" />
     <xs:attribute name="Class" use="optional">
       <xs:simpleType>
         <xs:list itemType="hyb:Class" />

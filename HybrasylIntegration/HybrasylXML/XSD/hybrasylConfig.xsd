@@ -152,8 +152,8 @@
   <xs:complexType name="DeathMap">
     <xs:simpleContent>
       <xs:extension base="hyb:String8">
-        <xs:attribute name="x" type="xs:byte" use="required"/>
-        <xs:attribute name="y" type="xs:byte" use="required"/>
+        <xs:attribute name="X" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Y" type="xs:unsignedByte" use="required"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
