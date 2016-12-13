@@ -29,8 +29,11 @@
   </xs:complexType>
   
   <xs:complexType name="Appearance">
-          <xs:attribute name="BodyStyle" type="hyb:ItemBodyStyle" />
-          <xs:attribute name="Color" type="hyb:ItemColor" />
+          <xs:attribute name="Sprite" use="required" type="xs:unsignedShort" />
+          <xs:attribute name="EquipSprite" type="xs:unsignedShort" />
+          <xs:attribute name="DisplaySprite" type="xs:unsignedShort" />
+          <xs:attribute name="BodyStyle" default="Transparent" type="hyb:ItemBodyStyle" />
+          <xs:attribute name="Color" default="None" type="hyb:ItemColor" />
         </xs:complexType>
   
   <xs:complexType name="Damage">
@@ -58,21 +61,21 @@
           <xs:attribute name="Vendorable" type="xs:boolean" default="true" />
           <xs:attribute name="Bound" type="xs:boolean" default="false" />
         </xs:complexType>
+  
+  <xs:complexType name="RestrictionsLevel">
+          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
+        </xs:complexType>
 
+  <xs:complexType name="RestrictionsAb">
+          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
+          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
+        </xs:complexType>
+    
   <xs:complexType name="Restrictions">
     <xs:sequence>
-      <xs:element name="Level" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
-          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="Ab" minOccurs="0" maxOccurs="1">
-        <xs:complexType>
-          <xs:attribute name="Min" type="xs:unsignedByte" default="0" />
-          <xs:attribute name="Max" type="xs:unsignedByte" default="255" />
-        </xs:complexType>
-      </xs:element>
+      <xs:element name="Level" minOccurs="0" maxOccurs="1" type="items:RestrictionsLevel"/>
+      <xs:element name="Ab" minOccurs="0" maxOccurs="1" type="items:RestrictionsAb"/>
       <xs:element name="Class" minOccurs="0" maxOccurs="1" type="hyb:Class" />
       <xs:element name="Gender" type="hyb:Gender" minOccurs="0" maxOccurs="1" default="Neutral" />
     </xs:sequence>

@@ -282,11 +282,63 @@ namespace Hybrasyl.Items
     public partial class Appearance
     {
 
+        private ushort _sprite;
+
+        private ushort _equipSprite;
+
+        private ushort _displaySprite;
+
         private ItemBodyStyle _bodyStyle;
 
         private ItemColor _color;
 
+        public Appearance()
+        {
+            this._bodyStyle = ItemBodyStyle.Transparent;
+            this._color = ItemColor.None;
+        }
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ushort Sprite
+        {
+            get
+            {
+                return this._sprite;
+            }
+            set
+            {
+                this._sprite = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ushort EquipSprite
+        {
+            get
+            {
+                return this._equipSprite;
+            }
+            set
+            {
+                this._equipSprite = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ushort DisplaySprite
+        {
+            get
+            {
+                return this._displaySprite;
+            }
+            set
+            {
+                this._displaySprite = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(ItemBodyStyle.Transparent)]
         public ItemBodyStyle BodyStyle
         {
             get
@@ -300,6 +352,7 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(ItemColor.None)]
         public ItemColor Color
         {
             get
@@ -434,68 +487,44 @@ namespace Hybrasyl.Items
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
-    public partial class Restrictions
+    public partial class RestrictionsAb
     {
 
-        private RestrictionsLevel _level;
+        private byte _min;
 
-        private RestrictionsAB _ab;
+        private byte _max;
 
-        private Class _class;
-
-        private Gender _gender;
-
-        public Restrictions()
+        public RestrictionsAb()
         {
-            this._gender = Gender.Neutral;
+            this._min = ((byte)(0));
+            this._max = ((byte)(255));
         }
 
-        public RestrictionsLevel Level
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
+        public byte Min
         {
             get
             {
-                return this._level;
+                return this._min;
             }
             set
             {
-                this._level = value;
+                this._min = value;
             }
         }
 
-        public RestrictionsAB Ab
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
+        public byte Max
         {
             get
             {
-                return this._ab;
+                return this._max;
             }
             set
             {
-                this._ab = value;
-            }
-        }
-
-        public Class Class
-        {
-            get
-            {
-                return this._class;
-            }
-            set
-            {
-                this._class = value;
-            }
-        }
-
-        [System.ComponentModel.DefaultValueAttribute(Gender.Neutral)]
-        public Gender Gender
-        {
-            get
-            {
-                return this._gender;
-            }
-            set
-            {
-                this._gender = value;
+                this._max = value;
             }
         }
     }
@@ -504,7 +533,7 @@ namespace Hybrasyl.Items
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
     public partial class RestrictionsLevel
     {
 
@@ -551,45 +580,69 @@ namespace Hybrasyl.Items
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Items")]
-    public partial class RestrictionsAB
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Items")]
+    public partial class Restrictions
     {
 
-        private byte _min;
+        private RestrictionsLevel _level;
 
-        private byte _max;
+        private RestrictionsAb _ab;
 
-        public RestrictionsAB()
+        private Class _class;
+
+        private Gender _gender;
+
+        public Restrictions()
         {
-            this._min = ((byte)(0));
-            this._max = ((byte)(255));
+            this._gender = Gender.Neutral;
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Min
+        public RestrictionsLevel Level
         {
             get
             {
-                return this._min;
+                return this._level;
             }
             set
             {
-                this._min = value;
+                this._level = value;
             }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
-        public byte Max
+        public RestrictionsAb Ab
         {
             get
             {
-                return this._max;
+                return this._ab;
             }
             set
             {
-                this._max = value;
+                this._ab = value;
+            }
+        }
+
+        public Class Class
+        {
+            get
+            {
+                return this._class;
+            }
+            set
+            {
+                this._class = value;
+            }
+        }
+
+        [System.ComponentModel.DefaultValueAttribute(Gender.Neutral)]
+        public Gender Gender
+        {
+            get
+            {
+                return this._gender;
+            }
+            set
+            {
+                this._gender = value;
             }
         }
     }
