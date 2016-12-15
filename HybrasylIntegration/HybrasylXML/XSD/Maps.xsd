@@ -113,6 +113,7 @@
     <xs:attribute name="Music" type="xs:unsignedByte" default="0" />
     <xs:attribute name="X" type="xs:unsignedByte" use="required" />
     <xs:attribute name="Y" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="IsEnabled" type="xs:boolean" use="optional" default="true"/>
   </xs:complexType>
 
   <xs:complexType name="Npc">
