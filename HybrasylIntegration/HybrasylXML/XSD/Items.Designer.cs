@@ -1306,28 +1306,28 @@ namespace Hybrasyl.Items
     public partial class StatEffectsCombat
     {
 
-        private byte _hit;
+        private sbyte _hit;
 
-        private byte _dmg;
+        private sbyte _dmg;
 
-        private byte _ac;
+        private sbyte _ac;
 
-        private byte _regen;
+        private sbyte _regen;
 
-        private byte _mr;
+        private sbyte _mr;
 
         public StatEffectsCombat()
         {
-            this._hit = ((byte)(0));
-            this._dmg = ((byte)(0));
-            this._ac = ((byte)(0));
-            this._regen = ((byte)(0));
-            this._mr = ((byte)(0));
+            this._hit = ((sbyte)(0));
+            this._dmg = ((sbyte)(0));
+            this._ac = ((sbyte)(0));
+            this._regen = ((sbyte)(0));
+            this._mr = ((sbyte)(0));
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Hit
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Hit
         {
             get
             {
@@ -1340,8 +1340,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Dmg
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Dmg
         {
             get
             {
@@ -1354,8 +1354,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Ac
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Ac
         {
             get
             {
@@ -1368,8 +1368,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Regen
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Regen
         {
             get
             {
@@ -1382,8 +1382,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Mr
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Mr
         {
             get
             {
@@ -1404,15 +1404,15 @@ namespace Hybrasyl.Items
     public partial class StatEffectsBase
     {
 
-        private byte _str;
+        private sbyte _str;
 
-        private byte _int;
+        private sbyte _int;
 
-        private byte _wis;
+        private sbyte _wis;
 
-        private byte _con;
+        private sbyte _con;
 
-        private byte _dex;
+        private sbyte _dex;
 
         private int _hp;
 
@@ -1420,18 +1420,18 @@ namespace Hybrasyl.Items
 
         public StatEffectsBase()
         {
-            this._str = ((byte)(0));
-            this._int = ((byte)(0));
-            this._wis = ((byte)(0));
-            this._con = ((byte)(0));
-            this._dex = ((byte)(0));
+            this._str = ((sbyte)(0));
+            this._int = ((sbyte)(0));
+            this._wis = ((sbyte)(0));
+            this._con = ((sbyte)(0));
+            this._dex = ((sbyte)(0));
             this._hp = 0;
             this._mp = 0;
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Str
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Str
         {
             get
             {
@@ -1444,8 +1444,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Int
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Int
         {
             get
             {
@@ -1458,8 +1458,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Wis
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Wis
         {
             get
             {
@@ -1472,8 +1472,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Con
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Con
         {
             get
             {
@@ -1486,8 +1486,8 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
-        public byte Dex
+        [System.ComponentModel.DefaultValueAttribute(typeof(sbyte), "0")]
+        public sbyte Dex
         {
             get
             {
@@ -1881,11 +1881,11 @@ namespace Hybrasyl.Items
     public partial class CastModifiersLines
     {
 
-        private byte _offset;
+        private sbyte _offset;
 
-        private byte _number;
+        private sbyte _number;
 
-        private byte _modifier;
+        private sbyte _modifier;
 
         private bool _global;
 
@@ -1901,7 +1901,7 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte Offset
+        public sbyte Offset
         {
             get
             {
@@ -1914,7 +1914,7 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte Number
+        public sbyte Number
         {
             get
             {
@@ -1927,7 +1927,7 @@ namespace Hybrasyl.Items
         }
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte Modifier
+        public sbyte Modifier
         {
             get
             {

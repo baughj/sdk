@@ -16,9 +16,9 @@
     <xs:sequence>
       <xs:element name="Lines" minOccurs="1" maxOccurs="unbounded">
         <xs:complexType>
-          <xs:attribute name="Offset" type="xs:unsignedByte" use="optional" />
-          <xs:attribute name="Number" type="xs:unsignedByte" use="optional" />
-          <xs:attribute name="Modifier" type="xs:unsignedByte" use="optional" />
+          <xs:attribute name="Offset" type="xs:byte" use="optional" />
+          <xs:attribute name="Number" type="xs:byte" use="optional" />
+          <xs:attribute name="Modifier" type="xs:byte" use="optional" />
           <xs:attribute name="Global" type="xs:boolean" default="false" use="optional" />
           <xs:attribute name="SpellGroup" type="xs:token" use="optional" />
           <xs:attribute name="Min" type="xs:unsignedByte" use="optional" />
@@ -86,21 +86,21 @@
         </xs:complexType>
   
   <xs:complexType name="StatEffectsBase">
-                <xs:attribute name="Str" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Int" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Wis" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Con" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Dex" default="0" type="xs:unsignedByte" />
+                <xs:attribute name="Str" default="0" type="xs:byte" />
+                <xs:attribute name="Int" default="0" type="xs:byte" />
+                <xs:attribute name="Wis" default="0" type="xs:byte" />
+                <xs:attribute name="Con" default="0" type="xs:byte" />
+                <xs:attribute name="Dex" default="0" type="xs:byte" />
                 <xs:attribute name="Hp" default="0" type="xs:int" />
                 <xs:attribute name="Mp" default="0" type="xs:int" />
               </xs:complexType>
   
   <xs:complexType name="StatEffectsCombat">
-                <xs:attribute name="Hit" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Dmg" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Ac" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Regen" default="0" type="xs:unsignedByte" />
-                <xs:attribute name="Mr" default="0" type="xs:unsignedByte" />
+                <xs:attribute name="Hit" default="0" type="xs:byte" />
+                <xs:attribute name="Dmg" default="0" type="xs:byte" />
+                <xs:attribute name="Ac" default="0" type="xs:byte" />
+                <xs:attribute name="Regen" default="0" type="xs:byte" />
+                <xs:attribute name="Mr" default="0" type="xs:byte" />
               </xs:complexType>
   
   <xs:complexType name="StatEffectsElement">
