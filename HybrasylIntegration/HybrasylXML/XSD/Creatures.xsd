@@ -117,8 +117,8 @@
     </xs:sequence>
     <xs:attribute name="Element" type="hyb:Element" default="None" use="optional"/>
     <xs:attribute name="Type" type="hyb:DamageType" default="Physical" use="optional"/>
-    <xs:attribute name="Dmg" type="xs:byte" use="optional" default="0"/>
-    <xs:attribute name="Hit" type="xs:byte" use="optional" default="0"/>
+    <xs:attribute name="Dmg" type="xs:unsignedByte" use="optional" default="0"/>
+    <xs:attribute name="Hit" type="xs:unsignedByte" use="optional" default="0"/>
   </xs:complexType>
 
   <xs:complexType name="DamageAmount">
@@ -131,7 +131,7 @@
     <xs:attribute name="Mr" type="xs:int" default="0" use="optional"/>
     <xs:attribute name="Ac" type="xs:int" use="required"/>
     <xs:attribute name="Element" type="hyb:Element" default="None" use="optional"/>
-    <xs:attribute name="Regen" type="xs:byte" use="optional" default="0"/>
+    <xs:attribute name="Regen" type="xs:unsignedByte" use="optional" default="0"/>
   </xs:complexType>
 
   <!-- Stats of a creature (a subset of player attributes are supported here) -->
