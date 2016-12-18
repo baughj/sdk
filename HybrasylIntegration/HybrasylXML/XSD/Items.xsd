@@ -82,8 +82,8 @@
   </xs:complexType>
   
   <xs:complexType name="Stackable">
-          <xs:attribute name="Max" use="required" />
-        </xs:complexType>
+          <xs:attribute name="Max" use="required" type="xs:unsignedByte" />
+  </xs:complexType>
   
   <xs:complexType name="StatEffectsBase">
                 <xs:attribute name="Str" default="0" type="xs:byte" />
