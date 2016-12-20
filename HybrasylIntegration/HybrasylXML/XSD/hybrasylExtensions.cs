@@ -189,3 +189,21 @@ namespace Hybrasyl.Creatures
     }
 
 }
+
+namespace Hybrasyl.Nations
+{
+    public partial class Nation
+    {
+        public SpawnPoint RandomSpawnPoint
+        {
+            get
+            {
+                var rand = new Random();
+                if (SpawnPoints.Count > 0)
+                    return SpawnPoints[rand.Next(0, SpawnPoints.Count)];
+                else
+                    return default(SpawnPoint);
+            }
+        }
+    }
+}
