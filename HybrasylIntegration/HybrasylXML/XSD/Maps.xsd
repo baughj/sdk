@@ -17,7 +17,7 @@
     <xs:sequence>
       <xs:element name="Description" minOccurs="0" maxOccurs="1" type="hyb:String8" />
       <xs:sequence>
-        <xs:element name="MapTarget">
+        <xs:element name="MapTarget" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:simpleContent>
               <xs:extension base="hyb:String8">
@@ -27,7 +27,7 @@
             </xs:simpleContent>
           </xs:complexType>
         </xs:element>
-          <xs:element name="WorldMapTarget" type="hyb:String8"/>
+          <xs:element name="WorldMapTarget" minOccurs="0" maxOccurs="1" type="hyb:String8"/>
       </xs:sequence>
       <xs:element name="Restrictions" minOccurs="0" maxOccurs="1" type="hyb:WarpRestrictions" />
     </xs:sequence>

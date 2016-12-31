@@ -15,47 +15,47 @@ namespace Hybrasyl.Maps
     using System.ComponentModel;
     using System.Xml;
     using System.Collections.Generic;
-
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps", IsNullable = false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Maps", IsNullable=false)]
     public partial class Map
     {
-
+        
         private string _name;
-
+        
         private string _description;
-
+        
         private MapFlags _flags;
-
+        
         private List<Warp> _warps;
-
+        
         private List<Reactor> _reactors;
-
+        
         private List<Npc> _npcs;
-
+        
         private Signs _signs;
-
+        
         private ushort _id;
-
+        
         private byte _music;
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         private bool _isEnabled;
-
+        
         public Map()
         {
             this._music = ((byte)(0));
             this._isEnabled = true;
         }
-
+        
         public string Name
         {
             get
@@ -67,7 +67,7 @@ namespace Hybrasyl.Maps
                 this._name = value;
             }
         }
-
+        
         public string Description
         {
             get
@@ -79,7 +79,7 @@ namespace Hybrasyl.Maps
                 this._description = value;
             }
         }
-
+        
         public MapFlags Flags
         {
             get
@@ -91,8 +91,8 @@ namespace Hybrasyl.Maps
                 this._flags = value;
             }
         }
-
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public List<Warp> Warps
         {
             get
@@ -104,8 +104,8 @@ namespace Hybrasyl.Maps
                 this._warps = value;
             }
         }
-
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public List<Reactor> Reactors
         {
             get
@@ -117,8 +117,8 @@ namespace Hybrasyl.Maps
                 this._reactors = value;
             }
         }
-
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
+        
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public List<Npc> Npcs
         {
             get
@@ -130,7 +130,7 @@ namespace Hybrasyl.Maps
                 this._npcs = value;
             }
         }
-
+        
         public Signs Signs
         {
             get
@@ -142,7 +142,7 @@ namespace Hybrasyl.Maps
                 this._signs = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort Id
         {
@@ -155,7 +155,7 @@ namespace Hybrasyl.Maps
                 this._id = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Music
@@ -169,7 +169,7 @@ namespace Hybrasyl.Maps
                 this._music = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -182,7 +182,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -195,7 +195,7 @@ namespace Hybrasyl.Maps
                 this._y = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(true)]
         public bool IsEnabled
@@ -210,55 +210,50 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
+    
     [System.FlagsAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum MapFlags
     {
-
+        
         /// <remarks/>
         Snow = 1,
-
+        
         /// <remarks/>
         Rain = 2,
-
+        
         /// <remarks/>
         Dark = 4,
-
+        
         /// <remarks/>
         NoMap = 8,
-
+        
         /// <remarks/>
         Winter = 16,
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class Warp
     {
-
+        
         private string _description;
-
+        
         private WarpMapTarget _mapTarget;
-
+        
         private string _worldMapTarget;
-
+        
         private WarpRestrictions _restrictions;
-
+        
         private byte _x;
-
+        
         private byte _y;
-
-        public Warp()
-        {
-            this._mapTarget = new WarpMapTarget();
-        }
-
+        
         public string Description
         {
             get
@@ -270,7 +265,7 @@ namespace Hybrasyl.Maps
                 this._description = value;
             }
         }
-
+        
         public WarpMapTarget MapTarget
         {
             get
@@ -282,7 +277,7 @@ namespace Hybrasyl.Maps
                 this._mapTarget = value;
             }
         }
-
+        
         public string WorldMapTarget
         {
             get
@@ -294,7 +289,7 @@ namespace Hybrasyl.Maps
                 this._worldMapTarget = value;
             }
         }
-
+        
         public WarpRestrictions Restrictions
         {
             get
@@ -306,7 +301,7 @@ namespace Hybrasyl.Maps
                 this._restrictions = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -319,7 +314,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -333,21 +328,21 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class WarpMapTarget
     {
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         private string _value;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -360,7 +355,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -373,7 +368,7 @@ namespace Hybrasyl.Maps
                 this._y = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -387,25 +382,25 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class MessageBoard
     {
-
+        
         private string _name;
-
+        
         private string _description;
-
+        
         private string _script;
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         public string Name
         {
             get
@@ -417,7 +412,7 @@ namespace Hybrasyl.Maps
                 this._name = value;
             }
         }
-
+        
         public string Description
         {
             get
@@ -429,7 +424,7 @@ namespace Hybrasyl.Maps
                 this._description = value;
             }
         }
-
+        
         public string Script
         {
             get
@@ -441,7 +436,7 @@ namespace Hybrasyl.Maps
                 this._script = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -454,7 +449,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -468,23 +463,23 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class Signpost
     {
-
+        
         private string _message;
-
+        
         private string _script;
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         public string Message
         {
             get
@@ -496,7 +491,7 @@ namespace Hybrasyl.Maps
                 this._message = value;
             }
         }
-
+        
         public string Script
         {
             get
@@ -508,7 +503,7 @@ namespace Hybrasyl.Maps
                 this._script = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -521,7 +516,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -535,25 +530,25 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class Signs
     {
-
+        
         private List<Signpost> _signposts;
-
+        
         private List<MessageBoard> _messageBoards;
-
+        
         public Signs()
         {
             this._messageBoards = new List<MessageBoard>();
             this._signposts = new List<Signpost>();
         }
-
+        
         [System.Xml.Serialization.XmlElementAttribute("Signposts")]
         public List<Signpost> Signposts
         {
@@ -566,7 +561,7 @@ namespace Hybrasyl.Maps
                 this._signposts = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlElementAttribute("MessageBoards")]
         public List<MessageBoard> MessageBoards
         {
@@ -580,28 +575,28 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class Npc
     {
-
+        
         private string _name;
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         private byte _direction;
-
+        
         public Npc()
         {
             this._direction = ((byte)(0));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -614,7 +609,7 @@ namespace Hybrasyl.Maps
                 this._name = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -627,7 +622,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -640,7 +635,7 @@ namespace Hybrasyl.Maps
                 this._y = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Direction
@@ -655,30 +650,30 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class Reactor
     {
-
+        
         private string _description;
-
+        
         private string _script;
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         private bool _blocking;
-
+        
         public Reactor()
         {
             this._blocking = false;
         }
-
+        
         public string Description
         {
             get
@@ -690,7 +685,7 @@ namespace Hybrasyl.Maps
                 this._description = value;
             }
         }
-
+        
         public string Script
         {
             get
@@ -702,7 +697,7 @@ namespace Hybrasyl.Maps
                 this._script = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -715,7 +710,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -728,7 +723,7 @@ namespace Hybrasyl.Maps
                 this._y = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Blocking
@@ -743,22 +738,22 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public partial class WarpRestrictions
     {
-
+        
         private WarpRestrictionsLevel _level;
-
+        
         private WarpRestrictionsAB _ab;
-
+        
         private bool _noMobUse;
-
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public WarpRestrictionsLevel Level
         {
             get
@@ -770,8 +765,8 @@ namespace Hybrasyl.Maps
                 this._level = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public WarpRestrictionsAB Ab
         {
             get
@@ -783,8 +778,8 @@ namespace Hybrasyl.Maps
                 this._ab = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public bool NoMobUse
         {
             get
@@ -797,25 +792,25 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public partial class WarpRestrictionsLevel
     {
-
+        
         private byte _min;
-
+        
         private byte _max;
-
+        
         public WarpRestrictionsLevel()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Min
@@ -829,7 +824,7 @@ namespace Hybrasyl.Maps
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
         public byte Max
@@ -844,25 +839,25 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
     public partial class WarpRestrictionsAB
     {
-
+        
         private byte _min;
-
+        
         private byte _max;
-
+        
         public WarpRestrictionsAB()
         {
             this._min = ((byte)(0));
             this._max = ((byte)(255));
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Min
@@ -876,7 +871,7 @@ namespace Hybrasyl.Maps
                 this._min = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "255")]
         public byte Max
@@ -891,24 +886,24 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps", IsNullable = false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Maps", IsNullable=false)]
     public partial class WorldMap
     {
-
+        
         private string _name;
-
+        
         private string _description;
-
+        
         private WorldMapPoints _points;
-
+        
         private string _clientMap;
-
+        
         public string Name
         {
             get
@@ -920,7 +915,7 @@ namespace Hybrasyl.Maps
                 this._name = value;
             }
         }
-
+        
         public string Description
         {
             get
@@ -932,7 +927,7 @@ namespace Hybrasyl.Maps
                 this._description = value;
             }
         }
-
+        
         public WorldMapPoints Points
         {
             get
@@ -944,7 +939,7 @@ namespace Hybrasyl.Maps
                 this._points = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string ClientMap
         {
@@ -958,24 +953,24 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class WorldMapPoints
     {
-
+        
         private List<WorldMapPoint> _point;
-
+        
         private WarpRestrictions _restrictions;
-
+        
         public WorldMapPoints()
         {
             this._point = new List<WorldMapPoint>();
         }
-
+        
         [System.Xml.Serialization.XmlElementAttribute("Point")]
         public List<WorldMapPoint> Point
         {
@@ -988,7 +983,7 @@ namespace Hybrasyl.Maps
                 this._point = value;
             }
         }
-
+        
         public WarpRestrictions Restrictions
         {
             get
@@ -1001,32 +996,32 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class WorldMapPoint
     {
-
+        
         private string _description;
-
+        
         private string _name;
-
+        
         private WorldMapPointTarget _target;
-
+        
         private WarpRestrictions _restrictions;
-
+        
         private ushort _x;
-
+        
         private ushort _y;
-
+        
         public WorldMapPoint()
         {
             this._target = new WorldMapPointTarget();
         }
-
+        
         public string Description
         {
             get
@@ -1038,7 +1033,7 @@ namespace Hybrasyl.Maps
                 this._description = value;
             }
         }
-
+        
         public string Name
         {
             get
@@ -1050,7 +1045,7 @@ namespace Hybrasyl.Maps
                 this._name = value;
             }
         }
-
+        
         public WorldMapPointTarget Target
         {
             get
@@ -1062,7 +1057,7 @@ namespace Hybrasyl.Maps
                 this._target = value;
             }
         }
-
+        
         public WarpRestrictions Restrictions
         {
             get
@@ -1074,7 +1069,7 @@ namespace Hybrasyl.Maps
                 this._restrictions = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort X
         {
@@ -1087,7 +1082,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort Y
         {
@@ -1101,21 +1096,21 @@ namespace Hybrasyl.Maps
             }
         }
     }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1590.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Maps")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Maps")]
     public partial class WorldMapPointTarget
     {
-
+        
         private byte _x;
-
+        
         private byte _y;
-
+        
         private string _value;
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -1128,7 +1123,7 @@ namespace Hybrasyl.Maps
                 this._x = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -1141,7 +1136,7 @@ namespace Hybrasyl.Maps
                 this._y = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
