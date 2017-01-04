@@ -136,6 +136,14 @@ namespace Hybrasyl.XML
             Writer.Serialize(xWrite, contents, ns);
         }
 
+        public static void Serialize(XmlWriter xWrite, Strings contents)
+        {
+            XmlSerializer Writer = new XmlSerializer(contents.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "http://www.hybrasyl.com/XML/HybrasylStrings");
+            Writer.Serialize(xWrite, contents, ns);
+        }
+
         public static string SerializeToString(object contents)
         {
             XmlSerializer Writer = new XmlSerializer(contents.GetType());
@@ -311,6 +319,19 @@ namespace Hybrasyl.XML
             {
                 var xContents = XmlSerial.Deserialize(reader);
                 contents = (HybrasylConfig)xContents;
+            }
+            return contents;
+        }
+
+        public static Strings Deserialize(XmlReader reader, Strings contents = null)
+        {
+            //reader.Settings.IgnoreWhitespace = false;
+            if (contents == null) contents = new Strings();
+            XmlSerializer XmlSerial = new XmlSerializer(contents.GetType());
+            if (XmlSerial.CanDeserialize(reader))
+            {
+                var xContents = XmlSerial.Deserialize(reader);
+                contents = (Strings)xContents;
             }
             return contents;
         }
