@@ -54,6 +54,7 @@
     <Compile Include="XSD\Creatures.Designer.cs" />
     <Compile Include="XSD\hybrasylConfig.Designer.cs" />
     <Compile Include="XSD\hybrasylExtensions.cs" />
+    <Compile Include="XSD\hybrasylStrings.Designer.cs" />
     <Compile Include="XSD\Items.Designer.cs" />
     <Compile Include="XSD\Loot.Designer.cs" />
     <Compile Include="XSD\Maps.Designer.cs" />
@@ -69,6 +70,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="XSD\hybrasylConfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\hybrasylStrings.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="XSD\hybrasylTypes.xsd">
