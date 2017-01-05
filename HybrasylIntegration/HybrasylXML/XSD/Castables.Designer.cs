@@ -306,6 +306,8 @@ namespace Hybrasyl.Castables
 
         private List<Class> _class;
 
+        private string _value;
+
         public Description()
         {
             this._class = new List<Class>();
@@ -321,6 +323,19 @@ namespace Hybrasyl.Castables
             set
             {
                 this._class = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this._value;
+            }
+            set
+            {
+                this._value = value;
             }
         }
     }
