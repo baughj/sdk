@@ -442,11 +442,15 @@
   </xs:complexType>
 
   <xs:complexType name="Description">
-    <xs:attribute name="Class" use="optional">
-      <xs:simpleType>
-        <xs:list itemType="hyb:Class" />
-      </xs:simpleType>
-    </xs:attribute>
+    <xs:simpleContent>
+      <xs:extension base="hyb:String8">
+        <xs:attribute name="Class" use="optional">
+          <xs:simpleType>
+            <xs:list itemType="hyb:Class" />
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="DescriptionList">
