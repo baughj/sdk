@@ -36,7 +36,17 @@ namespace Hybrasyl.Items
 
         #region Accessors to provide defaults 
         [XmlIgnore]
-        public bool Stackable => Properties.Stackable != null;
+        public bool Stackable
+        {
+            get
+            {
+                if (Properties.Stackable != null)
+                {
+                    return Properties.Stackable.Max != 1;
+                }
+                return false;
+            }
+        } 
 
         [XmlIgnore]
         public int MaximumStack => Properties.Stackable?.Max ?? 0;
