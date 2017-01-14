@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Hybrasyl.XML</id>
-    <version>0.5.6.3</version>
+    <version>$version$</version>
     <title>Hybrasyl XML Library</title>
     <authors>Hybrasyl Project</authors>
     <owners>Hybrasyl Project</owners>
