@@ -378,13 +378,6 @@
     <xs:attribute name="Duration" type="xs:unsignedInt" />
   </xs:complexType>
 
-  <xs:complexType name="Statuses">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="Add" type="actions:AddStatus" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="Remove" type="hyb:String8" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:complexType name="Categories">
     <xs:sequence minOccurs="0" maxOccurs="1">
       <xs:element name="Category" type="actions:Category"/>
@@ -399,16 +392,42 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="AddStatus">
-     <xs:simpleContent>
-       <xs:extension base="hyb:StatusEffectList">
-         <xs:attribute name="Modifier" type="xs:float" use="optional" />
-         <xs:attribute name="DamageType" type="hyb:DamageType" use="optional" />
-         <xs:attribute name="Target" type="xs:token" use="optional" />
-       </xs:extension>
-     </xs:simpleContent>
+  <xs:complexType name="StatusAnimations">
+    <xs:sequence>
+      <xs:element name="OnTick" type="actions:StatusAnimation" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OnStart" type="actions:StatusAnimation" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OnEnd" type="actions:StatusAnimation" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="StatusAnimation">
+    <xs:attribute name="TargetEffect" type="xs:unsignedShort" use="optional"/>
+    <xs:attribute name="CasterEffect" type="xs:unsignedShort" use="optional"/>
+    <xs:attribute name="Message" type="hyb:String8" use="optional"/>
+  </xs:complexType>
+    
+  <xs:complexType name="AddStatus">
+    <xs:sequence>
+      <xs:element name="StatEffect" type="actions:StatEffect" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Animations" type="actions:StatusAnimations" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="Icon" type="xs:unsignedShort" use="required"/>
+    <xs:attribute name="Duration" type="xs:int" use="required"/>
+    <xs:attribute name="Tick" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="RemoveStatus">
+    <xs:attribute name="Icon" type="xs:unsignedShort" />
+    <xs:attribute name="Name" type="hyb:String8"/>
+  </xs:complexType>
+  
+  <xs:complexType name="Statuses">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Add" type="actions:AddStatus" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Remove" type="actions:RemoveStatus" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
   <!-- Stat effects (buffs or debuffs) container element -->
   <xs:complexType name="StatEffects">
     <xs:sequence minOccurs="1" maxOccurs="unbounded">
@@ -429,7 +448,8 @@
     <xs:attribute name="Ac" default="0" type="xs:byte" />
     <xs:attribute name="Regen" default="0" type="xs:byte" />
     <xs:attribute name="Mr" default="0" type="xs:byte" />
-    <xs:attribute name="Duration" default="0" type="xs:unsignedInt" />
+    <xs:attribute name="OffensiveElement" type="actions:Element"/>
+    <xs:attribute name="DefensiveElement" type="actions:Element"/>
   </xs:complexType>
 
   <!-- Restrictions on casting, such as types of equipment, or
