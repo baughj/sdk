@@ -50,7 +50,7 @@ namespace Hybrasyl.Castables
         
         private Book _book;
         
-        private List<Element1> _element;
+        private List<Element> _element;
         
         private byte _lines;
         
@@ -63,7 +63,7 @@ namespace Hybrasyl.Castables
         public Castable()
         {
             this._class = new List<Class>();
-            this._element = new List<Element1>();
+            this._element = new List<Element>();
             this._effects = new Effects();
             this._restrictions = new Restrictions();
             this._requirements = new List<Requirement>();
@@ -228,7 +228,7 @@ namespace Hybrasyl.Castables
         }
         
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public List<Element1> Element
+        public List<Element> Element
         {
             get
             {
@@ -375,6 +375,8 @@ namespace Hybrasyl.Castables
         
         private ushort _icon;
         
+        private string _name;
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort Icon
         {
@@ -385,6 +387,19 @@ namespace Hybrasyl.Castables
             set
             {
                 this._icon = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
             }
         }
     }
@@ -826,7 +841,7 @@ namespace Hybrasyl.Castables
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Actions")]
     public enum Element
     {
         
@@ -2745,46 +2760,6 @@ namespace Hybrasyl.Castables
         
         /// <remarks/>
         UtilitySpell,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="Element", Namespace="http://www.hybrasyl.com/XML/Actions")]
-    public enum Element1
-    {
-        
-        /// <remarks/>
-        None,
-        
-        /// <remarks/>
-        Fire,
-        
-        /// <remarks/>
-        Water,
-        
-        /// <remarks/>
-        Wind,
-        
-        /// <remarks/>
-        Earth,
-        
-        /// <remarks/>
-        Light,
-        
-        /// <remarks/>
-        Dark,
-        
-        /// <remarks/>
-        Wood,
-        
-        /// <remarks/>
-        Metal,
-        
-        /// <remarks/>
-        Undead,
-        
-        /// <remarks/>
-        Random,
     }
 }
 #pragma warning restore

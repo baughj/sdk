@@ -416,21 +416,9 @@
     <xs:attribute name="Tick" type="xs:int" use="required"/>
   </xs:complexType>
 
-  <!--
-  <Statuses>
-<Add Icon="3" Duration="600" Tick="3">
-  <Animations>
-    <OnTick Effect="6" Message="You are fucked"/>
-    <OnStart .../>
-    <OnEnd .../>
-  </Animations>
-  <StatEffect></StatEffect>
-</Add>
-</Statuses>
--->
-
   <xs:complexType name="RemoveStatus">
     <xs:attribute name="Icon" type="xs:unsignedShort" />
+    <xs:attribute name="Name" type="hyb:String8"/>
   </xs:complexType>
   
   <xs:complexType name="Statuses">
@@ -460,8 +448,8 @@
     <xs:attribute name="Ac" default="0" type="xs:byte" />
     <xs:attribute name="Regen" default="0" type="xs:byte" />
     <xs:attribute name="Mr" default="0" type="xs:byte" />
-    <xs:attribute name="OffensiveElement" type="hyb:Element"/>
-    <xs:attribute name="DefensiveElement" type="hyb:Element"/>
+    <xs:attribute name="OffensiveElement" type="actions:Element"/>
+    <xs:attribute name="DefensiveElement" type="actions:Element"/>
   </xs:complexType>
 
   <!-- Restrictions on casting, such as types of equipment, or
