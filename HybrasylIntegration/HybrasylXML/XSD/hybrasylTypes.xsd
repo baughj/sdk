@@ -94,7 +94,7 @@
 
   <!-- Status effects -->
 
-  <xs:simpleType name="ConditionList">
+  <xs:simpleType name="PlayerCondition">
     <xs:restriction>
       <xs:simpleType>
         <xs:list>
