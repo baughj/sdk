@@ -208,7 +208,11 @@
 
   <xs:complexType name="NpcRoleTrainCastable">
     <xs:attribute name="Type" type="hyb:String8"/>
-    <xs:attribute name="Class" type="hyb:Class"/>
+    <xs:attribute name="Class">
+      <xs:simpleType>
+        <xs:list itemType="hyb:Class" />
+      </xs:simpleType>
+    </xs:attribute>
     <xs:attribute name="Name" type="hyb:String8"/>
   </xs:complexType>
   

@@ -94,7 +94,7 @@
 
   <!-- Status effects -->
 
-  <xs:simpleType name="StatusEffectList">
+  <xs:simpleType name="ConditionList">
     <xs:restriction>
       <xs:simpleType>
         <xs:list>
@@ -104,7 +104,7 @@
               <xs:enumeration value="Sleep" />
               <xs:enumeration value="Paralyze" />
               <xs:enumeration value="Blind" />
-              <xs:enumeration value="Skull" />
+              <xs:enumeration value="Coma" />
               <xs:enumeration value="Poison" />
               <xs:enumeration value="Mist" />
               <xs:enumeration value="Regen" />

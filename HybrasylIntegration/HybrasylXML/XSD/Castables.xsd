@@ -324,15 +324,15 @@
   <xs:complexType name="Animations">
     <xs:sequence minOccurs="0" maxOccurs="1">
       <xs:element name="OnCast" type="actions:AnimationGroup" minOccurs="0" maxOccurs="1" />
-      <xs:element name="Duration" type="actions:AnimationDurationGroup" minOccurs="0" maxOccurs="1" />
-      <xs:element name="End" type="actions:AnimationGroup" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OnTick" type="actions:AnimationDurationGroup" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OnEnd" type="actions:AnimationDurationGroup" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
 
   <!-- Animation group -->
   <xs:complexType name="AnimationGroup">
     <xs:sequence minOccurs="0" maxOccurs="1">
-      <xs:element name="Motions" type="actions:MotionsList" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Player" type="actions:MotionsList" minOccurs="0" maxOccurs="1" />
       <xs:element name="SpellEffect" type="actions:Animation" minOccurs="0" maxOccurs="1" />
       <xs:element name="Target" type="actions:Animation" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
@@ -369,15 +369,14 @@
           <xs:attribute name="Id" type="xs:unsignedByte" use="required" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="Script" minOccurs="0" maxOccurs="1" type="hyb:String8" />
       <xs:element name="Heal" minOccurs="0" maxOccurs="1" type="actions:Heal" />
       <xs:element name="Damage" minOccurs="0" maxOccurs="1" type="actions:Damage" />
       <xs:element name="StatEffects" minOccurs="0" maxOccurs="1" type="actions:StatEffects" />
       <xs:element name="Statuses" minOccurs="0" maxOccurs="0" type="actions:Statuses" />
     </xs:sequence>
-    <xs:attribute name="Duration" type="xs:unsignedInt" />
+    <xs:attribute name="ScriptOverride" type="xs:boolean" default="false"/>
   </xs:complexType>
-
+    
   <xs:complexType name="Categories">
     <xs:sequence minOccurs="0" maxOccurs="1">
       <xs:element name="Category" type="actions:Category"/>
@@ -392,30 +391,30 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="StatusAnimations">
+  <xs:complexType name="Conditions">
     <xs:sequence>
-      <xs:element name="OnTick" type="actions:StatusAnimation" minOccurs="0" maxOccurs="1" />
-      <xs:element name="OnStart" type="actions:StatusAnimation" minOccurs="0" maxOccurs="1" />
-      <xs:element name="OnEnd" type="actions:StatusAnimation" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Add" type="hyb:ConditionList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Remove" type="hyb:ConditionList" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
-
-  <xs:complexType name="StatusAnimation">
-    <xs:attribute name="TargetEffect" type="xs:unsignedShort" use="optional"/>
-    <xs:attribute name="CasterEffect" type="xs:unsignedShort" use="optional"/>
-    <xs:attribute name="Message" type="hyb:String8" use="optional"/>
-  </xs:complexType>
-    
+  
   <xs:complexType name="AddStatus">
     <xs:sequence>
-      <xs:element name="StatEffect" type="actions:StatEffect" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="Animations" type="actions:StatusAnimations" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StatEffects" type="actions:StatusStatEffects" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Conditions" type="actions:Conditions" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="Icon" type="xs:unsignedShort" use="required"/>
     <xs:attribute name="Duration" type="xs:int" use="required"/>
     <xs:attribute name="Tick" type="xs:int" use="required"/>
   </xs:complexType>
 
+  <xs:complexType name="StatusStatEffects">
+    <xs:sequence>
+      <xs:element name="OnCast" type="actions:StatEffects" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OnTick" type="actions:StatEffects" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  
   <xs:complexType name="RemoveStatus">
     <xs:attribute name="Icon" type="xs:unsignedShort" />
     <xs:attribute name="Name" type="hyb:String8"/>
@@ -450,6 +449,9 @@
     <xs:attribute name="Mr" default="0" type="xs:byte" />
     <xs:attribute name="OffensiveElement" type="actions:Element"/>
     <xs:attribute name="DefensiveElement" type="actions:Element"/>
+    <xs:attribute name="DamageModifier" type="xs:float"/>
+    <xs:attribute name="HealModifier" type="xs:float"/>
+    <xs:attribute name="DamageType" type="hyb:DamageType"/>
   </xs:complexType>
 
   <!-- Restrictions on casting, such as types of equipment, or
@@ -491,6 +493,7 @@
       <xs:element name="Requirements" type="actions:Requirements" minOccurs="0" maxOccurs="1" />
       <xs:element name="Restrictions" type="actions:Restrictions" minOccurs="0" maxOccurs="1" />
       <xs:element name="Effects" type="actions:Effects" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Script" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:all>
     <!-- Castable attributes -->
     <xs:attribute name="Type" use="required" />
