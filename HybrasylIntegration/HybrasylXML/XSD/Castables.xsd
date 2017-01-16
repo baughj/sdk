@@ -493,7 +493,7 @@
       <xs:element name="Requirements" type="actions:Requirements" minOccurs="0" maxOccurs="1" />
       <xs:element name="Restrictions" type="actions:Restrictions" minOccurs="0" maxOccurs="1" />
       <xs:element name="Effects" type="actions:Effects" minOccurs="0" maxOccurs="1" />
-      <xs:element name="Script" type="hyb:String8" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Script" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:all>
     <!-- Castable attributes -->
     <xs:attribute name="Type" use="required" />
