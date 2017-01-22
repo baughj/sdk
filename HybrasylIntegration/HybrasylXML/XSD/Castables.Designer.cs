@@ -426,11 +426,11 @@ namespace Hybrasyl.Castables
     public partial class Conditions
     {
 
-        private PlayerCondition _add;
+        private CreatureCondition _add;
 
-        private PlayerCondition _remove;
+        private CreatureCondition _remove;
 
-        public PlayerCondition Add
+        public CreatureCondition Add
         {
             get
             {
@@ -442,7 +442,7 @@ namespace Hybrasyl.Castables
             }
         }
 
-        public PlayerCondition Remove
+        public CreatureCondition Remove
         {
             get
             {
@@ -459,7 +459,7 @@ namespace Hybrasyl.Castables
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
-    public enum PlayerCondition
+    public enum CreatureCondition
     {
 
         /// <remarks/>
