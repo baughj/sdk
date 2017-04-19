@@ -393,8 +393,8 @@
 
   <xs:complexType name="Conditions">
     <xs:sequence>
-      <xs:element name="Add" type="hyb:PlayerCondition" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="Remove" type="hyb:PlayerCondition" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Add" type="hyb:CreatureCondition" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Remove" type="hyb:CreatureCondition" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
   
