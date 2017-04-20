@@ -226,12 +226,18 @@
     <xs:attribute name="Name" type="hyb:String8"/>
     <xs:attribute name="Quantity" type="xs:int"/>
     <xs:attribute name="Restock" type="xs:int"/>
+    <xs:attribute name="Tab" type="hyb:String8"/>
   </xs:complexType>
   
   <xs:complexType name="NpcRoleVend">
     <xs:sequence>
-      <xs:element name="Item" type="creature:NpcRoleVendItem" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="Items" type="creature:NpcRoleVendItem" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
+    <xs:attribute name="Tabs">
+      <xs:simpleType>
+        <xs:list itemType="hyb:String8"/>
+      </xs:simpleType>
+    </xs:attribute>
   </xs:complexType>
 
   <xs:complexType name="NpcRolePostSurcharge">
