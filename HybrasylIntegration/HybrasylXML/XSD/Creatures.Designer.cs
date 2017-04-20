@@ -1613,7 +1613,7 @@ namespace Hybrasyl.Creatures
         #region Private fields
         private List<NpcRoleTrainCastable> _train;
         
-        private List<NpcRoleVendItem> _vend;
+        private NpcRoleVend _vend;
         
         private NpcRolePost _post;
         
@@ -1635,8 +1635,7 @@ namespace Hybrasyl.Creatures
             }
         }
         
-        [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable=false)]
-        public List<NpcRoleVendItem> Vend
+        public NpcRoleVend Vend
         {
             get
             {
@@ -1776,6 +1775,53 @@ namespace Hybrasyl.Creatures
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRoleVend
+    {
+        
+        #region Private fields
+        private List<NpcRoleVendItem> _items;
+        
+        private List<string> _tabs;
+        #endregion
+        
+        public NpcRoleVend()
+        {
+            this._tabs = new List<string>();
+            this._items = new List<NpcRoleVendItem>();
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("Items")]
+        public List<NpcRoleVendItem> Items
+        {
+            get
+            {
+                return this._items;
+            }
+            set
+            {
+                this._items = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public List<string> Tabs
+        {
+            get
+            {
+                return this._tabs;
+            }
+            set
+            {
+                this._tabs = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRoleVendItem
     {
         
@@ -1785,6 +1831,8 @@ namespace Hybrasyl.Creatures
         private int _quantity;
         
         private int _restock;
+        
+        private string _tab;
         #endregion
         
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -1823,6 +1871,19 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._restock = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Tab
+        {
+            get
+            {
+                return this._tab;
+            }
+            set
+            {
+                this._tab = value;
             }
         }
     }
