@@ -1779,7 +1779,7 @@ namespace Hybrasyl.Creatures
     {
 
         #region Private fields
-        private NpcRoleVendItemList _items;
+        private NpcRoleVendItem _item;
 
         private List<string> _tabs;
         #endregion
@@ -1787,18 +1787,18 @@ namespace Hybrasyl.Creatures
         public NpcRoleVend()
         {
             this._tabs = new List<string>();
-            this._items = new NpcRoleVendItemList();
+            this._item = new NpcRoleVendItem();
         }
 
-        public NpcRoleVendItemList Items
+        public NpcRoleVendItem Item
         {
             get
             {
-                return this._items;
+                return this._item;
             }
             set
             {
-                this._items = value;
+                this._item = value;
             }
         }
 
@@ -1812,36 +1812,6 @@ namespace Hybrasyl.Creatures
             set
             {
                 this._tabs = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
-    public partial class NpcRoleVendItemList
-    {
-
-        #region Private fields
-        private NpcRoleVendItem _item;
-        #endregion
-
-        public NpcRoleVendItemList()
-        {
-            this._item = new NpcRoleVendItem();
-        }
-
-        public NpcRoleVendItem Item
-        {
-            get
-            {
-                return this._item;
-            }
-            set
-            {
-                this._item = value;
             }
         }
     }
