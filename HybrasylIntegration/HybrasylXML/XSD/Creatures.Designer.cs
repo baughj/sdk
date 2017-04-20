@@ -15,37 +15,37 @@ namespace Hybrasyl.Creatures
     using System.ComponentModel;
     using System.Xml;
     using System.Collections.Generic;
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Creature", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature", IsNullable = false)]
     public partial class Spawn
     {
-        
+
         #region Private fields
         private CreatureScript _script;
-        
+
         private IntentList _intents;
-        
+
         private Respawn _respawn;
-        
+
         private Damage _damage;
-        
+
         private Defense _defense;
-        
+
         private Stats _stats;
-        
+
         private LootList _loot;
-        
+
         private List<Castable> _castables;
-        
+
         private string _base;
         #endregion
-        
+
         public Spawn()
         {
             this._loot = new LootList();
@@ -54,7 +54,7 @@ namespace Hybrasyl.Creatures
             this._damage = new Damage();
             this._respawn = new Respawn();
         }
-        
+
         public CreatureScript Script
         {
             get
@@ -66,7 +66,7 @@ namespace Hybrasyl.Creatures
                 this._script = value;
             }
         }
-        
+
         public IntentList Intents
         {
             get
@@ -78,7 +78,7 @@ namespace Hybrasyl.Creatures
                 this._intents = value;
             }
         }
-        
+
         public Respawn Respawn
         {
             get
@@ -90,7 +90,7 @@ namespace Hybrasyl.Creatures
                 this._respawn = value;
             }
         }
-        
+
         public Damage Damage
         {
             get
@@ -102,7 +102,7 @@ namespace Hybrasyl.Creatures
                 this._damage = value;
             }
         }
-        
+
         public Defense Defense
         {
             get
@@ -114,7 +114,7 @@ namespace Hybrasyl.Creatures
                 this._defense = value;
             }
         }
-        
+
         public Stats Stats
         {
             get
@@ -126,7 +126,7 @@ namespace Hybrasyl.Creatures
                 this._stats = value;
             }
         }
-        
+
         public LootList Loot
         {
             get
@@ -138,8 +138,8 @@ namespace Hybrasyl.Creatures
                 this._loot = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
         public List<Castable> Castables
         {
             get
@@ -151,7 +151,7 @@ namespace Hybrasyl.Creatures
                 this._castables = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Base
         {
@@ -165,21 +165,21 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class CreatureScript
     {
-        
+
         #region Private fields
         private ScriptType _type;
-        
+
         private string _value;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ScriptType type
         {
@@ -192,7 +192,7 @@ namespace Hybrasyl.Creatures
                 this._type = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -206,45 +206,45 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public enum ScriptType
     {
-        
+
         /// <remarks/>
         Override,
-        
+
         /// <remarks/>
         Supplement,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class Castable
     {
-        
+
         #region Private fields
         private int _cooldown;
-        
+
         private float _chance;
-        
+
         private bool _always;
-        
+
         private string _value;
         #endregion
-        
+
         public Castable()
         {
             this._cooldown = 1;
             this._chance = ((float)(1F));
             this._always = false;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Cooldown
@@ -258,7 +258,7 @@ namespace Hybrasyl.Creatures
                 this._cooldown = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(float), "1")]
         public float Chance
@@ -272,7 +272,7 @@ namespace Hybrasyl.Creatures
                 this._chance = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Always
@@ -286,7 +286,7 @@ namespace Hybrasyl.Creatures
                 this._always = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -300,27 +300,27 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class LootGold
     {
-        
+
         #region Private fields
         private int _min;
-        
+
         private int _max;
         #endregion
-        
+
         public LootGold()
         {
             this._min = 1;
             this._max = 1;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Min
@@ -334,7 +334,7 @@ namespace Hybrasyl.Creatures
                 this._min = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Max
@@ -349,27 +349,27 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class LootItem
     {
-        
+
         #region Private fields
         private int _min;
-        
+
         private int _max;
-        
+
         private bool _unique;
-        
+
         private bool _always;
-        
+
         private string _value;
         #endregion
-        
+
         public LootItem()
         {
             this._min = 1;
@@ -377,7 +377,7 @@ namespace Hybrasyl.Creatures
             this._unique = false;
             this._always = false;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Min
@@ -391,7 +391,7 @@ namespace Hybrasyl.Creatures
                 this._min = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Max
@@ -405,7 +405,7 @@ namespace Hybrasyl.Creatures
                 this._max = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Unique
@@ -419,7 +419,7 @@ namespace Hybrasyl.Creatures
                 this._unique = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
         public bool Always
@@ -433,7 +433,7 @@ namespace Hybrasyl.Creatures
                 this._always = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -447,31 +447,31 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class LootTable
     {
-        
+
         #region Private fields
         private List<LootItem> _item;
-        
+
         private LootGold _gold;
-        
+
         private int _rolls;
-        
+
         private double _chance;
         #endregion
-        
+
         public LootTable()
         {
             this._rolls = 1;
             this._chance = 1D;
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Item")]
         public List<LootItem> Item
         {
@@ -484,7 +484,7 @@ namespace Hybrasyl.Creatures
                 this._item = value;
             }
         }
-        
+
         public LootGold Gold
         {
             get
@@ -496,7 +496,7 @@ namespace Hybrasyl.Creatures
                 this._gold = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Rolls
@@ -510,7 +510,7 @@ namespace Hybrasyl.Creatures
                 this._rolls = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1D)]
         public double Chance
@@ -525,19 +525,19 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class LootImport
     {
-        
+
         #region Private fields
         private string _name;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -551,31 +551,31 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class LootList
     {
-        
+
         #region Private fields
         private List<LootImport> _set;
-        
+
         private List<LootTable> _table;
-        
+
         private uint _xp;
-        
+
         private uint _gold;
         #endregion
-        
+
         public LootList()
         {
             this._xp = ((uint)(0));
             this._gold = ((uint)(0));
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Set")]
         public List<LootImport> Set
         {
@@ -588,7 +588,7 @@ namespace Hybrasyl.Creatures
                 this._set = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Table")]
         public List<LootTable> Table
         {
@@ -601,7 +601,7 @@ namespace Hybrasyl.Creatures
                 this._table = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         public uint Xp
@@ -615,7 +615,7 @@ namespace Hybrasyl.Creatures
                 this._xp = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         public uint Gold
@@ -630,38 +630,38 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class Stats
     {
-        
+
         #region Private fields
         private uint _hp;
-        
+
         private uint _mp;
-        
+
         private byte _level;
-        
+
         private byte _str;
-        
+
         private byte _int;
-        
+
         private byte _wis;
-        
+
         private byte _con;
-        
+
         private byte _dex;
         #endregion
-        
+
         public Stats()
         {
             this._mp = ((uint)(0));
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public uint Hp
         {
@@ -674,7 +674,7 @@ namespace Hybrasyl.Creatures
                 this._hp = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         public uint Mp
@@ -688,7 +688,7 @@ namespace Hybrasyl.Creatures
                 this._mp = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Level
         {
@@ -701,7 +701,7 @@ namespace Hybrasyl.Creatures
                 this._level = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Str
         {
@@ -714,7 +714,7 @@ namespace Hybrasyl.Creatures
                 this._str = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Int
         {
@@ -727,7 +727,7 @@ namespace Hybrasyl.Creatures
                 this._int = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Wis
         {
@@ -740,7 +740,7 @@ namespace Hybrasyl.Creatures
                 this._wis = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Con
         {
@@ -753,7 +753,7 @@ namespace Hybrasyl.Creatures
                 this._con = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Dex
         {
@@ -767,32 +767,32 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class Defense
     {
-        
+
         #region Private fields
         private int _mr;
-        
+
         private int _ac;
-        
+
         private Element _element;
-        
+
         private byte _regen;
         #endregion
-        
+
         public Defense()
         {
             this._mr = 0;
             this._element = Element.None;
             this._regen = ((byte)(0));
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Mr
@@ -806,7 +806,7 @@ namespace Hybrasyl.Creatures
                 this._mr = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Ac
         {
@@ -819,7 +819,7 @@ namespace Hybrasyl.Creatures
                 this._ac = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(Element.None)]
         public Element Element
@@ -833,7 +833,7 @@ namespace Hybrasyl.Creatures
                 this._element = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Regen
@@ -848,67 +848,67 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum Element
     {
-        
+
         /// <remarks/>
         None,
-        
+
         /// <remarks/>
         Fire,
-        
+
         /// <remarks/>
         Water,
-        
+
         /// <remarks/>
         Wind,
-        
+
         /// <remarks/>
         Earth,
-        
+
         /// <remarks/>
         Light,
-        
+
         /// <remarks/>
         Dark,
-        
+
         /// <remarks/>
         Wood,
-        
+
         /// <remarks/>
         Metal,
-        
+
         /// <remarks/>
         Undead,
-        
+
         /// <remarks/>
         Random,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class DamageAmount
     {
-        
+
         #region Private fields
         private int _min;
-        
+
         private int _max;
         #endregion
-        
+
         public DamageAmount()
         {
             this._min = 0;
             this._max = 1;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int Min
@@ -922,7 +922,7 @@ namespace Hybrasyl.Creatures
                 this._min = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Max
@@ -937,29 +937,29 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class Damage
     {
-        
+
         #region Private fields
         private DamageAmount _small;
-        
+
         private DamageAmount _large;
-        
+
         private Element _element;
-        
+
         private DamageType _type;
-        
+
         private byte _dmg;
-        
+
         private byte _hit;
         #endregion
-        
+
         public Damage()
         {
             this._element = Element.None;
@@ -967,7 +967,7 @@ namespace Hybrasyl.Creatures
             this._dmg = ((byte)(0));
             this._hit = ((byte)(0));
         }
-        
+
         public DamageAmount Small
         {
             get
@@ -979,7 +979,7 @@ namespace Hybrasyl.Creatures
                 this._small = value;
             }
         }
-        
+
         public DamageAmount Large
         {
             get
@@ -991,7 +991,7 @@ namespace Hybrasyl.Creatures
                 this._large = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(Element.None)]
         public Element Element
@@ -1005,7 +1005,7 @@ namespace Hybrasyl.Creatures
                 this._element = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(DamageType.Physical)]
         public DamageType Type
@@ -1019,7 +1019,7 @@ namespace Hybrasyl.Creatures
                 this._type = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Dmg
@@ -1033,7 +1033,7 @@ namespace Hybrasyl.Creatures
                 this._dmg = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "0")]
         public byte Hit
@@ -1048,50 +1048,50 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum DamageType
     {
-        
+
         /// <remarks/>
         Direct,
-        
+
         /// <remarks/>
         Physical,
-        
+
         /// <remarks/>
         Magical,
-        
+
         /// <remarks/>
         Elemental,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class Respawn
     {
-        
+
         #region Private fields
         private int _interval;
-        
+
         private int _min;
-        
+
         private int _max;
-        
+
         private float _percentage;
         #endregion
-        
+
         public Respawn()
         {
             this._interval = 30;
             this._min = 1;
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(30)]
         public int Interval
@@ -1105,7 +1105,7 @@ namespace Hybrasyl.Creatures
                 this._interval = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(1)]
         public int Min
@@ -1119,7 +1119,7 @@ namespace Hybrasyl.Creatures
                 this._min = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Max
         {
@@ -1132,7 +1132,7 @@ namespace Hybrasyl.Creatures
                 this._max = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public float Percentage
         {
@@ -1146,21 +1146,21 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class Intent
     {
-        
+
         #region Private fields
         private IntentType _intent;
-        
+
         private string _value;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public IntentType intent
         {
@@ -1173,7 +1173,7 @@ namespace Hybrasyl.Creatures
                 this._intent = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -1187,39 +1187,39 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum IntentType
     {
-        
+
         /// <remarks/>
         Hostile,
-        
+
         /// <remarks/>
         Passive,
-        
+
         /// <remarks/>
         Neutral,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class IntentList
     {
-        
+
         #region Private fields
         private List<Intent> _npc;
-        
+
         private List<Intent> _player;
-        
+
         private List<Intent> _monster;
         #endregion
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Npc")]
         public List<Intent> Npc
         {
@@ -1232,7 +1232,7 @@ namespace Hybrasyl.Creatures
                 this._npc = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Player")]
         public List<Intent> Player
         {
@@ -1245,7 +1245,7 @@ namespace Hybrasyl.Creatures
                 this._player = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Monster")]
         public List<Intent> Monster
         {
@@ -1259,29 +1259,29 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Creature", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature", IsNullable = false)]
     public partial class SpawnGroup
     {
-        
+
         #region Private fields
         private List<Map> _maps;
-        
+
         private List<Spawn> _spawns;
         #endregion
-        
+
         public SpawnGroup()
         {
             this._spawns = new List<Spawn>();
             this._maps = new List<Map>();
         }
-        
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
         public List<Map> Maps
         {
             get
@@ -1293,8 +1293,8 @@ namespace Hybrasyl.Creatures
                 this._maps = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable = false)]
         public List<Spawn> Spawns
         {
             get
@@ -1307,27 +1307,27 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class Map
     {
-        
+
         #region Private fields
         private string _name;
-        
+
         private int _minSpawn;
-        
+
         private int _maxSpawn;
-        
+
         private int _limit;
-        
+
         private int _interval;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -1340,7 +1340,7 @@ namespace Hybrasyl.Creatures
                 this._name = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int MinSpawn
         {
@@ -1353,7 +1353,7 @@ namespace Hybrasyl.Creatures
                 this._minSpawn = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int MaxSpawn
         {
@@ -1366,7 +1366,7 @@ namespace Hybrasyl.Creatures
                 this._maxSpawn = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Limit
         {
@@ -1379,7 +1379,7 @@ namespace Hybrasyl.Creatures
                 this._limit = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Interval
         {
@@ -1393,24 +1393,24 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Creature", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature", IsNullable = false)]
     public partial class Creature
     {
-        
+
         #region Private fields
         private string _name;
-        
+
         private string _description;
-        
+
         private ushort _sprite;
         #endregion
-        
+
         public string Name
         {
             get
@@ -1422,7 +1422,7 @@ namespace Hybrasyl.Creatures
                 this._name = value;
             }
         }
-        
+
         public string Description
         {
             get
@@ -1434,7 +1434,7 @@ namespace Hybrasyl.Creatures
                 this._description = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort Sprite
         {
@@ -1448,32 +1448,32 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.hybrasyl.com/XML/Creature", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature", IsNullable = false)]
     public partial class Npc
     {
-        
+
         #region Private fields
         private string _name;
-        
+
         private string _displayName;
-        
+
         private NpcAppearance _appearance;
-        
+
         private NpcRoleList _roles;
-        
+
         private NpcInventory _inventory;
-        
+
         private byte _x;
-        
+
         private byte _y;
         #endregion
-        
+
         public string Name
         {
             get
@@ -1485,7 +1485,7 @@ namespace Hybrasyl.Creatures
                 this._name = value;
             }
         }
-        
+
         public string DisplayName
         {
             get
@@ -1497,7 +1497,7 @@ namespace Hybrasyl.Creatures
                 this._displayName = value;
             }
         }
-        
+
         public NpcAppearance Appearance
         {
             get
@@ -1509,7 +1509,7 @@ namespace Hybrasyl.Creatures
                 this._appearance = value;
             }
         }
-        
+
         public NpcRoleList Roles
         {
             get
@@ -1521,7 +1521,7 @@ namespace Hybrasyl.Creatures
                 this._roles = value;
             }
         }
-        
+
         public NpcInventory Inventory
         {
             get
@@ -1533,7 +1533,7 @@ namespace Hybrasyl.Creatures
                 this._inventory = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte X
         {
@@ -1546,7 +1546,7 @@ namespace Hybrasyl.Creatures
                 this._x = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public byte Y
         {
@@ -1560,21 +1560,21 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcAppearance
     {
-        
+
         #region Private fields
         private ushort _sprite;
-        
+
         private string _portrait;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort Sprite
         {
@@ -1587,7 +1587,7 @@ namespace Hybrasyl.Creatures
                 this._sprite = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Portrait
         {
@@ -1601,28 +1601,28 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRoleList
     {
-        
+
         #region Private fields
         private List<NpcRoleTrainCastable> _train;
-        
+
         private NpcRoleVend _vend;
-        
+
         private NpcRolePost _post;
-        
+
         private NpcRoleRepair _repair;
-        
+
         private NpcRoleBank _bank;
         #endregion
-        
-        [System.Xml.Serialization.XmlArrayItemAttribute("Castable", IsNullable=false)]
+
+        [System.Xml.Serialization.XmlArrayItemAttribute("Castable", IsNullable = false)]
         public List<NpcRoleTrainCastable> Train
         {
             get
@@ -1634,7 +1634,7 @@ namespace Hybrasyl.Creatures
                 this._train = value;
             }
         }
-        
+
         public NpcRoleVend Vend
         {
             get
@@ -1646,7 +1646,7 @@ namespace Hybrasyl.Creatures
                 this._vend = value;
             }
         }
-        
+
         public NpcRolePost Post
         {
             get
@@ -1658,7 +1658,7 @@ namespace Hybrasyl.Creatures
                 this._post = value;
             }
         }
-        
+
         public NpcRoleRepair Repair
         {
             get
@@ -1670,7 +1670,7 @@ namespace Hybrasyl.Creatures
                 this._repair = value;
             }
         }
-        
+
         public NpcRoleBank Bank
         {
             get
@@ -1683,28 +1683,28 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRoleTrainCastable
     {
-        
+
         #region Private fields
         private string _type;
-        
+
         private List<Class> _class;
-        
+
         private string _name;
         #endregion
-        
+
         public NpcRoleTrainCastable()
         {
             this._class = new List<Class>();
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Type
         {
@@ -1717,7 +1717,7 @@ namespace Hybrasyl.Creatures
                 this._type = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public List<Class> Class
         {
@@ -1730,7 +1730,7 @@ namespace Hybrasyl.Creatures
                 this._class = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -1744,54 +1744,53 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum Class
     {
-        
+
         /// <remarks/>
         Peasant,
-        
+
         /// <remarks/>
         Warrior,
-        
+
         /// <remarks/>
         Rogue,
-        
+
         /// <remarks/>
         Wizard,
-        
+
         /// <remarks/>
         Priest,
-        
+
         /// <remarks/>
         Monk,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRoleVend
     {
-        
+
         #region Private fields
-        private List<NpcRoleVendItem> _items;
-        
+        private NpcRoleVendItemList _items;
+
         private List<string> _tabs;
         #endregion
-        
+
         public NpcRoleVend()
         {
             this._tabs = new List<string>();
-            this._items = new List<NpcRoleVendItem>();
+            this._items = new NpcRoleVendItemList();
         }
-        
-        [System.Xml.Serialization.XmlElementAttribute("Items")]
-        public List<NpcRoleVendItem> Items
+
+        public NpcRoleVendItemList Items
         {
             get
             {
@@ -1802,7 +1801,7 @@ namespace Hybrasyl.Creatures
                 this._items = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public List<string> Tabs
         {
@@ -1816,25 +1815,55 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
+    public partial class NpcRoleVendItemList
+    {
+
+        #region Private fields
+        private NpcRoleVendItem _item;
+        #endregion
+
+        public NpcRoleVendItemList()
+        {
+            this._item = new NpcRoleVendItem();
+        }
+
+        public NpcRoleVendItem Item
+        {
+            get
+            {
+                return this._item;
+            }
+            set
+            {
+                this._item = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRoleVendItem
     {
-        
+
         #region Private fields
         private string _name;
-        
+
         private int _quantity;
-        
+
         private int _restock;
-        
+
         private string _tab;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -1847,7 +1876,7 @@ namespace Hybrasyl.Creatures
                 this._name = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Quantity
         {
@@ -1860,7 +1889,7 @@ namespace Hybrasyl.Creatures
                 this._quantity = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Restock
         {
@@ -1873,7 +1902,7 @@ namespace Hybrasyl.Creatures
                 this._restock = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Tab
         {
@@ -1887,26 +1916,26 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRolePost
     {
-        
+
         #region Private fields
         private List<NpcRolePostSurcharge> _surcharge;
-        
+
         private string _receive;
         #endregion
-        
+
         public NpcRolePost()
         {
             this._surcharge = new List<NpcRolePostSurcharge>();
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Surcharge")]
         public List<NpcRolePostSurcharge> Surcharge
         {
@@ -1919,7 +1948,7 @@ namespace Hybrasyl.Creatures
                 this._surcharge = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Receive
         {
@@ -1933,21 +1962,21 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRolePostSurcharge
     {
-        
+
         #region Private fields
         private string _nation;
-        
+
         private int _percent;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Nation
         {
@@ -1960,7 +1989,7 @@ namespace Hybrasyl.Creatures
                 this._nation = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Percent
         {
@@ -1974,28 +2003,28 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRoleRepair
     {
-        
+
         #region Private fields
         private string _nation;
-        
+
         private int _discount;
-        
+
         private List<NpcRepairType> _type;
         #endregion
-        
+
         public NpcRoleRepair()
         {
             this._type = new List<NpcRepairType>();
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Nation
         {
@@ -2008,7 +2037,7 @@ namespace Hybrasyl.Creatures
                 this._nation = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Discount
         {
@@ -2021,7 +2050,7 @@ namespace Hybrasyl.Creatures
                 this._discount = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public List<NpcRepairType> Type
         {
@@ -2035,35 +2064,35 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/HybrasylCommon")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/HybrasylCommon")]
     public enum NpcRepairType
     {
-        
+
         /// <remarks/>
         Armor,
-        
+
         /// <remarks/>
         Weapon,
-        
+
         /// <remarks/>
         All,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcRoleBank
     {
-        
+
         #region Private fields
         private string _discount;
         #endregion
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Discount
         {
@@ -2077,26 +2106,26 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcInventory
     {
-        
+
         #region Private fields
         private NpcInventoryItem _item;
-        
+
         private byte _gold;
         #endregion
-        
+
         public NpcInventory()
         {
             this._item = new NpcInventoryItem();
         }
-        
+
         public NpcInventoryItem Item
         {
             get
@@ -2108,7 +2137,7 @@ namespace Hybrasyl.Creatures
                 this._item = value;
             }
         }
-        
+
         public byte Gold
         {
             get
@@ -2121,29 +2150,29 @@ namespace Hybrasyl.Creatures
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.hybrasyl.com/XML/Creature")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.hybrasyl.com/XML/Creature")]
     public partial class NpcInventoryItem
     {
-        
+
         #region Private fields
         private uint _quantity;
-        
+
         private uint _refresh;
-        
+
         private string _value;
         #endregion
-        
+
         public NpcInventoryItem()
         {
             this._quantity = ((uint)(0));
             this._refresh = ((uint)(0));
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         public uint Quantity
@@ -2157,7 +2186,7 @@ namespace Hybrasyl.Creatures
                 this._quantity = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         public uint Refresh
@@ -2171,7 +2200,7 @@ namespace Hybrasyl.Creatures
                 this._refresh = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
