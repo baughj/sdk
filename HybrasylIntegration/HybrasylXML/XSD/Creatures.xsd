@@ -222,6 +222,12 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="NpcRoleVendItemList">
+    <xs:sequence>
+      <xs:element name="Item" type="creature:NpcRoleVendItem" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="NpcRoleVendItem">
     <xs:attribute name="Name" type="hyb:String8"/>
     <xs:attribute name="Quantity" type="xs:int"/>
@@ -231,7 +237,7 @@
   
   <xs:complexType name="NpcRoleVend">
     <xs:sequence>
-      <xs:element name="Item" type="creature:NpcRoleVendItem"/>
+      <xs:element name="Items" type="creature:NpcRoleVendItemList" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="Tabs">
       <xs:simpleType>

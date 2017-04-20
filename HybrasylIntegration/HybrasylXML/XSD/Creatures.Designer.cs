@@ -1779,7 +1779,7 @@ namespace Hybrasyl.Creatures
     {
 
         #region Private fields
-        private NpcRoleVendItem _item;
+        private List<NpcRoleVendItem> _items;
 
         private List<string> _tabs;
         #endregion
@@ -1787,18 +1787,18 @@ namespace Hybrasyl.Creatures
         public NpcRoleVend()
         {
             this._tabs = new List<string>();
-            this._item = new NpcRoleVendItem();
         }
 
-        public NpcRoleVendItem Item
+        [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable = false)]
+        public List<NpcRoleVendItem> Items
         {
             get
             {
-                return this._item;
+                return this._items;
             }
             set
             {
-                this._item = value;
+                this._items = value;
             }
         }
 
