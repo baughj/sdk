@@ -21,7 +21,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
+using BinaryFormatter;
 using System.Xml.Serialization;
 
 namespace Hybrasyl.Items
@@ -146,13 +147,12 @@ namespace Hybrasyl.Items
 
         public Item Clone()
         {
-            MemoryStream ms = new MemoryStream();
-            BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(ms, this);
-            ms.Position = 0;
-            object obj = bf.Deserialize(ms);
-            ms.Close();
-            return (Item)obj;
+            //MemoryStream ms = new MemoryStream();
+            BinaryConverter bf = new BinaryConverter();
+            var s = bf.Serialize(this);
+            var o = bf.Deserialize<Item>(s);
+            
+            return (Item)o;
         }
     }
 }
