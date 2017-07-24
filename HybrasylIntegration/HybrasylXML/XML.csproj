@@ -1,102 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F21B116-7897-4AE5-A675-8E666A264A30}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hybrasyl</RootNamespace>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Hybrasyl.XML</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <RootNamespace>Hybrasyl.XML</RootNamespace>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XML|AnyCPU'" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Entities|AnyCPU'" />
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="BinaryFormatter" Version="1.2.0" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Xml" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XML\Node.cs" />
-    <Compile Include="XML\Serializer.cs" />
-    <Compile Include="XML\Utf8StringWriter.cs" />
-    <Compile Include="XML\XMLBase.cs" />
-    <Compile Include="XSD\Castables.Designer.cs" />
-    <Compile Include="XSD\Creatures.Designer.cs" />
-    <Compile Include="XSD\hybrasylConfig.Designer.cs" />
-    <Compile Include="XSD\hybrasylExtensions.cs" />
-    <Compile Include="XSD\hybrasylStrings.Designer.cs" />
-    <Compile Include="XSD\Items.Designer.cs" />
-    <Compile Include="XSD\Loot.Designer.cs" />
-    <Compile Include="XSD\Maps.Designer.cs" />
-    <Compile Include="XSD\Nations.Designer.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="XSD\Castables.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\Creatures.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\hybrasylConfig.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\hybrasylStrings.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\hybrasylTypes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\Items.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\Loot.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\Maps.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XSD\Nations.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
