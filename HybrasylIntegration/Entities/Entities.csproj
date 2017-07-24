@@ -6,6 +6,10 @@
     <RootNamespace>Hybrasyl.Entities</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XML|AnyCPU'" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Entities|AnyCPU'" />
+
   <ItemGroup>
     <ProjectReference Include="..\HybrasylXML\XML.csproj" />
   </ItemGroup>

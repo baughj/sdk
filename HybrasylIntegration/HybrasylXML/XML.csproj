@@ -6,6 +6,10 @@
     <RootNamespace>Hybrasyl.XML</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='XML|AnyCPU'" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Entities|AnyCPU'" />
+
   <ItemGroup>
     <PackageReference Include="BinaryFormatter" Version="1.2.0" />
     <PackageReference Include="System.ComponentModel" Version="4.3.0" />
