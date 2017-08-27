@@ -10,6 +10,11 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Entities|AnyCPU'" />
 
+  <!-- Continue to control versioning manually with AssemblyInfo.cs -->
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup> 
+ 
   <ItemGroup>
     <PackageReference Include="BinaryFormatter" Version="1.2.0" />
     <PackageReference Include="System.ComponentModel" Version="4.3.0" />
